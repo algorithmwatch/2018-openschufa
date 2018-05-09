@@ -1,0 +1,456 @@
+[
+  {
+    "descriptors": [
+      {
+        "defaultMessage": "Photo added",
+        "id": "AddedPhoto.header"
+      },
+      {
+        "defaultMessage": "Click on 'ANOTHER PHOTO' to take another photo.",
+        "id": "AddedPhoto.p1"
+      },
+      {
+        "defaultMessage": "Another photo",
+        "id": "AddPhoto.addphoto"
+      },
+      {
+        "defaultMessage": "Click on 'TO SURVEY' to anwser a few questions before you send your data.",
+        "id": "AddedPhoto.p2"
+      },
+      {
+        "defaultMessage": "To survey",
+        "id": "AddPhoto.survey"
+      }
+    ],
+    "path": "src/components/AddedPhoto/AddedPhoto.json"
+  },
+  {
+    "descriptors": [
+      {
+        "defaultMessage": "Please only send those SCHUFA pages that do not show the SCHUFA-Logo ...",
+        "id": "Capture.p1"
+      },
+      {
+        "defaultMessage": "Press to take photo",
+        "id": "Capture.takephotobutton"
+      }
+    ],
+    "path": "src/components/CapturePhoto/CapturePhoto.json"
+  },
+  {
+    "descriptors": [
+      {
+        "defaultMessage": "Postal code",
+        "id": "DataForm.plz"
+      },
+      {
+        "defaultMessage": "Year of birth",
+        "id": "DataForm.yearofbirth"
+      },
+      {
+        "defaultMessage": "Sex",
+        "id": "DataForm.sex"
+      },
+      {
+        "defaultMessage": "Male",
+        "id": "DataForm.male"
+      },
+      {
+        "defaultMessage": "Female",
+        "id": "DataForm.female"
+      },
+      {
+        "defaultMessage": "Non-binary",
+        "id": "DataForm.nonbinary"
+      },
+      {
+        "defaultMessage": "Not specified",
+        "id": "DataForm.notspecified"
+      },
+      {
+        "defaultMessage": "Married / Civil partners",
+        "id": "DataForm.Married"
+      },
+      {
+        "defaultMessage": "Nationality",
+        "id": "DataForm.nationality"
+      },
+      {
+        "defaultMessage": "Yes",
+        "id": "DataForm.yes"
+      },
+      {
+        "defaultMessage": "No",
+        "id": "DataForm.no"
+      },
+      {
+        "defaultMessage": "Migration background",
+        "id": "DataForm.migrationbackground"
+      },
+      {
+        "defaultMessage": "Number of children entitled to child allowance",
+        "id": "DataForm.numberOfChildren"
+      },
+      {
+        "defaultMessage": "Freelance",
+        "id": "DataForm.freelance"
+      },
+      {
+        "defaultMessage": "Employed",
+        "id": "DataForm.employed"
+      },
+      {
+        "defaultMessage": "Official",
+        "id": "DataForm.official"
+      },
+      {
+        "defaultMessage": "Seeking work",
+        "id": "DataForm.seekingwork"
+      },
+      {
+        "defaultMessage": "Retired",
+        "id": "DataForm.retired"
+      },
+      {
+        "defaultMessage": "Student",
+        "id": "DataForm.student"
+      },
+      {
+        "defaultMessage": "Employment",
+        "id": "DataForm.employment"
+      },
+      {
+        "defaultMessage": "Monthly income (pre-tax)",
+        "id": "DataForm.monthlyincome"
+      },
+      {
+        "defaultMessage": "More than 5000 €",
+        "id": "DataForm.morethan5000"
+      },
+      {
+        "defaultMessage": "Housing",
+        "id": "DataForm.housing"
+      },
+      {
+        "defaultMessage": "Shared flat",
+        "id": "DataForm.sharedflat"
+      },
+      {
+        "defaultMessage": "Flat",
+        "id": "DataForm.flat"
+      },
+      {
+        "defaultMessage": "Freehold flat",
+        "id": "DataForm.freeholdflat"
+      },
+      {
+        "defaultMessage": "Number of relocations within last 10 years",
+        "id": "DataForm.relocations"
+      },
+      {
+        "defaultMessage": "More",
+        "id": "DataForm.more"
+      },
+      {
+        "defaultMessage": "Number",
+        "id": "DataForm.number"
+      },
+      {
+        "defaultMessage": "Loan amount",
+        "id": "DataForm.loanamount"
+      },
+      {
+        "defaultMessage": "Number of mobile contracts",
+        "id": "DataForm.numberofmobilecontracts"
+      },
+      {
+        "defaultMessage": "Number of giro accounts",
+        "id": "DataForm.numberofgiroaccounts"
+      },
+      {
+        "defaultMessage": "Number of credit cards",
+        "id": "DataForm.numberofcreditcards"
+      },
+      {
+        "defaultMessage": "Do you have mail order accounts like Amazon or Zalando?",
+        "id": "DataForm.mailorder"
+      },
+      {
+        "defaultMessage": "Admonitions",
+        "id": "DataForm.admonitions"
+      },
+      {
+        "defaultMessage": "Pending collection orders",
+        "id": "DataForm.cashing"
+      },
+      {
+        "defaultMessage": "Execution proceedings",
+        "id": "DataForm.executionproceedings"
+      },
+      {
+        "defaultMessage": "Insolvency proceedings",
+        "id": "DataForm.insolvencyproceedings"
+      },
+      {
+        "defaultMessage": "Date of SCHUFA-information",
+        "id": "DataForm.date"
+      },
+      {
+        "defaultMessage": "A few data more...",
+        "id": "DataForm.header"
+      },
+      {
+        "defaultMessage": "The following are some questions that you are kindly asked to answer ...",
+        "id": "DataForm.p1"
+      },
+      {
+        "defaultMessage": "Socio-demography",
+        "id": "DataForm.sociodemography"
+      },
+      {
+        "defaultMessage": "Family status",
+        "id": "DataForm.familystatus"
+      },
+      {
+        "defaultMessage": "Financial situation",
+        "id": "DataForm.financialsituation"
+      },
+      {
+        "defaultMessage": "Active Loans / Mortgages / Lease contracts / instalment payments",
+        "id": "DataForm.activeloans"
+      },
+      {
+        "defaultMessage": "Paid off Loans / Mortgages / Lease contracts / instalment payments",
+        "id": "DataForm.paidoffloans"
+      },
+      {
+        "defaultMessage": "E-Commerce",
+        "id": "DataForm.ecommerce"
+      },
+      {
+        "defaultMessage": "Negative Indicators",
+        "id": "DataForm.negativeindicators"
+      },
+      {
+        "defaultMessage": "Hard facts",
+        "id": "DataForm.hardfacts"
+      }
+    ],
+    "path": "src/components/DataForm/DataForm.json"
+  },
+  {
+    "descriptors": [
+      {
+        "defaultMessage": "Accept privacy agreement",
+        "id": "Finish.checkboxlabel"
+      },
+      {
+        "defaultMessage": "Finish",
+        "id": "Finish.header"
+      },
+      {
+        "defaultMessage": "Please read the data privacy agreement and click the checkbutton to confirm.",
+        "id": "Finish.p1"
+      },
+      {
+        "defaultMessage": "Show privacy agreement",
+        "id": "Finish.privacyagreementbutton"
+      },
+      {
+        "defaultMessage": "Click on 'SEND' to send your data.",
+        "id": "Finish.p2"
+      },
+      {
+        "defaultMessage": "Send",
+        "id": "Finish.sendbutton"
+      }
+    ],
+    "path": "src/components/Finish/Finish.json"
+  },
+  {
+    "descriptors": [
+      {
+        "defaultMessage": "Your e-mail address",
+        "id": "FinishedForm.email"
+      },
+      {
+        "defaultMessage": "Upload successful",
+        "id": "Finished.header"
+      },
+      {
+        "defaultMessage": "Your data has been sent successfully and stored with the following ID:",
+        "id": "Finished.notification"
+      },
+      {
+        "defaultMessage": "If you want to receive a message with this ID, please enter your e-mail address below and click 'Send'.",
+        "id": "Finished.reminderquestion"
+      },
+      {
+        "defaultMessage": "Send",
+        "id": "FinishedForm.sendemail"
+      },
+      {
+        "defaultMessage": "Your data could not be uploaded:",
+        "id": "Finished.formuploaderror"
+      },
+      {
+        "defaultMessage": "Send again",
+        "id": "FinishedForm.sendform"
+      },
+      {
+        "defaultMessage": "Your ID has been sent to the e-mail address given above. If you don't receive a message within a couple of minutes, please check your SPAM folder or if you misspelled your address!",
+        "id": "Finished.emailsent"
+      },
+      {
+        "defaultMessage": "There has something gone wrong while trying to send you an e-mail. Please check your address and try it again.",
+        "id": "Finished.emailsenterror"
+      }
+    ],
+    "path": "src/components/Finished/Finished.json"
+  },
+  {
+    "descriptors": [
+      {
+        "defaultMessage": "Welcome to OpenSCHUFA!",
+        "id": "LandingPage.welcome"
+      },
+      {
+        "defaultMessage": "You already have a SCHUFA-information that you wish to pass on to us?",
+        "id": "LandingPage.upload.description"
+      },
+      {
+        "defaultMessage": "Upload",
+        "id": "LandingPage.upload.buttontext"
+      },
+      {
+        "defaultMessage": "You still have to apply for your SCHUFA-information?",
+        "id": "LandingPage.requestinfo.description"
+      },
+      {
+        "defaultMessage": "Apply",
+        "id": "LandingPage.requestinfo.buttontext"
+      },
+      {
+        "defaultMessage": "You want to know more about the project and those who participate?",
+        "id": "LandingPage.openschufa.description"
+      },
+      {
+        "defaultMessage": "Get information",
+        "id": "LandingPage.openschufa.buttontext"
+      },
+      {
+        "defaultMessage": "Frequently asked questions",
+        "id": "LandingPage.faq.description"
+      },
+      {
+        "defaultMessage": "FAQ",
+        "id": "LandingPage.faq.buttontext"
+      },
+      {
+        "defaultMessage": "Imprint",
+        "id": "LandingPage.impressum"
+      },
+      {
+        "defaultMessage": "Data privacy statement",
+        "id": "LandingPage.dataprivacy"
+      }
+    ],
+    "path": "src/components/LandingPage/LandingPage.json"
+  },
+  {
+    "descriptors": [
+      {
+        "defaultMessage": "About OpenSCHUFA",
+        "id": "Menu.about"
+      },
+      {
+        "defaultMessage": "Imprint",
+        "id": "Menu.imprint"
+      },
+      {
+        "defaultMessage": "Data Privacy Statement",
+        "id": "Menu.dataprivacy"
+      },
+      {
+        "defaultMessage": "FAQ",
+        "id": "Menu.faq"
+      },
+      {
+        "defaultMessage": "Privacy agreement",
+        "id": "Menu.privacyagreement"
+      }
+    ],
+    "path": "src/components/MainAppBar/MainAppBar.json"
+  },
+  {
+    "descriptors": [
+      {
+        "defaultMessage": "Close",
+        "id": "Modal.dialogclose"
+      }
+    ],
+    "path": "src/components/Modal/Modal.json"
+  },
+  {
+    "descriptors": [
+      {
+        "defaultMessage": "Usage",
+        "id": "StepperPage.usagebutton"
+      },
+      {
+        "defaultMessage": "Add photo",
+        "id": "StepperPage.capturebutton"
+      },
+      {
+        "defaultMessage": "Reset",
+        "id": "StepperPage.resetbutton"
+      },
+      {
+        "defaultMessage": "Rotate",
+        "id": "StepperPage.rotatebutton"
+      },
+      {
+        "defaultMessage": "Blacken",
+        "id": "StepperPage.paintbutton"
+      },
+      {
+        "defaultMessage": "Save Image",
+        "id": "StepperPage.saveimagebutton"
+      },
+      {
+        "defaultMessage": "Form",
+        "id": "StepperPage.formbutton"
+      },
+      {
+        "defaultMessage": "Overview",
+        "id": "StepperPage.overviewbutton"
+      },
+      {
+        "defaultMessage": "Send data",
+        "id": "StepperPage.finishbutton"
+      },
+      {
+        "defaultMessage": "Are you sure you wanna do that? All changes will be lost if you continue!",
+        "id": "StepperPage.prompt"
+      }
+    ],
+    "path": "src/components/StepperPage/StepperPage.json"
+  },
+  {
+    "descriptors": [
+      {
+        "defaultMessage": "Introduction",
+        "id": "Usage.header"
+      },
+      {
+        "defaultMessage": "On the next pages we want collect ...",
+        "id": "Usage.p1"
+      },
+      {
+        "defaultMessage": "If you now take fotos of your SCHUFA information ...",
+        "id": "Usage.p2"
+      }
+    ],
+    "path": "src/components/Usage/Usage.json"
+  }
+]

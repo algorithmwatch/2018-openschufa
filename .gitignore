@@ -1,0 +1,6 @@
+# Created by .ignore support plugin (hsz.mobi)
+/openschufa.iml
+.idea/
+/backend/media/
+/backend/.pytest_cache/
+/frontend/src/translations/extractedMessages/

@@ -1,0 +1,7 @@
+Flask
+Flask-Cors
+Flask-Mail
+Flask-Migrate
+Flask-Uploads
+psycopg2-binary
+pytest

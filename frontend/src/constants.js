@@ -1,0 +1,11 @@
+export const MODE_ZOOM = 'photo/MODE_ZOOM';
+export const MODE_PAINT = 'photo/MODE_PAINT';
+export const STEP_USAGE = 'stepper/STEP_USAGE';
+export const STEP_CAPTURE = 'stepper/STEP_CAPTURE';
+export const STEP_ROTATE = 'stepper/STEP_ROTATE';
+export const STEP_PAINT = 'stepper/STEP_PAINT';
+export const STEP_SAVED = 'stepper/STEP_SAVED';
+export const STEP_FORM = 'stepper/STEP_FORM';
+export const STEP_OVERVIEW = 'stepper/STEP_OVERVIEW';
+export const STEP_FINISHED = 'stepper/STEP_FINSHED';
+export const BASE64_MARKER = ',';

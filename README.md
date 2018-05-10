@@ -1,1 +1,3 @@
-# openschufa
+# OpenSCHUFA
+
+Current branch is "develop"

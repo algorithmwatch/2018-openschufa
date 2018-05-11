@@ -185,6 +185,7 @@ class Index extends Component {
             variant='raised'
             className={classes.button}
             href="https://selbstauskunft.net/schufa/"
+            target="_blank"
           >
             <FormattedMessage
               id="LandingPage.requestinfo.buttontext"

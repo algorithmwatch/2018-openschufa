@@ -91,7 +91,7 @@ class MainAppBar extends Component {
             </div>
             <IconButton
               className={classes.menuButton}
-              color="primary"
+              color="secondary"
               aria-label="Menu"
               onClick={this.toggleDrawer(true)}
             >

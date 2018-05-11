@@ -1,6 +1,5 @@
 import { STEP_USAGE, MODE_ZOOM } from '../constants';
-// import {languageWithoutRegionCode, messages} from "../i18nsetup";
-import { messages } from "../i18nsetup";
+import {languageWithoutRegionCode, messages} from "../i18nsetup";
 
 
 export default {
@@ -18,8 +17,7 @@ export default {
     text: ""
   },
   intl: {
-    // language: languageWithoutRegionCode
-    language: 'de',
+    language: languageWithoutRegionCode,
     messages: messages
   },
   stepper: {

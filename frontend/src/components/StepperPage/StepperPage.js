@@ -44,7 +44,7 @@ const inlineStyles = () => ({
     backgroundColor: grey[100],
     width: '100%',
     justifyContent: 'space-between',
-    minHeight: 60,
+    minHeight: 50,
     alignItems: 'flex-start'
   },
   content: {

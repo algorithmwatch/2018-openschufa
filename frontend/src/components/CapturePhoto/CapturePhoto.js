@@ -20,7 +20,7 @@ const styles = theme => ({
     maxWidth: '100%'
   },
   button: {
-    marginTop: 20
+    marginTop: 12
   },
   buttonContainer: {
     width: '100%',

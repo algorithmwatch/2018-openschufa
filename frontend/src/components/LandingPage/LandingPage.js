@@ -57,7 +57,6 @@ const inlineStyles = theme => ({
     height: 'UNSET'
   },
   button: {
-    margin: theme.spacing.unit,
     width: '10rem'
   },
   leftIcon: {

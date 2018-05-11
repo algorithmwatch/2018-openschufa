@@ -25,11 +25,22 @@ const theme = createMuiTheme({
 });
 
 theme.overrides = {
+  Index: {
+    button: {
+      marginBottom: 20
+    }
+  },
   MuiButton: { // Name of the component ⚛️ / style shee
     raised: {
       boxShadow: theme.shadows[0]
     }
   },
+  MuiButtonBase: {
+    root: {
+      marginTop: 8,
+      marginBottom: 16
+    }
+  }
 };
 
 

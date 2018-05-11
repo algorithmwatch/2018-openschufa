@@ -15,7 +15,6 @@ const styles = theme => ({
     backgroundColor: theme.palette.background.default,
   }),
   button: {
-    margin: theme.spacing.unit,
     width: '10rem'
   },
   buttonContainer: {

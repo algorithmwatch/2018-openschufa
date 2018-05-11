@@ -2,7 +2,7 @@
 
 Clone the git repository.
 ```
-git clone git@bitbucket.org:elsueno/openschufa.git
+git clone git@github.com:algorithmwatch/openschufa.git
 ```
 Change into the just created project directory.  
 Create a python 3 virtual environment.  

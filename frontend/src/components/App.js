@@ -21,8 +21,17 @@ const theme = createMuiTheme({
       dark: '#00214f',
       contrastText: '#fff',
     },
-  },
+  }
 });
+
+theme.overrides = {
+  MuiButton: { // Name of the component ⚛️ / style shee
+    raised: {
+      boxShadow: theme.shadows[0]
+    }
+  },
+};
+
 
 class App extends Component {
   render() {

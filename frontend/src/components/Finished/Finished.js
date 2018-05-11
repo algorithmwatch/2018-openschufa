@@ -30,6 +30,11 @@ const styles = theme => ({
     margin: theme.spacing.unit,
     width: '10rem'
   },
+  buttonContainer: {
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'center'
+  },
   aligner: {
     position: 'absolute',
     top: 0,
@@ -136,18 +141,20 @@ class Finished extends Component {
                     }}
                     margin="normal"
                   />
-                  <Button
-                    color='primary'
-                    variant='raised'
-                    className={classes.button}
-                    onClick={this.handleSubmit}
-                    disabled={email.trim() === ""}
-                  >
-                    <FormattedMessage
-                      id="FinishedForm.sendemail"
-                      defaultMessage="Send"
-                    />
-                  </Button>
+                  <div className={classes.buttonContainer}>
+                    <Button
+                      color='primary'
+                      variant='raised'
+                      className={classes.button}
+                      onClick={this.handleSubmit}
+                      disabled={email.trim() === ""}
+                    >
+                      <FormattedMessage
+                        id="FinishedForm.sendemail"
+                        defaultMessage="Send"
+                      />
+                    </Button>
+                  </div>
                 </form>
               </div>
             </div>
@@ -163,17 +170,19 @@ class Finished extends Component {
               <Typography color='error'>
                 {formUploadErrorMessage}
               </Typography>
-              <Button
-                color='primary'
-                variant='raised'
-                className={classes.button}
-                onClick={this.sendForm}
-              >
-                <FormattedMessage
-                  id="FinishedForm.sendform"
-                  defaultMessage="Send again"
-                />
-              </Button>
+              <div className={classes.buttonContainer}>
+                <Button
+                  color='primary'
+                  variant='raised'
+                  className={classes.button}
+                  onClick={this.sendForm}
+                >
+                  <FormattedMessage
+                    id="FinishedForm.sendform"
+                    defaultMessage="Send again"
+                  />
+                </Button>
+              </div>
             </div>
             }
             {sentEmail && !emailErrorMessage &&

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {FormattedMessage, injectIntl, defineMessages} from 'react-intl';
-import { withStyles } from 'material-ui/styles';
+import {withStyles} from 'material-ui/styles';
 import Paper from 'material-ui/Paper';
 import Typography from 'material-ui/Typography';
 import Button from 'material-ui/Button';
@@ -18,6 +18,11 @@ const styles = theme => ({
   button: {
     margin: theme.spacing.unit,
   },
+  buttonContainer: {
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'center'
+  }
 });
 
 const messages = defineMessages({
@@ -38,14 +43,14 @@ class Finish extends Component {
   };
 
   handleChange = name => event => {
-    this.setState({ [name]: event.target.checked });
+    this.setState({[name]: event.target.checked});
   };
 
   render() {
 
-    const { classes, openModal, sendData} = this.props;
-    const { formatMessage } = this.props.intl;
-    const { checked } = this.state;
+    const {classes, openModal, sendData} = this.props;
+    const {formatMessage} = this.props.intl;
+    const {checked} = this.state;
 
     return (
       <div>
@@ -62,17 +67,19 @@ class Finish extends Component {
               defaultMessage="Please read the data privacy agreement and click the checkbutton to confirm."
             />
           </Typography>
-          <Button
-            color='default'
-            variant='raised'
-            className={classes.button}
-            onClick={() => openModal('privacyagreement')}
-          >
-            <FormattedMessage
-              id="Finish.privacyagreementbutton"
-              defaultMessage="Show privacy agreement"
-            />
-          </Button>
+          <div className={classes.buttonContainer}>
+            <Button
+              color='default'
+              variant='raised'
+              className={classes.button}
+              onClick={() => openModal('privacyagreement')}
+            >
+              <FormattedMessage
+                id="Finish.privacyagreementbutton"
+                defaultMessage="Show privacy agreement"
+              />
+            </Button>
+          </div>
           <FormGroup row>
             <FormControlLabel
               control={
@@ -91,18 +98,20 @@ class Finish extends Component {
               defaultMessage="Click on 'SEND' to send your data."
             />
           </Typography>
-          <Button
-            color='primary'
-            variant='raised'
-            className={classes.button}
-            onClick={() => sendData()}
-            disabled={!checked}
-          >
-            <FormattedMessage
-              id="Finish.sendbutton"
-              defaultMessage="Send"
-            />
-          </Button>
+          <div className={classes.buttonContainer}>
+            <Button
+              color='primary'
+              variant='raised'
+              className={classes.button}
+              onClick={() => sendData()}
+              disabled={!checked}
+            >
+              <FormattedMessage
+                id="Finish.sendbutton"
+                defaultMessage="Send"
+              />
+            </Button>
+          </div>
         </Paper>
       </div>
     )

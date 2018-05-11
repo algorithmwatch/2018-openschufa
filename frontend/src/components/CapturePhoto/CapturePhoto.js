@@ -21,6 +21,11 @@ const styles = theme => ({
   },
   button: {
     marginTop: 20
+  },
+  buttonContainer: {
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'center'
   }
 });
 
@@ -47,6 +52,7 @@ class CapturePhoto extends Component {
             />
           </Typography>
           <img src={photo} alt='' className={classes.image}/>
+          <div className={classes.buttonContainer}>
           <Button
             color='primary'
             variant='raised'
@@ -65,6 +71,7 @@ class CapturePhoto extends Component {
               style={{ display: 'none' }}
             />
           </Button>
+          </div>
         </Paper>
       </div>
     );

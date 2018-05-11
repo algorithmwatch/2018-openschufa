@@ -199,11 +199,13 @@ const styles = theme => ({
     marginTop: theme.spacing.unit * 3,
     backgroundColor: theme.palette.background.default,
   }),
-  container: {
+  formContainer: {
     display: 'flex',
     flexDirection: 'column',
     flexWrap: 'nowrap',
-    marginTop: 20
+    marginTop: 20,
+    width: '100%',
+    alignItems: 'center'
   },
   textField: {
     marginLeft: theme.spacing.unit,
@@ -416,7 +418,7 @@ class DataForm extends Component {
               defaultMessage="The following are some questions that you are kindly asked to answer ... "
             />
           </Typography>
-          <form className={classes.container} noValidate autoComplete="off">
+          <form className={classes.formContainer} noValidate autoComplete="off">
             <MuiPickersUtilsProvider utils={LocalizedUtils} locale={locale}>
               <div className="picker">
                 <DatePicker

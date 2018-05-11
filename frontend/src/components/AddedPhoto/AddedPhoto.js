@@ -1,6 +1,6 @@
 import React from 'react';
 import {FormattedMessage} from 'react-intl';
-import { withStyles } from 'material-ui/styles';
+import {withStyles} from 'material-ui/styles';
 import Paper from 'material-ui/Paper';
 import Typography from 'material-ui/Typography';
 import Button from 'material-ui/Button';
@@ -18,6 +18,11 @@ const styles = theme => ({
     margin: theme.spacing.unit,
     width: '10rem'
   },
+  buttonContainer: {
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'center'
+  }
 });
 
 const AddedPhoto = ({classes, setActiveStep}) => {
@@ -37,34 +42,38 @@ const AddedPhoto = ({classes, setActiveStep}) => {
             defaultMessage="Click on 'ANOTHER PHOTO' to take another photo."
           />
         </Typography>
-        <Button
-          color='primary'
-          variant='raised'
-          className={classes.button}
-          onClick={() => setActiveStep(STEP_CAPTURE)}
-        >
-          <FormattedMessage
-            id="AddPhoto.addphoto"
-            defaultMessage="Another photo"
-          />
-        </Button>
+        <div className={classes.buttonContainer}>
+          <Button
+            color='primary'
+            variant='raised'
+            className={classes.button}
+            onClick={() => setActiveStep(STEP_CAPTURE)}
+          >
+            <FormattedMessage
+              id="AddPhoto.addphoto"
+              defaultMessage="Another photo"
+            />
+          </Button>
+        </div>
         <Typography variant="body1" gutterBottom>
           <FormattedMessage
             id="AddedPhoto.p2"
             defaultMessage="Click on 'TO SURVEY' to anwser a few questions before you send your data."
           />
         </Typography>
-        <Button
-        color='primary'
-        variant='raised'
-        className={classes.button}
-        onClick={() => setActiveStep(STEP_FORM)}
-      >
-        <FormattedMessage
-          id="AddPhoto.survey"
-          defaultMessage="To survey"
-        />
-      </Button>
+        <div className={classes.buttonContainer}>
+          <Button
+            color='primary'
+            variant='raised'
+            className={classes.button}
+            onClick={() => setActiveStep(STEP_FORM)}
+          >
+            <FormattedMessage
+              id="AddPhoto.survey"
+              defaultMessage="To survey"
+            />
+          </Button>
+        </div>
       </Paper>
     </div>
   )

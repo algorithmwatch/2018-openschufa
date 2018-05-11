@@ -63,7 +63,7 @@ const AddedPhoto = ({classes, setActiveStep}) => {
         </Typography>
         <div className={classes.buttonContainer}>
           <Button
-            color='primary'
+            color='secondary'
             variant='raised'
             className={classes.button}
             onClick={() => setActiveStep(STEP_FORM)}

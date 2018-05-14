@@ -1,7 +1,8 @@
+import logging
 import uuid
 from threading import Thread
 
-from flask import Flask, jsonify, request, render_template
+from flask import Flask, jsonify, request, render_template, current_app
 from flask_cors import CORS
 from flask_mail import Mail, Message
 from flask_migrate import Migrate
@@ -36,6 +37,7 @@ class Image(db.Model):
 
 def create_app(**kwargs):
     app = Flask(__name__)
+    app.logger.setLevel(logging.DEBUG)
     CORS(app)
     init_config(app, **kwargs)
     db.init_app(app)
@@ -45,6 +47,7 @@ def create_app(**kwargs):
 
     @app.route('/ping/', methods=['GET'])
     def ping_pong():
+        app.logger.debug('Healthcheck called')
         return jsonify({
             'status': 'Epic success',
             'message': 'pong!'
@@ -72,20 +75,15 @@ def create_app(**kwargs):
                    'uuid', uuid=json['uuid'])
         return '', 204
 
-    def send_async_email(app, msg):
-        with app.app_context():
-            try:
-                mail.send(msg)
-            except:
-                pass
-
     def send_email(to, subject, template, **kwargs):
         msg = Message(subject, recipients=[to])
         msg.body = render_template(template + '.txt', **kwargs)
         msg.html = render_template(template + '.html', **kwargs)
-        thr = Thread(target=send_async_email, args=[app, msg])
-        thr.start()
-        return thr
+        try:
+            mail.send(msg)
+            app.logger.debug('Mail sent to {0}'.format(to))
+        except Exception as e:
+            app.logger.error('Sending mail failed {0}'.format(e))
 
     return app
 

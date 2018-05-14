@@ -39,7 +39,6 @@
     "material-ui": "^1.0.0-beta.41",
     "material-ui-pickers": "^1.0.0-rc.6",
     "object-assign": "4.1.1",
-    "pinch-zoom-js": "2.2.0",
     "postcss-flexbugs-fixes": "3.2.0",
     "postcss-loader": "2.1.4",
     "promise": "8.0.1",

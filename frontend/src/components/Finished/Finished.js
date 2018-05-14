@@ -202,7 +202,7 @@ class Finished extends Component {
                 />
               </Typography>
               <Typography color='error'>
-                {emailErrorMessage}
+                <div dangerouslySetInnerHTML={{__html: emailErrorMessage}} />
               </Typography>
             </div>
             }

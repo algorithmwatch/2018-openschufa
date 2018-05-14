@@ -18,13 +18,17 @@ const styles = () => ({
     flex: 1,
   },
   logoButton: {
-    paddingLeft: 0
+    paddingLeft: 0,
+    marginBottom: 4
   },
   menuButton: {
     marginLeft: 20,
     marginRight: -12,
+    marginBottom: 4
   },
-
+  listItem: {
+    margin: 0
+  }
 });
 
 class MainAppBar extends Component {
@@ -112,19 +116,19 @@ class MainAppBar extends Component {
             onKeyDown={this.toggleDrawer(false)}
           >
             <List component="nav">
-              <ListItem button onClick={this.handleModalOpen('openschufa')}>
+              <ListItem button className={classes.listItem} onClick={this.handleModalOpen('openschufa')}>
                 <ListItemText primary={formatMessage(messages.menuAbout)} />
               </ListItem>
-              <ListItem button onClick={this.handleModalOpen('imprint')}>
+              <ListItem button className={classes.listItem} onClick={this.handleModalOpen('imprint')}>
                 <ListItemText primary={formatMessage(messages.menuImprint)} />
               </ListItem>
-              <ListItem button onClick={this.handleModalOpen('dataprivacy')}>
+              <ListItem button className={classes.listItem} onClick={this.handleModalOpen('dataprivacy')}>
                 <ListItemText primary={formatMessage(messages.menuDataPrivacy)} />
               </ListItem>
-              <ListItem button onClick={this.handleModalOpen('faq')}>
+              <ListItem button className={classes.listItem} onClick={this.handleModalOpen('faq')}>
                 <ListItemText primary={formatMessage(messages.menuFaq)} />
               </ListItem>
-              <ListItem button onClick={this.handleModalOpen('privacyagreement')}>
+              <ListItem button className={classes.listItem} onClick={this.handleModalOpen('privacyagreement')}>
                 <ListItemText primary={formatMessage(messages.menuPrivacyAgreement)} />
               </ListItem>
             </List>

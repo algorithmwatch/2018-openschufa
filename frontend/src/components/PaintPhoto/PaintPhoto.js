@@ -56,6 +56,7 @@ class PaintPhoto extends Component {
     const canvas = this.refs.photoContainer;
     this.pinchzoom = new PinchZoom(canvas, {
       zoomOutFactor: 1,
+      minZoom: 1,
       maxZoom: 8
     });
 

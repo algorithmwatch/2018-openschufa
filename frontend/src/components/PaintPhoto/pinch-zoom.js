@@ -233,6 +233,20 @@ var definePinchZoom = function () {
     },
 
     /**
+     * Event handler for 'mousewheel'
+     * @param event
+     */
+    handleMousewheel: function (event) {
+      const {pageX, pageY, deltaX, deltaY} = event;
+      var center = this.getTouches(event)[0];
+      var zoomFactor = this.zoomFactor * (1 + deltaY * -0.002);
+      var {minZoom, maxZoom} = this.options;
+      zoomFactor = Math.min(maxZoom, Math.max(minZoom, zoomFactor));
+      this.scaleTo(zoomFactor, center);
+      this.update();
+    },
+
+    /**
      * Compute the initial offset
      *
      * the element should be centered in the container upon initialization
@@ -522,12 +536,19 @@ var definePinchZoom = function () {
       var posTop = rect.top + scrollTop;
       var posLeft = rect.left + scrollLeft;
 
-      return Array.prototype.slice.call(event.touches).map(function (touch) {
-        return {
-          x: touch.pageX - posLeft,
-          y: touch.pageY - posTop,
-        };
-      });
+      if (event.touches) {
+        return Array.prototype.slice.call(event.touches).map(function (touch) {
+          return {
+            x: touch.pageX - posLeft,
+            y: touch.pageY - posTop,
+          };
+        });
+      } else {
+        return [{
+          x: event.pageX - posLeft,
+          y: event.pageY - posTop,
+        }];
+      }
     },
 
     /**
@@ -860,6 +881,36 @@ var definePinchZoom = function () {
       if (target.enabled) {
         fingers = event.touches.length;
         updateInteraction(event);
+      }
+    });
+
+    el.addEventListener('dblclick', function (event) {
+      target.handleDoubleTap(event);
+    });
+
+    function move(event) {
+      target.handleDrag(event);
+      target.update();
+    }
+
+    function up() {
+      window.removeEventListener('mousemove', move);
+      window.removeEventListener('mouseup', up);
+      target.handleDragEnd();
+    }
+
+    el.addEventListener('mousedown', function (event) {
+      if (target.enabled) {
+        event.preventDefault();
+        window.addEventListener('mousemove', move);
+        window.addEventListener('mouseup', up);
+        target.handleDragStart(event);
+      }
+    });
+
+    el.addEventListener('mousewheel', function (event) {
+      if (target.enabled) {
+        target.handleMousewheel(event);
       }
     });
   };

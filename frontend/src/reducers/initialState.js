@@ -53,7 +53,8 @@ export default {
     imageData: [],
     uuid: "",
     formUploadErrorMessage: "",
-    isUploading: false
+    isUploading: false,
+    uploadProgress: 0
   },
   finished: {
     sentEmail: false,

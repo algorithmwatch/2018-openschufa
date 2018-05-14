@@ -13,7 +13,6 @@ import PaintPhoto from '../PaintPhoto/PaintPhotoContainer';
 import AddedPhoto from '../AddedPhoto/AddedPhotoContainer';
 import DataForm from "../DataForm/DataFormContainer";
 import Finish from '../Finish/FinishContainer';
-import grey from 'material-ui/colors/grey'
 import MainAppBar from "../MainAppBar/MainAppBarContainer";
 import styles from "./StepperPage.css";
 import {

@@ -16,6 +16,7 @@ export const SET_PROP = 'form/SET_PROP';
 export const UPLOAD_SUCCESS = 'form/UPLOAD_SUCCESS';
 export const UPLOAD_FAILURE = 'form/UPLOAD_FAILURE';
 export const UPLOAD_REQUEST = 'form/UPLOAD_REQUEST';
+export const UPLOAD_PROGRESS = 'form/UPLOAD_PROGRESS';
 export const SENT_ID_SUCCESS = 'finished/SENT_ID_SUCCESS';
 export const SENT_ID_FAILURE = 'finished/SENT_ID_FAILURE';
 export const RESET_FINISHED = 'finished/RESET_FINISHED';

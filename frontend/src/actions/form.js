@@ -1,7 +1,7 @@
 import {BASE64_MARKER, STEP_FINISHED} from "../constants";
 import {
   RESET_FORM, UPLOAD_SUCCESS, UPLOAD_FAILURE,
-  UPLOAD_REQUEST, SET_PROP, SET_ACTIVE_STEP
+  UPLOAD_REQUEST, SET_PROP, SET_ACTIVE_STEP, UPLOAD_PROGRESS
 } from "./actionTypes";
 
 export function sendData() {
@@ -25,19 +25,14 @@ export function sendData() {
       method: 'POST',
       body: formData
     };
-    return fetch('/upload/', config)
+    return futch('/upload/', config, dispatch)
       .then(response => {
-        if (response.ok) {
-          return response.json();
+        if (response.statusText === "OK") {
+          return JSON.parse(response.body);
         }
-        return response.text()
-          .then(text => {
-            dispatch({
-              type: UPLOAD_FAILURE,
-              payload: text
-            });
-            Promise.reject(text)
-          })
+        else {
+          return Promise.reject(response.body)
+        }
       })
       .then(json => {
         dispatch({
@@ -46,7 +41,10 @@ export function sendData() {
         })
       })
       .catch(error => {
-        console.log(error)
+        dispatch({
+          type: UPLOAD_FAILURE,
+          payload: error
+        });
       })
   }
 }
@@ -76,3 +74,26 @@ export function setProp(name, value) {
     payload: { name, value }
   }
 }
+
+function futch(url, opts={}, dispatch) {
+  return new Promise((response, reject) => {
+    const xhr = new XMLHttpRequest();
+    xhr.onload = () => response({
+      body: xhr.response,
+      statusText: xhr.statusText,
+      type: xhr.responseType
+    });
+    xhr.onerror = reject;
+    if (xhr.upload)
+      xhr.upload.onprogress = e => {
+        if (e.lengthComputable)
+          dispatch({
+            type: UPLOAD_PROGRESS,
+            payload: e.loaded / e.total * 100
+          })
+      };
+    xhr.open(opts.method || 'get', url);
+    xhr.send(opts.body);
+  });
+}
+

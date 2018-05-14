@@ -1,6 +1,8 @@
 import initialState from './initialState';
-import {ADD_PHOTO, RESET_FORM, UPLOAD_REQUEST,
-  UPLOAD_FAILURE, UPLOAD_SUCCESS, SET_PROP} from "../actions/actionTypes";
+import {
+  ADD_PHOTO, RESET_FORM, UPLOAD_REQUEST,
+  UPLOAD_FAILURE, UPLOAD_SUCCESS, SET_PROP, UPLOAD_PROGRESS
+} from "../actions/actionTypes";
 
 
 export default function reducer(state = initialState.form, action) {
@@ -21,7 +23,8 @@ export default function reducer(state = initialState.form, action) {
       return {
         ...state,
         formUploadErrorMessage: "",
-        isUploading: true
+        isUploading: true,
+        uploadProgress: 0
       };
 
     case UPLOAD_SUCCESS:
@@ -37,6 +40,12 @@ export default function reducer(state = initialState.form, action) {
         ...state,
         formUploadErrorMessage: action.payload,
         isUploading: false
+      };
+
+    case UPLOAD_PROGRESS:
+      return {
+        ...state,
+        uploadProgress: action.payload
       };
 
     case SET_PROP:

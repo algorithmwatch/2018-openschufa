@@ -6,7 +6,6 @@ import Typography from 'material-ui/Typography';
 import TextField from 'material-ui/TextField';
 import Button from 'material-ui/Button';
 import {injectIntl, defineMessages, FormattedMessage} from 'react-intl';
-import MDSpinner from "react-md-spinner";
 
 
 const styles = theme => ({
@@ -35,18 +34,8 @@ const styles = theme => ({
     display: 'flex',
     justifyContent: 'center'
   },
-  aligner: {
-    position: 'absolute',
-    top: 0,
-    bottom: 0,
-    left: 0,
-    right: 0,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  alignerItem: {
-    maxWidth: '50%'
+  progress: {
+    width: '100%',
   }
 });
 
@@ -77,7 +66,7 @@ class Finished extends Component {
 
     const {
       uuid, sentEmail, emailErrorMessage, formUploadErrorMessage,
-      isUploading, classes
+      isUploading, uploadProgress, classes
     } = this.props;
     const {formatMessage} = this.props.intl;
     const {email} = this.state;
@@ -91,10 +80,10 @@ class Finished extends Component {
 
     if (isUploading) {
       return (
-        <div className={classes.aligner}>
-          <div className={classes.alignerItem}>
-            <MDSpinner/>
-          </div>
+        <div className={classes.progress}>
+          <Paper className={classes.root} elevation={0}>
+            <progress className={classes.progress} value={uploadProgress} max="100"/>
+          </Paper>
         </div>
       )
     } else {
@@ -202,7 +191,7 @@ class Finished extends Component {
                 />
               </Typography>
               <Typography color='error'>
-                <div dangerouslySetInnerHTML={{__html: emailErrorMessage}} />
+                <div dangerouslySetInnerHTML={{__html: emailErrorMessage}}/>
               </Typography>
             </div>
             }

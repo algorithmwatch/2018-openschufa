@@ -34,14 +34,14 @@ const steps = [
   STEP_FINISHED
 ];
 
-const inlineStyles = () => ({
+const inlineStyles = theme => ({
   header: {
     flex: '0 0 auto'
   },
   footer: {
     display: 'flex',
     flex: '0 0 auto',
-    backgroundColor: grey[100],
+    backgroundColor: theme.palette.primary.main,
     width: '100%',
     justifyContent: 'space-between',
     minHeight: 50,

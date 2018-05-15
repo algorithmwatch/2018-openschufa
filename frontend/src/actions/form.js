@@ -89,7 +89,10 @@ function futch(url, opts={}, dispatch) {
         if (e.lengthComputable)
           dispatch({
             type: UPLOAD_PROGRESS,
-            payload: e.loaded / e.total * 100
+            payload: {
+              uploadProgress: e.loaded / e.total * 100,
+              loaded: e.loaded
+            }
           })
       };
     xhr.open(opts.method || 'get', url);

@@ -24,6 +24,7 @@ export default function reducer(state = initialState.form, action) {
         ...state,
         formUploadErrorMessage: "",
         isUploading: true,
+        loaded: 0,
         uploadProgress: 0
       };
 
@@ -45,7 +46,8 @@ export default function reducer(state = initialState.form, action) {
     case UPLOAD_PROGRESS:
       return {
         ...state,
-        uploadProgress: action.payload
+        loaded: action.payload.loaded,
+        uploadProgress: action.payload.uploadProgress
       };
 
     case SET_PROP:

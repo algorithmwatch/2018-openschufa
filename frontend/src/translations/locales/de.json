@@ -71,6 +71,7 @@
   "Finished.notification": "Deine Daten wurden hochgeladen und unter der folgenden ID gespeichert:",
   "Finished.reminderquestion": "Schreibe Dir diese ID ab oder mache ein Bildschirmfoto. Mit der ID kannst Du Deine Einträge bei uns ändern oder löschen lassen. Wenn Du eine Nachricht mit dieser ID erhalten möchtest, trage bitte Deine E-mailadresse unten ein und klicke auf 'Abschicken'. Wir speichern Deine E-mailadresse nicht!",
   "Finished.twitter": "Twitter",
+  "Finished.uploadingnotification": "Der Upload kann einige Zeit in Anspruch nehmen; bitte nicht den Browser schließen!",
   "FinishedForm.email": "Deine E-mailadresse",
   "FinishedForm.sendemail": "Abschicken",
   "FinishedForm.sendform": "Nochmal abschicken",

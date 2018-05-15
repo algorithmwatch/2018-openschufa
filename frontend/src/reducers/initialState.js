@@ -54,7 +54,8 @@ export default {
     uuid: "",
     formUploadErrorMessage: "",
     isUploading: false,
-    uploadProgress: 0
+    uploadProgress: 0,
+    loaded: 0
   },
   finished: {
     sentEmail: false,

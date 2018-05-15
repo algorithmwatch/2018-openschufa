@@ -4,9 +4,9 @@ import {sendData, sendID} from "../../actions";
 
 
 const mapStateToProps = state => {
-  const { uuid, formUploadErrorMessage, isUploading, uploadProgress } = state.form;
+  const { uuid, formUploadErrorMessage, isUploading, loaded, uploadProgress } = state.form;
   const { sentEmail, emailErrorMessage } = state.finished;
-  return { uuid, sentEmail, emailErrorMessage, formUploadErrorMessage, isUploading, uploadProgress } ;
+  return { uuid, sentEmail, emailErrorMessage, formUploadErrorMessage, isUploading, uploadProgress, loaded } ;
 };
 
 const mapDispatchToProps = dispatch => {

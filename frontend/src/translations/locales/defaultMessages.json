@@ -274,6 +274,10 @@
         "id": "FinishedForm.email"
       },
       {
+        "defaultMessage": "Your data are being uploaded, Please don't close your browser!",
+        "id": "Finished.uploadingnotification"
+      },
+      {
         "defaultMessage": "Upload successful",
         "id": "Finished.header"
       },

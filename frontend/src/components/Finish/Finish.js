@@ -8,7 +8,7 @@ import PropTypes from "prop-types";
 import {Checkbox, FormControlLabel, FormGroup} from "material-ui";
 
 
-const styles = theme => ({
+const inlineStyles = theme => ({
   root: theme.mixins.gutters({
     paddingTop: 16,
     paddingBottom: 16,
@@ -118,4 +118,4 @@ class Finish extends Component {
   }
 }
 
-export default withStyles(styles)(injectIntl(Finish));
+export default withStyles(inlineStyles)(injectIntl(Finish));

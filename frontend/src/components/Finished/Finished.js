@@ -6,9 +6,11 @@ import Typography from 'material-ui/Typography';
 import TextField from 'material-ui/TextField';
 import Button from 'material-ui/Button';
 import {injectIntl, defineMessages, FormattedMessage} from 'react-intl';
+import styles from './Finished.css';
+import {formatBytes} from "../../utils/utilityFunctions";
 
 
-const styles = theme => ({
+const inlineStyles = theme => ({
   root: theme.mixins.gutters({
     paddingTop: 16,
     paddingBottom: 16,
@@ -36,6 +38,9 @@ const styles = theme => ({
   },
   progress: {
     width: '100%',
+  },
+  progressText: {
+    marginTop: 10
   }
 });
 
@@ -66,7 +71,7 @@ class Finished extends Component {
 
     const {
       uuid, sentEmail, emailErrorMessage, formUploadErrorMessage,
-      isUploading, uploadProgress, classes
+      isUploading, loaded, uploadProgress, classes
     } = this.props;
     const {formatMessage} = this.props.intl;
     const {email} = this.state;
@@ -82,7 +87,20 @@ class Finished extends Component {
       return (
         <div className={classes.progress}>
           <Paper className={classes.root} elevation={0}>
-            <progress className={classes.progress} value={uploadProgress} max="100"/>
+            <Typography variant="caption" gutterBottom>
+              {formatBytes(loaded)}
+            </Typography>
+            <progress className={styles["Progress-main"]} value={uploadProgress} max="100">
+              <div className={styles["Progress-bar"]} role="presentation">
+                <span className={styles["Progress-value"]} style={{width: '80%'}}> </span>
+              </div>
+            </progress>
+            <Typography className={classes.progressText} variant="body1" gutterBottom>
+              <FormattedMessage
+                id="Finished.uploadingnotification"
+                defaultMessage="Your data are being uploaded, Please don't close your browser!"
+              />
+            </Typography>
           </Paper>
         </div>
       )
@@ -236,4 +254,4 @@ class Finished extends Component {
   }
 }
 
-export default withStyles(styles, {withTheme: true})(injectIntl(Finished));
+export default withStyles(inlineStyles, {withTheme: true})(injectIntl(Finished));

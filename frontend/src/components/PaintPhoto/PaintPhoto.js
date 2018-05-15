@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import styles from './PaintPhoto.css';
-import PinchZoom from 'pinch-zoom-js';
+import PinchZoom from './pinch-zoom';
 import simplify from 'simplify-js';
 import Button from 'material-ui/Button';
 import ZoomIcon from '@material-ui/icons/ZoomIn';
@@ -56,6 +56,7 @@ class PaintPhoto extends Component {
     const canvas = this.refs.photoContainer;
     this.pinchzoom = new PinchZoom(canvas, {
       zoomOutFactor: 1,
+      minZoom: 1,
       maxZoom: 8
     });
 

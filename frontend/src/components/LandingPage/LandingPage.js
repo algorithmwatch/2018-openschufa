@@ -70,6 +70,17 @@ const inlineStyles = theme => ({
   },
   rightButton: {
     paddingRight: 0
+  },
+  callToAction: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '5rem',
+    backgroundColor: theme.palette.primary.main,
+    marginBottom: 10
+  },
+  callToActionTitle: {
+    fontSize: '1.2rem'
   }
 });
 
@@ -137,6 +148,14 @@ class Index extends Component {
                 }
               </MenuList>
           </div>*/}
+        </div>
+        <div className={classes.callToAction}>
+          <Typography className={classes.callToActionTitle} variant="title" noWrap={true}>
+            <FormattedMessage
+              id="LandingPage.calltoaction"
+              defaultMessage="Help us to crack the SCHUFA!"
+            />
+          </Typography>
         </div>
         <div className={classes.item}>
           <Typography variant="subheading" gutterBottom>

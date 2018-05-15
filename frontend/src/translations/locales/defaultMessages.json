@@ -363,6 +363,10 @@
   {
     "descriptors": [
       {
+        "defaultMessage": "Help us to crack the SCHUFA!",
+        "id": "LandingPage.calltoaction"
+      },
+      {
         "defaultMessage": "Welcome to OpenSCHUFA!",
         "id": "LandingPage.welcome"
       },

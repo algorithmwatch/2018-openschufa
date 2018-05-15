@@ -164,40 +164,6 @@ class Finished extends Component {
                   </div>
                 </form>
               </div>
-              <Typography variant="body1" gutterBottom>
-                <FormattedMessage
-                  id="Finished.contact"
-                  defaultMessage="If you have any questions, please contact us at {mail}."
-                  values={{
-                    mail:
-                      <a href="mailto:support@openschufa.de">
-                        support@openschufa.de
-                      </a>
-                  }}
-                />
-              </Typography>
-              <Typography variant="body1" gutterBottom>
-                <FormattedMessage
-                  id="Finished.news"
-                  defaultMessage="Latest news is available on {facebook} or {twitter}"
-                  values={{
-                    twitter:
-                      <a href="https://twitter.com/openschufa" target="_blank" rel="noopener noreferrer">
-                        <FormattedMessage
-                          id="Finished.twitter"
-                          defaultMessage="Twitter"
-                        />
-                      </a>,
-                    facebook:
-                      <a href="https://www.facebook.com/openschufa/" target="_blank" rel="noopener noreferrer">
-                        <FormattedMessage
-                          id="Finished.facebook"
-                          defaultMessage="Facebook"
-                        />
-                      </a>
-                  }}
-                />
-              </Typography>
             </div>
             }
             {formUploadErrorMessage &&
@@ -209,7 +175,7 @@ class Finished extends Component {
                 />
               </Typography>
               <Typography color='error'>
-                {formUploadErrorMessage}
+                <div dangerouslySetInnerHTML={{__html: formUploadErrorMessage}}/>
               </Typography>
               <div className={classes.buttonContainer}>
                 <Button
@@ -247,6 +213,40 @@ class Finished extends Component {
               </Typography>
             </div>
             }
+            <Typography className={classes.marginTop} variant="body1" gutterBottom>
+              <FormattedMessage
+                id="Finished.contact"
+                defaultMessage="If you have any questions, please contact us at {mail}."
+                values={{
+                  mail:
+                    <a href="mailto:support@openschufa.de">
+                      support@openschufa.de
+                    </a>
+                }}
+              />
+            </Typography>
+            <Typography variant="body1" gutterBottom>
+              <FormattedMessage
+                id="Finished.news"
+                defaultMessage="Latest news is available on {facebook} or {twitter}"
+                values={{
+                  twitter:
+                    <a href="https://twitter.com/openschufa" target="_blank" rel="noopener noreferrer">
+                      <FormattedMessage
+                        id="Finished.twitter"
+                        defaultMessage="Twitter"
+                      />
+                    </a>,
+                  facebook:
+                    <a href="https://www.facebook.com/openschufa/" target="_blank" rel="noopener noreferrer">
+                      <FormattedMessage
+                        id="Finished.facebook"
+                        defaultMessage="Facebook"
+                      />
+                    </a>
+                }}
+              />
+            </Typography>
           </Paper>
         </div>
       )

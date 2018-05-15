@@ -290,6 +290,22 @@
         "id": "FinishedForm.sendemail"
       },
       {
+        "defaultMessage": "If you have any questions, please contact us at {mail}.",
+        "id": "Finished.contact"
+      },
+      {
+        "defaultMessage": "Latest news is available on {facebook} or {twitter}",
+        "id": "Finished.news"
+      },
+      {
+        "defaultMessage": "Twitter",
+        "id": "Finished.twitter"
+      },
+      {
+        "defaultMessage": "Facebook",
+        "id": "Finished.facebook"
+      },
+      {
         "defaultMessage": "Your data could not be uploaded:",
         "id": "Finished.formuploaderror"
       },
@@ -422,7 +438,7 @@
         "id": "StepperPage.formbutton"
       },
       {
-        "defaultMessage": "Overview",
+        "defaultMessage": "Finish",
         "id": "StepperPage.overviewbutton"
       },
       {

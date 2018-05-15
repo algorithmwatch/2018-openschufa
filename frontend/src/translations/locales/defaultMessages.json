@@ -2,8 +2,24 @@
   {
     "descriptors": [
       {
-        "defaultMessage": "Photo added",
+        "defaultMessage": "Thank you!",
         "id": "AddedPhoto.header"
+      },
+      {
+        "defaultMessage": "Your photo has been added.",
+        "id": "AddedPhoto.subheading"
+      },
+      {
+        "defaultMessage": "You've added a total of {count} {photos}.",
+        "id": "AddedPhoto.numberofphotos"
+      },
+      {
+        "defaultMessage": "Photo",
+        "id": "AddedPhoto.photo"
+      },
+      {
+        "defaultMessage": "Photos",
+        "id": "AddedPhoto.photos"
       },
       {
         "defaultMessage": "Click on 'ANOTHER PHOTO' to take another photo.",
@@ -294,22 +310,6 @@
         "id": "FinishedForm.sendemail"
       },
       {
-        "defaultMessage": "If you have any questions, please contact us at {mail}.",
-        "id": "Finished.contact"
-      },
-      {
-        "defaultMessage": "Latest news is available on {facebook} or {twitter}",
-        "id": "Finished.news"
-      },
-      {
-        "defaultMessage": "Twitter",
-        "id": "Finished.twitter"
-      },
-      {
-        "defaultMessage": "Facebook",
-        "id": "Finished.facebook"
-      },
-      {
         "defaultMessage": "Your data could not be uploaded:",
         "id": "Finished.formuploaderror"
       },
@@ -324,6 +324,22 @@
       {
         "defaultMessage": "There has something gone wrong while trying to send you an e-mail. Please check your address and try it again.",
         "id": "Finished.emailsenterror"
+      },
+      {
+        "defaultMessage": "If you have any questions, please contact us at {mail}.",
+        "id": "Finished.contact"
+      },
+      {
+        "defaultMessage": "Latest news is available on {facebook} or {twitter}",
+        "id": "Finished.news"
+      },
+      {
+        "defaultMessage": "Twitter",
+        "id": "Finished.twitter"
+      },
+      {
+        "defaultMessage": "Facebook",
+        "id": "Finished.facebook"
       }
     ],
     "path": "src/components/Finished/Finished.json"

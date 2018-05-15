@@ -3,6 +3,12 @@ import { connect } from 'react-redux';
 import { setActiveStep } from '../../actions';
 
 
+const mapStateToProps = state => {
+  return {
+    numberOfPhotos: state.form.imageData.length
+  }
+};
+
 const mapDispatchToProps = dispatch => {
   return {
     setActiveStep: step => dispatch(setActiveStep(step)),
@@ -10,6 +16,6 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(AddPhoto);

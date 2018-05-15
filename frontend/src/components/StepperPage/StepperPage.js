@@ -209,7 +209,7 @@ class StepperPage extends Component {
         <div className={classes.content}>
           {stepObj.component}
         </div>
-        {activeStep !== STEP_SAVED &&
+        {![STEP_SAVED, STEP_FINISHED].includes(activeStep) &&
         <div className={classes.footer}>
           {backButton}
           {nextButton}

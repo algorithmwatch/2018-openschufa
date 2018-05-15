@@ -39,7 +39,7 @@ const inlineStyles = theme => ({
   progress: {
     width: '100%',
   },
-  progressText: {
+  marginTop: {
     marginTop: 10
   }
 });
@@ -95,7 +95,7 @@ class Finished extends Component {
                 <span className={styles["Progress-value"]} style={{width: '80%'}}> </span>
               </div>
             </progress>
-            <Typography className={classes.progressText} variant="body1" gutterBottom>
+            <Typography className={classes.marginTop} variant="body1" gutterBottom>
               <FormattedMessage
                 id="Finished.uploadingnotification"
                 defaultMessage="Your data are being uploaded, Please don't close your browser!"

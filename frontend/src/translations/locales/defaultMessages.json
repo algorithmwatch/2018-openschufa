@@ -216,10 +216,6 @@
         "id": "DataForm.validationerror.plz"
       },
       {
-        "defaultMessage": "Please enter a year smaller than 2018!",
-        "id": "DataForm.validationerror.yearOfBirth"
-      },
-      {
         "defaultMessage": "Please enter at most 30 characters!",
         "id": "DataForm.validationerror.nationalitylength"
       },

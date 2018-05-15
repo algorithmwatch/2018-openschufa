@@ -27,7 +27,7 @@ export default {
     surveyData: {
       schufaDate: new Date(),
       plz: '',
-      yearOfBirth: '',
+      yearOfBirth: 'not-specified',
       sex: 'not-specified',
       married: false,
       nationality: '',

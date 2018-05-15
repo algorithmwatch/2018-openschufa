@@ -20,6 +20,10 @@ import {MenuItem} from "material-ui/Menu/index";
 
 import enLocale from 'date-fns/locale/en-US';
 import deLocale from 'date-fns/locale/de';
+import Snackbar from "material-ui/Snackbar";
+import IconButton from "material-ui/IconButton";
+import CloseIcon from '@material-ui/icons/Close';
+
 
 const localeMap = {
   en: enLocale,
@@ -192,7 +196,7 @@ const messages = defineMessages({
   }
 });
 
-const styles = theme => ({
+const inlineStyles = theme => ({
   root: theme.mixins.gutters({
     paddingTop: 16,
     paddingBottom: 16,
@@ -234,8 +238,59 @@ class DataForm extends Component {
     language: PropTypes.string
   };
 
+  state = {
+    open: false,
+    message: ""
+  };
+
   handleChange = name => event => {
-    this.props.handleChange(name, event.target.value)
+    const value = event.target.value;
+    if (name === 'plz' && value >= 99999) {
+      this.setState({
+        open: true,
+        message:
+          <FormattedMessage
+            id="DataForm.validationerror.plz"
+            defaultMessage="Please enter at most 5 numbers!"
+          />
+      });
+      return;
+    }
+    if (name === 'nationality') {
+      if (value.length > 30) {
+        this.setState({
+          open: true,
+          message:
+            <FormattedMessage
+              id="DataForm.validationerror.nationalitylength"
+              defaultMessage="Please enter at most 30 characters!"
+            />
+        });
+        return;
+      }
+      if (value.length && !/^[a-z -]+$/i.test(value)) {
+        this.setState({
+          open: true,
+          message:
+            <FormattedMessage
+              id="DataForm.validationerror.nationality"
+              defaultMessage="Please enter only letters or hyphens!"
+            />
+        });
+        return;
+      }
+    }
+    if (name === 'numberOfChildren' && value >= 20) {
+      this.setState({
+        open: true,
+        message:
+          <FormattedMessage
+            id="DataForm.validationerror.numberOfChildren"
+            defaultMessage="Please enter a number smaller than or equal to 20!"
+          />
+      });
+    }
+    this.props.handleChange(name, value)
   };
 
   handleCheckboxChange = name => event => {
@@ -244,6 +299,14 @@ class DataForm extends Component {
 
   handleDateChange = (date) => {
     this.props.handleChange('schufaDate', date)
+  };
+
+  handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    this.setState({ open: false });
   };
 
   render() {
@@ -403,6 +466,18 @@ class DataForm extends Component {
       },
     ];
 
+    const years = [];
+    for(let i = 1900; i <= 2018; i++) years.push({
+      value: i,
+      label: i
+    });
+    years.push(
+      {
+        value: 'not-specified',
+        label: formatMessage(messages.notSpecified)
+      }
+    );
+
     return (
       <div>
         <Paper className={classes.root} elevation={0}>
@@ -443,6 +518,7 @@ class DataForm extends Component {
               value={plz}
               onChange={this.handleChange('plz')}
               type="number"
+              inputProps={{ min: 0, max: 10 }}
               className={classes.textField}
               InputLabelProps={{
                 shrink: true,
@@ -451,16 +527,24 @@ class DataForm extends Component {
             />
             <TextField
               id="yearOfBirth"
+              select
               label={formatMessage(messages.yearOfBirth)}
+              className={classes.textField}
               value={yearOfBirth}
               onChange={this.handleChange('yearOfBirth')}
-              type="number"
-              className={classes.textField}
-              InputLabelProps={{
-                shrink: true,
+              SelectProps={{
+                MenuProps: {
+                  className: classes.menu,
+                },
               }}
               margin="normal"
-            />
+            >
+              {years.map(option => (
+                <MenuItem key={option.value} value={option.value}>
+                  {option.label}
+                </MenuItem>
+              ))}
+            </TextField>
             <TextField
               id="sex"
               select
@@ -905,9 +989,31 @@ class DataForm extends Component {
             </TextField>
           </form>
         </Paper>
+        <Snackbar
+          anchorOrigin={{
+            vertical: 'top',
+            horizontal: 'center',
+          }}
+          open={this.state.open}
+          autoHideDuration={4000}
+          onClose={this.handleClose}
+          message={this.state.message}
+          action={[
+            <IconButton
+              key="close"
+              aria-label="Close"
+              color="inherit"
+              className={classes.close}
+              onClick={this.handleClose}
+            >
+              <CloseIcon />
+            </IconButton>,
+          ]}
+        />
+
       </div>
     )
   }
 }
 
-export default withStyles(styles, {withTheme: true})(injectIntl(DataForm));
+export default withStyles(inlineStyles, {withTheme: true})(injectIntl(DataForm));

@@ -14,11 +14,11 @@
         "id": "AddedPhoto.numberofphotos"
       },
       {
-        "defaultMessage": "Photo",
+        "defaultMessage": "photo",
         "id": "AddedPhoto.photo"
       },
       {
-        "defaultMessage": "Photos",
+        "defaultMessage": "photos",
         "id": "AddedPhoto.photos"
       },
       {
@@ -210,6 +210,26 @@
       {
         "defaultMessage": "Date of SCHUFA-information",
         "id": "DataForm.date"
+      },
+      {
+        "defaultMessage": "Please enter at most 5 numbers!",
+        "id": "DataForm.validationerror.plz"
+      },
+      {
+        "defaultMessage": "Please enter a year smaller than 2018!",
+        "id": "DataForm.validationerror.yearOfBirth"
+      },
+      {
+        "defaultMessage": "Please enter at most 30 characters!",
+        "id": "DataForm.validationerror.nationalitylength"
+      },
+      {
+        "defaultMessage": "Please enter only letters or hyphens!",
+        "id": "DataForm.validationerror.nationality"
+      },
+      {
+        "defaultMessage": "Please enter a number smaller than or equal to 20!",
+        "id": "DataForm.validationerror.numberOfChildren"
       },
       {
         "defaultMessage": "A few data more...",

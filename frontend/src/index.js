@@ -4,6 +4,7 @@ import App from './components/App';
 import configureStore from './store/configureStore';
 import {Provider} from 'react-redux';
 import IntlProvider from './components/Intl/IntlProviderContainer';
+import 'typeface-roboto';
 
 
 const store = configureStore();

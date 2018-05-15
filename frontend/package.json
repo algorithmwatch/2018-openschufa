@@ -57,6 +57,7 @@
     "style-loader": "0.21.0",
     "svg-inline-loader": "^0.8.0",
     "sw-precache-webpack-plugin": "0.11.4",
+    "typeface-roboto": "^0.0.54",
     "url-loader": "0.6.2",
     "webpack": "3.11.0",
     "webpack-dev-server": "2.9.4",

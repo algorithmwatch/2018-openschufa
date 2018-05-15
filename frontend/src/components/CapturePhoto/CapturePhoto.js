@@ -66,7 +66,6 @@ class CapturePhoto extends Component {
             <input
               type="file"
               accept="image/*"
-              capture="camera"
               onChange={this.onChange}
               style={{ display: 'none' }}
             />

@@ -1,5 +1,9 @@
 ### FAQ - Häufig gestellte Fragen FAQ
 
+## Wo wende ich mich bei Problemen hin?
+
+Bitte per E-mail an <mailto:support@openschufa.de>.
+
 ## Was genau braucht Ihr von mir
 
 Uns interessiert Deine SCHUFA-Auskunft, die Du nach Bundesdatenschutzgesetz §34 in Briefform erhalten hast und aus mindestens vier DIN A4-Seiten besteht. Von diesem Schreiben wollen wir NICHT die erste Seite (auf der Dein Name und Deine Adresse steht) und auch nicht die letzte Seite. Wir benötigen die Seiten mit den Tabellen und die vorletzte Seite, auf der in einem Fließtext einige Angaben über Anfragen von Banken, Kreditbewilligungen usw. stehen könnten. Die letzte Seite benötigen wir nicht. Wenn Du Daten nicht an uns übermitteln will, lasse die weg oder schwärze sie - Du kannst das Schwärzen direkt hier in der Anwendung machen.
@@ -30,4 +34,8 @@ Die maschinenlesbaren Daten werden lokal gespeichert und per PGP verschlüsselt.
 
 ## Warum bekomme ich eine ID?
 
-Die maschinenlesbaren Daten bleiben auf unbestimmte Zeit für Forschungszwecke und für journalistische Auswertung bei AlgorithmWatch, bei OKF und den Redaktionen gespeichert. Wenn Du Deine Daten spendest, erhältst nach dem Upload eine ID (zufällig erzeugt), die Du speichern oder Dir per E-mail zusenden lassen kannst (wir speichern die E-mailadresse nicht!). Die ID ist ein die Daten gekoppelt - nicht aber an Deinen Namen. Mit dieser ID kannst Du Dich an support@openschufa.de wenden, wenn Du Deine Daten zu einem späteren Zeitpunkt löschen lassen möchtest. Wir speichern als einziges Meta-Datum, wann die Daten übertragen wurden. IP-Adressen werden nicht gespeichert. 
+Die maschinenlesbaren Daten bleiben auf unbestimmte Zeit für Forschungszwecke und für journalistische Auswertung bei AlgorithmWatch, bei OKF und den Redaktionen gespeichert. Wenn Du Deine Daten spendest, erhältst nach dem Upload eine ID (zufällig erzeugt), die Du speichern oder Dir per E-mail zusenden lassen kannst (wir speichern die E-mailadresse nicht!). Die ID ist ein die Daten gekoppelt - nicht aber an Deinen Namen. Mit dieser ID kannst Du Dich an support@openschufa.de wenden, wenn Du Deine Daten zu einem späteren Zeitpunkt löschen lassen möchtest. Wir speichern als einziges Meta-Datum, wann die Daten übertragen wurden. IP-Adressen werden nicht gespeichert.
+
+## Ist die Software von OpenSCHUFA Open Source?
+
+Ja. Der Code findet sich [auf Github](https://github.com/algorithmwatch/openschufa).

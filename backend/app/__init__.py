@@ -1,8 +1,7 @@
 import logging
 import uuid
-from threading import Thread
 
-from flask import Flask, jsonify, request, render_template, current_app
+from flask import Flask, jsonify, request, render_template
 from flask_cors import CORS
 from flask_mail import Mail, Message
 from flask_migrate import Migrate
@@ -30,8 +29,8 @@ class User(db.Model):
 class Image(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer,
-                          db.ForeignKey('user.id', ondelete=u'CASCADE', onupdate=u'CASCADE'),
-                          nullable=False)
+                        db.ForeignKey('user.id', ondelete=u'CASCADE', onupdate=u'CASCADE'),
+                        nullable=False)
     filename = db.Column(db.String, default=None, nullable=True)
 
 
@@ -95,4 +94,3 @@ def init_config(app, **kwargs):
     app.config.from_pyfile('config.py', silent=True)
     if 'config' in kwargs:
         app.config.from_object(kwargs['config'])
-

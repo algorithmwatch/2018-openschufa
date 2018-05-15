@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import Button from 'material-ui/Button';
-import brushSVG from './noun_1551627.svg';
+import brushSVG from './noun_598350.svg';
 import styles from './RotatePhoto.css';
 
 

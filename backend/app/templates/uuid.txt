@@ -1,0 +1,7 @@
+Hallo und danke für Deine Teilnahme!
+
+Deine Daten wurden unter der folgenden ID gespeichert:
+
+{{ uuid }}
+
+Hinweis: Antworten auf diese Nachricht werden nicht verarbeitet.

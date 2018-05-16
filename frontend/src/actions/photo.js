@@ -142,7 +142,7 @@ export function savePhoto() {
       dispatch({
         type: ADD_PHOTO,
         payload: {
-          dataURL: canvas.toDataURL()
+          dataURL: canvas.toDataURL('image/jpeg', 0.6)
         }
       });
       dispatch({

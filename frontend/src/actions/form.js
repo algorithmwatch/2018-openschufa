@@ -18,8 +18,8 @@ export function sendData() {
     Object.keys(surveyData).forEach(key => formData.append(key, surveyData[key]));
     imageData.forEach(dataURI => {
       const arr = convertDataURIToBinary(dataURI);
-      const blob = new Blob([arr], { type: 'image/png' });
-      formData.append('blob', blob, 'image.png');
+      const blob = new Blob([arr], { type: 'image/jpg' });
+      formData.append('blob', blob, 'image.jpg');
     });
     const config = {
       method: 'POST',

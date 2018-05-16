@@ -23,6 +23,8 @@ import deLocale from 'date-fns/locale/de';
 import Snackbar from "material-ui/Snackbar";
 import IconButton from "material-ui/IconButton";
 import CloseIcon from '@material-ui/icons/Close';
+import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
+import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 
 
 const localeMap = {
@@ -503,6 +505,8 @@ class DataForm extends Component {
                   value={schufaDate}
                   onChange={this.handleDateChange}
                   animateYearScrolling={false}
+                  leftArrowIcon={<KeyboardArrowLeft/>}
+                  rightArrowIcon={<KeyboardArrowRight/>}
                 />
               </div>
             </MuiPickersUtilsProvider>

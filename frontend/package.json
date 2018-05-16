@@ -2,8 +2,8 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://beta.openschufa.de",
-  "proxy": "http://openschufa/",
+  "homepage": "https://www.openschufa.de",
+  "proxy": "http://localhost:5000/",
   "dependencies": {
     "@material-ui/docs": "^1.0.0-alpha.1",
     "@material-ui/icons": "^1.0.0-beta.42",

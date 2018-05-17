@@ -75,7 +75,7 @@ const ProgressBar = ({ stepsFinished }) => (
         <small>Upload</small>
       </div>
       <div style={{ width: "30%", textAlign: "center" }}>
-        <small>Datenerhebung</small>
+        <small>Fragebogen</small>
       </div>
       <div style={{ width: "20%", textAlign: "right" }}>
         <small>Abschicken</small>

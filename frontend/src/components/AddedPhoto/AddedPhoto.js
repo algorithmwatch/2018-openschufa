@@ -7,6 +7,7 @@ import Button from 'material-ui/Button';
 import {STEP_FORM} from "../../constants";
 import CheckCircle from '@material-ui/icons/CheckCircle';
 import green from 'material-ui/colors/green';
+import ProgressBar from '../ProgressBar';
 
 
 const styles = theme => ({
@@ -45,6 +46,7 @@ class AddedPhoto extends Component{
           <div className={classes.centerContainer}>
             <CheckCircle style={{fill: green[700], width: '5em', height: '5em'}}/>
           </div>
+          <ProgressBar stepsFinished={numberOfPhotos > 1 ? 2 : 1}/>
           <Typography className={classes.centerContainer} variant="title" gutterBottom>
             <FormattedMessage
               id="AddedPhoto.header"

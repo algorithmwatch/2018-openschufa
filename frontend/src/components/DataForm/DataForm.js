@@ -25,6 +25,7 @@ import IconButton from "material-ui/IconButton";
 import CloseIcon from '@material-ui/icons/Close';
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
+import ProgressBar from '../ProgressBar';
 
 
 const localeMap = {
@@ -483,6 +484,7 @@ class DataForm extends Component {
     return (
       <div>
         <Paper className={classes.root} elevation={0}>
+          <ProgressBar stepsFinished={2}/>
           <Typography variant="title" gutterBottom>
             <FormattedMessage
               id="DataForm.header"

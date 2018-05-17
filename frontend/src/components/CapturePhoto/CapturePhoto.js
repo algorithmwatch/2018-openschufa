@@ -6,7 +6,7 @@ import Paper from 'material-ui/Paper';
 import Typography from 'material-ui/Typography';
 import Button from 'material-ui/Button';
 import photo from '../../images/which_pages_to_take.jpg';
-
+import ProgressBar from '../ProgressBar';
 
 const styles = theme => ({
   root: theme.mixins.gutters({
@@ -45,6 +45,7 @@ class CapturePhoto extends Component {
     return (
       <div>
         <Paper className={classes.root} elevation={0}>
+          <ProgressBar stepsFinished={1}/>
           <Typography variant="body1" gutterBottom>
             <FormattedMessage
               id="Capture.p1"

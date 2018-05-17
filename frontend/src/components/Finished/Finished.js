@@ -8,6 +8,7 @@ import Button from 'material-ui/Button';
 import {injectIntl, defineMessages, FormattedMessage} from 'react-intl';
 import styles from './Finished.css';
 import {formatBytes} from "../../utils/utilityFunctions";
+import ProgressBar from '../ProgressBar';
 
 
 const inlineStyles = theme => ({
@@ -108,6 +109,7 @@ class Finished extends Component {
       return (
         <div>
           <Paper className={classes.root} elevation={0}>
+            <ProgressBar stepsFinished={uuid ? 4 : 3}/>
             {uuid &&
             <div>
               <Typography variant="subheading" gutterBottom>

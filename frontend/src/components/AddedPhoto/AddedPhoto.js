@@ -7,6 +7,7 @@ import Button from 'material-ui/Button';
 import {STEP_FORM} from "../../constants";
 import CheckCircle from '@material-ui/icons/CheckCircle';
 import green from 'material-ui/colors/green';
+import ProgressBar from '../ProgressBar';
 
 
 const styles = theme => ({
@@ -42,60 +43,48 @@ class AddedPhoto extends Component{
     return (
       <div>
         <Paper className={classes.root} elevation={0}>
-          <div className={classes.centerContainer}>
-            <CheckCircle style={{fill: green[700], width: '5em', height: '5em'}}/>
-          </div>
-          <Typography className={classes.centerContainer} variant="title" gutterBottom>
-            <FormattedMessage
-              id="AddedPhoto.header"
-              defaultMessage="Thank you!"
-            />
-          </Typography>
+          <ProgressBar stepsFinished={numberOfPhotos > 1 ? 2 : 1}/>
           <Typography className={classes.centerContainer} variant="subheading" gutterBottom>
             <FormattedMessage
               id="AddedPhoto.subheading"
               defaultMessage="Your photo has been added."
             />
           </Typography>
-          <Typography variant="body1" gutterBottom>
-            <FormattedMessage
-              id='AddedPhoto.numberofphotos'
-              defaultMessage={`You've added a total of {count} {photos}.`}
-              values={{
-                count: (
-                  <b>
-                    <FormattedNumber
+          <div style={{textAlign: 'center'}}>
+            <Typography variant="body1" gutterBottom>
+              <FormattedMessage
+                id='AddedPhoto.numberofphotos'
+                defaultMessage={`You've added a total of {count} {photos}.`}
+                values={{
+                  count: (
+                    <b>
+                      <FormattedNumber
+                        value={numberOfPhotos}
+                      />
+                    </b>
+                  ),
+                  photos: (
+                    <FormattedPlural
                       value={numberOfPhotos}
+                      one={
+                        <FormattedMessage
+                          id='AddedPhoto.photo'
+                          defaultMessage='photo'
+                        />
+                      }
+                      other={
+                        <FormattedMessage
+                          id='AddedPhoto.photos'
+                          defaultMessage='photos'
+                        />
+                      }
                     />
-                  </b>
-                ),
-                photos: (
-                  <FormattedPlural
-                    value={numberOfPhotos}
-                    one={
-                      <FormattedMessage
-                        id='AddedPhoto.photo'
-                        defaultMessage='photo'
-                      />
-                    }
-                    other={
-                      <FormattedMessage
-                        id='AddedPhoto.photos'
-                        defaultMessage='photos'
-                      />
-                    }
-                  />
-                ),
-              }}
-            />
-          </Typography>
-          <Typography variant="body1" gutterBottom>
-            <FormattedMessage
-              id="AddedPhoto.p1"
-              defaultMessage="Click on 'ANOTHER PHOTO' to take another photo."
-            />
-          </Typography>
-          <div className={classes.centerContainer}>
+                  ),
+                }}
+              />
+            </Typography>
+          </div>
+          <div className={classes.centerContainer} style={{textAlign: 'center'}}>
             <Button
               color='primary'
               variant='raised'
@@ -115,10 +104,6 @@ class AddedPhoto extends Component{
             </Button>
           </div>
           <Typography variant="body1" gutterBottom>
-            <FormattedMessage
-              id="AddedPhoto.p2"
-              defaultMessage="Click on 'TO SURVEY' to anwser a few questions before you send your data."
-            />
           </Typography>
           <div className={classes.centerContainer}>
             <Button

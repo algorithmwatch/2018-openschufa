@@ -4,6 +4,8 @@ import {withStyles} from 'material-ui/styles';
 import Paper from 'material-ui/Paper';
 import Typography from 'material-ui/Typography';
 import photo from '../../images/how_to_take_photo.jpg';
+import ProgressBar from '../ProgressBar';
+
 
 const styles = theme => ({
   root: theme.mixins.gutters({
@@ -23,6 +25,7 @@ const Usage = ({classes}) => {
   return (
     <div>
       <Paper className={classes.root} elevation={0}>
+        <ProgressBar stepsFinished={0}/>
         <Typography variant="title" gutterBottom>
           <FormattedMessage
             id="Usage.header"

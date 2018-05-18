@@ -6,6 +6,8 @@ import Typography from 'material-ui/Typography';
 import Button from 'material-ui/Button';
 import PropTypes from "prop-types";
 import {Checkbox, FormControlLabel, FormGroup} from "material-ui";
+import ProgressBar from '../ProgressBar';
+
 
 
 const inlineStyles = theme => ({
@@ -55,6 +57,7 @@ class Finish extends Component {
     return (
       <div>
         <Paper className={classes.root} elevation={0}>
+          <ProgressBar stepsFinished={3}/>
           <Typography variant="title" gutterBottom>
             <FormattedMessage
               id="Finish.header"

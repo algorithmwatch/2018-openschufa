@@ -18,13 +18,11 @@ export function sendData() {
     Object.keys(surveyData).forEach(key => formData.append(key, surveyData[key]));
     imageData.forEach(data => {
       if (typeof data === 'string') {
-        const dataURI = data;
-        const arr = convertDataURIToBinary(dataURI);
+        const arr = convertDataURIToBinary(data);
         const blob = new Blob([arr], { type: 'image/jpg' });
         formData.append('blob', blob, 'image.jpg');
       } else {
-        const file = data;
-        formData.append('pdf', file);
+        formData.append('pdf', data);
       }
     });
     const config = {

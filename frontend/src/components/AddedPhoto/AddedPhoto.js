@@ -5,8 +5,6 @@ import Paper from 'material-ui/Paper';
 import Typography from 'material-ui/Typography';
 import Button from 'material-ui/Button';
 import {STEP_FORM} from "../../constants";
-import CheckCircle from '@material-ui/icons/CheckCircle';
-import green from 'material-ui/colors/green';
 import ProgressBar from '../ProgressBar';
 
 

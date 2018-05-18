@@ -7,6 +7,7 @@ from flask_mail import Mail, Message
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 from flask_uploads import UploadSet, IMAGES, configure_uploads
+from sqlalchemy import func
 from sqlalchemy.dialects.postgresql import JSONB, UUID
 
 import config
@@ -47,9 +48,11 @@ def create_app(**kwargs):
     @app.route('/ping/', methods=['GET'])
     def ping_pong():
         app.logger.debug('Healthcheck called')
+        q = db.session.query(User)
+        users = get_count(q)
         return jsonify({
             'status': 'Epic success',
-            'message': 'pong!'
+            'message': '{0} records currently in database'.format(users)
         })
 
     @app.route('/upload/', methods=['POST'])
@@ -83,6 +86,11 @@ def create_app(**kwargs):
             app.logger.debug('Mail sent to {0}'.format(to))
         except Exception as e:
             app.logger.error('Sending mail failed {0}'.format(e))
+
+    def get_count(q):
+        count_q = q.statement.with_only_columns([func.count()]).order_by(None)
+        count = q.session.execute(count_q).scalar()
+        return count
 
     return app
 

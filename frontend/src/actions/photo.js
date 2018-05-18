@@ -14,7 +14,7 @@ import {
 import { STEP_ROTATE, STEP_SAVED } from "../constants";
 
 
-export function displayCapturedPhoto(file) {
+export function selectFile(file) {
   return (dispatch) => {
     if (file.type.startsWith('image/')) {
       selectImageFile(dispatch, file);

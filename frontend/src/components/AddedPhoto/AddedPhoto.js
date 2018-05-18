@@ -29,10 +29,10 @@ const styles = theme => ({
 class AddedPhoto extends Component{
 
   onChange = (e) => {
-    const { displayCapturedPhoto } = this.props;
+    const { selectFile } = this.props;
     const input = e.currentTarget;
     const file = input.files[0];
-    displayCapturedPhoto(file);
+    selectFile(file);
   };
 
   render() {

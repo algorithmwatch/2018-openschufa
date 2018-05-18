@@ -13,9 +13,7 @@ import {
   FormLabel,
   FormControl,
   FormGroup,
-  FormControlLabel,
 } from 'material-ui/Form';
-import Checkbox from 'material-ui/Checkbox';
 import {MenuItem} from "material-ui/Menu/index";
 
 import enLocale from 'date-fns/locale/en-US';
@@ -68,9 +66,25 @@ const messages = defineMessages({
     id: 'DataForm.notspecified',
     defaultMessage: 'Not specified'
   },
+  familyStatus: {
+    id: 'DataForm.familystatus',
+    defaultMessage: 'Family status'
+  },
   married: {
-    id: 'DataForm.Married',
+    id: 'DataForm.married',
     defaultMessage: 'Married / Civil partners'
+  },
+  divorced: {
+    id: 'DataForm.divorced',
+    defaultMessage: 'Divorced'
+  },
+  singleParent: {
+    id: 'DataForm.singleparent',
+    defaultMessage: 'Single parent'
+  },
+  single: {
+    id: 'DataForm.single',
+    defaultMessage: 'Single'
   },
   nationality: {
     id: 'DataForm.nationality',
@@ -192,7 +206,6 @@ const messages = defineMessages({
     id: 'DataForm.insolvencyproceedings',
     defaultMessage: 'Insolvency proceedings'
   },
-
   formDate: {
     id: 'DataForm.date',
     defaultMessage: 'Date of SCHUFA-information'
@@ -283,15 +296,16 @@ class DataForm extends Component {
         return;
       }
     }
-    if (name === 'numberOfChildren' && value >= 20) {
+    if (name === 'numberOfChildren' && (value >= 20 || value < 0)) {
       this.setState({
         open: true,
         message:
           <FormattedMessage
             id="DataForm.validationerror.numberOfChildren"
-            defaultMessage="Please enter a number smaller than or equal to 20!"
+            defaultMessage="Please enter a number between 0 and 20!"
           />
       });
+      return;
     }
     this.props.handleChange(name, value)
   };
@@ -318,7 +332,7 @@ class DataForm extends Component {
     const {formatMessage} = this.props.intl;
     const locale = localeMap[language];
     const {
-      plz, yearOfBirth, sex, married, nationality,
+      plz, yearOfBirth, sex, familyStatus, nationality,
       migrationBackground, numberOfChildren, employment,
       monthlyIncome, housing, relocation, numberOfActiveLoans,
       activeLoanAmount, numberOfPaidOffLoans, paidOffLoanAmount,
@@ -339,6 +353,29 @@ class DataForm extends Component {
       {
         value: 'non-binary',
         label: formatMessage(messages.nonBinary)
+      },
+      {
+        value: 'not-specified',
+        label: formatMessage(messages.notSpecified)
+      }
+    ];
+
+    const familyStatuses = [
+      {
+        value: 'married',
+        label: formatMessage(messages.married)
+      },
+      {
+        value: 'divorced',
+        label: formatMessage(messages.divorced)
+      },
+      {
+        value: 'single',
+        label: formatMessage(messages.single)
+      },
+      {
+        value: 'single-parent',
+        label: formatMessage(messages.singleParent)
       },
       {
         value: 'not-specified',
@@ -575,31 +612,6 @@ class DataForm extends Component {
                 </MenuItem>
               ))}
             </TextField>
-            <FormControl component="fieldset" className={classes.divContainer}>
-              <FormLabel component="legend" className={classes.checkboxLabel}>
-                <FormattedMessage
-                  id="DataForm.familystatus"
-                  defaultMessage="Family status"
-                />
-              </FormLabel>
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={married}
-                    value="married"
-                    onChange={this.handleCheckboxChange('married')}
-                  />
-                }
-                label={formatMessage(messages.married)}/>
-            </FormControl>
-            <TextField
-              id="nationality"
-              label={formatMessage(messages.nationality)}
-              className={classes.textField}
-              value={nationality}
-              onChange={this.handleChange('nationality')}
-              margin="normal"
-            />
             <TextField
               id="migrationBackground"
               select
@@ -615,6 +627,34 @@ class DataForm extends Component {
               margin="normal"
             >
               {yesno.map(option => (
+                <MenuItem key={option.value} value={option.value}>
+                  {option.label}
+                </MenuItem>
+              ))}
+            </TextField>
+            <TextField
+              id="nationality"
+              label={formatMessage(messages.nationality)}
+              className={classes.textField}
+              value={nationality}
+              onChange={this.handleChange('nationality')}
+              margin="normal"
+            />
+            <TextField
+              id="familyStatus"
+              select
+              label={formatMessage(messages.familyStatus)}
+              className={classes.textField}
+              value={familyStatus}
+              onChange={this.handleChange('familyStatus')}
+              SelectProps={{
+                MenuProps: {
+                  className: classes.menu,
+                },
+              }}
+              margin="normal"
+            >
+              {familyStatuses.map(option => (
                 <MenuItem key={option.value} value={option.value}>
                   {option.label}
                 </MenuItem>

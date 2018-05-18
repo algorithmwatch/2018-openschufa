@@ -72,8 +72,24 @@
         "id": "DataForm.notspecified"
       },
       {
+        "defaultMessage": "Family status",
+        "id": "DataForm.familystatus"
+      },
+      {
         "defaultMessage": "Married / Civil partners",
-        "id": "DataForm.Married"
+        "id": "DataForm.married"
+      },
+      {
+        "defaultMessage": "Divorced",
+        "id": "DataForm.divorced"
+      },
+      {
+        "defaultMessage": "Single parent",
+        "id": "DataForm.singleparent"
+      },
+      {
+        "defaultMessage": "Single",
+        "id": "DataForm.single"
       },
       {
         "defaultMessage": "Nationality",
@@ -226,10 +242,6 @@
       {
         "defaultMessage": "Socio-demography",
         "id": "DataForm.sociodemography"
-      },
-      {
-        "defaultMessage": "Family status",
-        "id": "DataForm.familystatus"
       },
       {
         "defaultMessage": "Financial situation",

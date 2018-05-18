@@ -6,7 +6,7 @@ import Button from 'material-ui/Button';
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import {defineMessages, injectIntl} from 'react-intl';
-import Usage from "../Usage/Usage";
+import Usage from "../Usage/UsageContainer";
 import CapturePhoto from '../CapturePhoto/CapturePhotoContainer';
 import RotatePhoto from '../RotatePhoto/RotatePhotoContainer';
 import PaintPhoto from '../PaintPhoto/PaintPhotoContainer';

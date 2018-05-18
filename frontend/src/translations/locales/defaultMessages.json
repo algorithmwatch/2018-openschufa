@@ -508,8 +508,12 @@
         "id": "Usage.header"
       },
       {
-        "defaultMessage": "On the next pages we want collect ...",
+        "defaultMessage": "{link} can you have a look at the privacy agreement...",
         "id": "Usage.p1"
+      },
+      {
+        "defaultMessage": "Here",
+        "id": "Usage.linktoprivacyagreement"
       },
       {
         "defaultMessage": "If you now take fotos of your SCHUFA information ...",

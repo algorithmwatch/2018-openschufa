@@ -2,24 +2,20 @@
   {
     "descriptors": [
       {
-        "defaultMessage": "Thank you!",
-        "id": "AddedPhoto.header"
-      },
-      {
-        "defaultMessage": "Your photo has been added.",
+        "defaultMessage": "Your {documentType} has been added.",
         "id": "AddedPhoto.subheading"
-      },
-      {
-        "defaultMessage": "You've added a total of {count} {photos}.",
-        "id": "AddedPhoto.numberofphotos"
       },
       {
         "defaultMessage": "photo",
         "id": "AddedPhoto.photo"
       },
       {
-        "defaultMessage": "photos",
-        "id": "AddedPhoto.photos"
+        "defaultMessage": "pdf",
+        "id": "AddedPhoto.pdf"
+      },
+      {
+        "defaultMessage": "Thank you!",
+        "id": "AddedPhoto.header"
       },
       {
         "defaultMessage": "Click on 'ANOTHER PHOTO' to take another photo.",

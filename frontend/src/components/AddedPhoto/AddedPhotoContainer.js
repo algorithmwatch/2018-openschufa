@@ -5,7 +5,7 @@ import { setActiveStep, selectFile } from '../../actions';
 
 const mapStateToProps = state => {
   return {
-    numberOfPhotos: state.form.imageData.length
+    imageData: state.form.imageData
   }
 };
 

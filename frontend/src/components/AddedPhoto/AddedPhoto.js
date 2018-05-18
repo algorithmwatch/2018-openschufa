@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {FormattedMessage, FormattedNumber, FormattedPlural} from 'react-intl';
+// import {defineMessages, FormattedMessage, FormattedNumber, FormattedPlural, injectIntl} from 'react-intl';
+import {defineMessages, FormattedMessage, injectIntl} from 'react-intl';
 import {withStyles} from 'material-ui/styles';
 import Paper from 'material-ui/Paper';
 import Typography from 'material-ui/Typography';
@@ -8,6 +9,9 @@ import {STEP_FORM} from "../../constants";
 import CheckCircle from '@material-ui/icons/CheckCircle';
 import green from 'material-ui/colors/green';
 
+
+const PHOTO = 'photo';
+const PDF = 'pdf';
 
 const styles = theme => ({
   root: theme.mixins.gutters({
@@ -26,6 +30,21 @@ const styles = theme => ({
   }
 });
 
+const messages = defineMessages({
+  documentAdded: {
+    id: 'AddedPhoto.subheading',
+    defaultMessage: 'Your {documentType} has been added.'
+  },
+  photo: {
+    id: 'AddedPhoto.photo',
+    defaultMessage: 'photo'
+  },
+  pdf: {
+    id: 'AddedPhoto.pdf',
+    defaultMessage: 'pdf'
+  }
+});
+
 class AddedPhoto extends Component{
 
   onChange = (e) => {
@@ -37,8 +56,18 @@ class AddedPhoto extends Component{
 
   render() {
 
-    const {classes, setActiveStep, numberOfPhotos} = this.props;
+    const {formatMessage} = this.props.intl;
+    const {classes, setActiveStep, imageData} = this.props;
+    const documentTypes = imageData.map(data => typeof data === 'string' ? PHOTO : PDF);
+    const numberOfPhotos = documentTypes.filter(t => t === PHOTO).length;
+    const numberOfPdfs = documentTypes.filter(t => t === PDF).length;
+    const lastDocumentType = documentTypes[documentTypes.length - 1];
 
+    let                                 msg = 'Du hast insgesamt ';
+    if (numberOfPhotos)                 msg += `${numberOfPhotos} Foto(s) `;
+    if (numberOfPhotos && numberOfPdfs) msg += 'und ';
+    if (numberOfPdfs)                   msg += `${numberOfPdfs} Pdf(s) `;
+                                        msg += 'hinzugefügt';
     return (
       <div>
         <Paper className={classes.root} elevation={0}>
@@ -51,13 +80,16 @@ class AddedPhoto extends Component{
               defaultMessage="Thank you!"
             />
           </Typography>
+          { lastDocumentType &&
           <Typography className={classes.centerContainer} variant="subheading" gutterBottom>
-            <FormattedMessage
-              id="AddedPhoto.subheading"
-              defaultMessage="Your photo has been added."
-            />
+            {formatMessage(messages.documentAdded, {
+              documentType: formatMessage(messages[lastDocumentType])
+            })}
           </Typography>
+          }
           <Typography variant="body1" gutterBottom>
+            {msg}
+            {/*
             <FormattedMessage
               id='AddedPhoto.numberofphotos'
               defaultMessage={`You've added a total of {count} {photos}.`}
@@ -88,6 +120,7 @@ class AddedPhoto extends Component{
                 ),
               }}
             />
+            */}
           </Typography>
           <Typography variant="body1" gutterBottom>
             <FormattedMessage
@@ -139,4 +172,5 @@ class AddedPhoto extends Component{
   }
 }
 
-export default withStyles(styles)(AddedPhoto);
+
+export default withStyles(styles)(injectIntl(AddedPhoto));

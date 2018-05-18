@@ -2,10 +2,6 @@
   {
     "descriptors": [
       {
-        "defaultMessage": "Thank you!",
-        "id": "AddedPhoto.header"
-      },
-      {
         "defaultMessage": "Your photo has been added.",
         "id": "AddedPhoto.subheading"
       },
@@ -22,16 +18,8 @@
         "id": "AddedPhoto.photos"
       },
       {
-        "defaultMessage": "Click on 'ANOTHER PHOTO' to take another photo.",
-        "id": "AddedPhoto.p1"
-      },
-      {
         "defaultMessage": "Another photo",
         "id": "AddPhoto.addphoto"
-      },
-      {
-        "defaultMessage": "Click on 'TO SURVEY' to anwser a few questions before you send your data.",
-        "id": "AddedPhoto.p2"
       },
       {
         "defaultMessage": "To survey",
@@ -446,6 +434,27 @@
       }
     ],
     "path": "src/components/Modal/Modal.json"
+  },
+  {
+    "descriptors": [
+      {
+        "defaultMessage": "Introduction",
+        "id": "Progressbar.introduction"
+      },
+      {
+        "defaultMessage": "Upload",
+        "id": "Progressbar.upload"
+      },
+      {
+        "defaultMessage": "Form",
+        "id": "Progressbar.form"
+      },
+      {
+        "defaultMessage": "Send",
+        "id": "Progressbar.send"
+      }
+    ],
+    "path": "src/components/ProgressBar/index.json"
   },
   {
     "descriptors": [

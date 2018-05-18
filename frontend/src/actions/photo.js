@@ -9,47 +9,59 @@ import {
   ADD_POLYLINE,
   UNDO_POLYLINE,
   SET_ACTIVE_STEP,
-  ADD_PHOTO
+  ADD_PHOTO, ADD_PDF
 } from "./actionTypes";
-import {STEP_ROTATE} from "../constants";
+import { STEP_ROTATE, STEP_SAVED } from "../constants";
 
 
 export function displayCapturedPhoto(file) {
   return (dispatch) => {
+    if (file.type.startsWith('image/')) {
+      selectImageFile(dispatch, file);
+    } else {
+      selectPdfFile(dispatch, file);
+    }
+  }
+}
 
-    // photo was captured
+function selectImageFile(dispatch, file) {
+  const fileReader = new FileReader();
+  fileReader.readAsDataURL(file);
+  fileReader.onload = () => {
+
+    // image data was read from file
     dispatch({
-      type: SET_PROCESSING,
-      payload: true
+      type: SET_IMAGEDATA,
+      payload: {imageData: fileReader.result}
     });
 
-    const fileReader = new FileReader();
-    fileReader.readAsDataURL(file);
-    fileReader.onload = () => {
+    const img = new Image();
+    img.src = fileReader.result;
+    img.onload = () => {
 
-      // image data was read from file
+      // image data was loaded and it's size can be retrieved
+      const {width, height} = img;
       dispatch({
-        type: SET_IMAGEDATA,
-        payload: { imageData: fileReader.result }
+        type: SET_SIZE,
+        payload: {width, height}
       });
-
-      const img = new Image();
-      img.src = fileReader.result;
-      img.onload = () => {
-
-        // image data was loaded and it's size can be retrieved
-        const { width, height } = img;
-        dispatch({
-          type: SET_SIZE,
-          payload: { width, height }
-        });
-        dispatch({
-          type: SET_ACTIVE_STEP,
-          payload: STEP_ROTATE
-        })
-      };
+      dispatch({
+        type: SET_ACTIVE_STEP,
+        payload: STEP_ROTATE
+      })
     };
-  }
+  };
+}
+
+function selectPdfFile(dispatch, file) {
+  dispatch({
+    type: ADD_PDF,
+    payload: {file}
+  });
+  dispatch({
+    type: SET_ACTIVE_STEP,
+    payload: STEP_SAVED
+  })
 }
 
 export function rotatePhoto(degrees) {

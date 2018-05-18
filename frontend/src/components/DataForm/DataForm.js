@@ -440,8 +440,12 @@ class DataForm extends Component {
 
     const numbers = [
       {
+        value: 'not-specified',
+        label: formatMessage(messages.notSpecified)
+      },
+      {
         value: 0,
-        label: 0
+        label: '0'
       },
       {
         value: 1,

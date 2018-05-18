@@ -17,6 +17,11 @@ const styles = theme => ({
   image: {
     marginTop: 10,
     maxWidth: '100%'
+  },
+  link: {
+    cursor: 'pointer',
+    color: 'blue',
+    textDecoration: 'underline'
   }
 });
 
@@ -47,12 +52,14 @@ class Usage extends Component {
               defaultMessage="{link} can you have a look at the privacy agreement..."
               values={{
                 link:
-                  <a href="#" onClick={this.handleClick}>
+                  <span
+                    className={classes.link}
+                    onClick={this.handleClick}>
                     <FormattedMessage
                       id="Usage.linktoprivacyagreement"
                       defaultMessage="Here"
                     />
-                  </a>
+                  </span>
               }}
             />
           </Typography>

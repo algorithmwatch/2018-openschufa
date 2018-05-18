@@ -1,18 +1,18 @@
 import AddPhoto from './AddedPhoto';
 import { connect } from 'react-redux';
-import { setActiveStep, displayCapturedPhoto } from '../../actions';
+import { setActiveStep, selectFile } from '../../actions';
 
 
 const mapStateToProps = state => {
   return {
-    numberOfPhotos: state.form.imageData.length
+    imageData: state.form.imageData
   }
 };
 
 const mapDispatchToProps = dispatch => {
   return {
     setActiveStep: step => dispatch(setActiveStep(step)),
-    displayCapturedPhoto: (imageData) => dispatch(displayCapturedPhoto(imageData))
+    selectFile: (file) => dispatch(selectFile(file))
   }
 };
 

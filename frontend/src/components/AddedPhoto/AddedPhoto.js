@@ -1,14 +1,16 @@
 import React, {Component} from 'react';
-import {FormattedMessage, FormattedNumber, FormattedPlural} from 'react-intl';
+// import {defineMessages, FormattedMessage, FormattedNumber, FormattedPlural, injectIntl} from 'react-intl';
+import {defineMessages, FormattedMessage, injectIntl} from 'react-intl';
 import {withStyles} from 'material-ui/styles';
 import Paper from 'material-ui/Paper';
 import Typography from 'material-ui/Typography';
 import Button from 'material-ui/Button';
 import {STEP_FORM} from "../../constants";
-import CheckCircle from '@material-ui/icons/CheckCircle';
-import green from 'material-ui/colors/green';
 import ProgressBar from '../ProgressBar';
 
+
+const PHOTO = 'photo';
+const PDF = 'pdf';
 
 const styles = theme => ({
   root: theme.mixins.gutters({
@@ -27,64 +29,91 @@ const styles = theme => ({
   }
 });
 
+const messages = defineMessages({
+  documentAdded: {
+    id: 'AddedPhoto.subheading',
+    defaultMessage: 'Your {documentType} has been added.'
+  },
+  photo: {
+    id: 'AddedPhoto.photo',
+    defaultMessage: 'photo'
+  },
+  pdf: {
+    id: 'AddedPhoto.pdf',
+    defaultMessage: 'pdf'
+  }
+});
+
 class AddedPhoto extends Component{
 
   onChange = (e) => {
-    const { displayCapturedPhoto } = this.props;
+    const { selectFile } = this.props;
     const input = e.currentTarget;
     const file = input.files[0];
-    displayCapturedPhoto(file);
+    selectFile(file);
   };
 
   render() {
 
-    const {classes, setActiveStep, numberOfPhotos} = this.props;
+    const {formatMessage} = this.props.intl;
+    const {classes, setActiveStep, imageData} = this.props;
+    const documentTypes = imageData.map(data => typeof data === 'string' ? PHOTO : PDF);
+    const numberOfPhotos = documentTypes.filter(t => t === PHOTO).length;
+    const numberOfPdfs = documentTypes.filter(t => t === PDF).length;
+    const lastDocumentType = documentTypes[documentTypes.length - 1];
 
+    let                                 msg = 'Du hast insgesamt ';
+    if (numberOfPhotos)                 msg += `${numberOfPhotos} Foto(s) `;
+    if (numberOfPhotos && numberOfPdfs) msg += 'und ';
+    if (numberOfPdfs)                   msg += `${numberOfPdfs} Pdf(s) `;
+                                        msg += 'hinzugefügt';
     return (
       <div>
         <Paper className={classes.root} elevation={0}>
           <ProgressBar stepsFinished={numberOfPhotos > 1 ? 2 : 1}/>
+          { lastDocumentType &&
           <Typography className={classes.centerContainer} variant="subheading" gutterBottom>
-            <FormattedMessage
-              id="AddedPhoto.subheading"
-              defaultMessage="Your photo has been added."
-            />
+            {formatMessage(messages.documentAdded, {
+              documentType: formatMessage(messages[lastDocumentType])
+            })}
           </Typography>
-          <div style={{textAlign: 'center'}}>
-            <Typography variant="body1" gutterBottom>
-              <FormattedMessage
-                id='AddedPhoto.numberofphotos'
-                defaultMessage={`You've added a total of {count} {photos}.`}
-                values={{
-                  count: (
-                    <b>
-                      <FormattedNumber
-                        value={numberOfPhotos}
-                      />
-                    </b>
-                  ),
-                  photos: (
-                    <FormattedPlural
+          }
+          <Typography variant="body1" gutterBottom>
+            {msg}
+            {/*
+            <FormattedMessage
+              id='AddedPhoto.numberofphotos'
+              defaultMessage={`You've added a total of {count} {photos}.`}
+              values={{
+                count: (
+                  <b>
+                    <FormattedNumber
                       value={numberOfPhotos}
-                      one={
-                        <FormattedMessage
-                          id='AddedPhoto.photo'
-                          defaultMessage='photo'
-                        />
-                      }
-                      other={
-                        <FormattedMessage
-                          id='AddedPhoto.photos'
-                          defaultMessage='photos'
-                        />
-                      }
                     />
-                  ),
-                }}
-              />
-            </Typography>
-          </div>
-          <div className={classes.centerContainer} style={{textAlign: 'center'}}>
+                  </b>
+                ),
+                photos: (
+                  <FormattedPlural
+                    value={numberOfPhotos}
+                    one={
+                      <FormattedMessage
+                        id='AddedPhoto.photo'
+                        defaultMessage='photo'
+                      />
+                    }
+                    other={
+                      <FormattedMessage
+                        id='AddedPhoto.photos'
+                        defaultMessage='photos'
+                      />
+                    }
+                  />
+                ),
+              }}
+            />
+            */}
+          </Typography>
+          <div className={classes.centerContainer}>
             <Button
               color='primary'
               variant='raised'
@@ -97,7 +126,7 @@ class AddedPhoto extends Component{
               />
               <input
                 type="file"
-                accept="image/*"
+                accept="image/*,application/pdf"
                 onChange={this.onChange}
                 style={{ display: 'none' }}
               />
@@ -124,4 +153,5 @@ class AddedPhoto extends Component{
   }
 }
 
-export default withStyles(styles)(AddedPhoto);
+
+export default withStyles(styles)(injectIntl(AddedPhoto));

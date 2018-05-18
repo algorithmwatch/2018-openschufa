@@ -2,20 +2,20 @@
   {
     "descriptors": [
       {
-        "defaultMessage": "Your photo has been added.",
+        "defaultMessage": "Your {documentType} has been added.",
         "id": "AddedPhoto.subheading"
-      },
-      {
-        "defaultMessage": "You've added a total of {count} {photos}.",
-        "id": "AddedPhoto.numberofphotos"
       },
       {
         "defaultMessage": "photo",
         "id": "AddedPhoto.photo"
       },
       {
-        "defaultMessage": "photos",
-        "id": "AddedPhoto.photos"
+        "defaultMessage": "pdf",
+        "id": "AddedPhoto.pdf"
+      },
+      {
+        "defaultMessage": "Click on 'ANOTHER PHOTO' to take another photo.",
+        "id": "AddedPhoto.p1"
       },
       {
         "defaultMessage": "Another photo",
@@ -72,8 +72,24 @@
         "id": "DataForm.notspecified"
       },
       {
+        "defaultMessage": "Family status",
+        "id": "DataForm.familystatus"
+      },
+      {
         "defaultMessage": "Married / Civil partners",
-        "id": "DataForm.Married"
+        "id": "DataForm.married"
+      },
+      {
+        "defaultMessage": "Divorced",
+        "id": "DataForm.divorced"
+      },
+      {
+        "defaultMessage": "Single parent",
+        "id": "DataForm.singleparent"
+      },
+      {
+        "defaultMessage": "Single",
+        "id": "DataForm.single"
       },
       {
         "defaultMessage": "Nationality",
@@ -212,7 +228,7 @@
         "id": "DataForm.validationerror.nationality"
       },
       {
-        "defaultMessage": "Please enter a number smaller than or equal to 20!",
+        "defaultMessage": "Please enter a number between 0 and 20!",
         "id": "DataForm.validationerror.numberOfChildren"
       },
       {
@@ -226,10 +242,6 @@
       {
         "defaultMessage": "Socio-demography",
         "id": "DataForm.sociodemography"
-      },
-      {
-        "defaultMessage": "Family status",
-        "id": "DataForm.familystatus"
       },
       {
         "defaultMessage": "Financial situation",
@@ -508,8 +520,12 @@
         "id": "Usage.header"
       },
       {
-        "defaultMessage": "On the next pages we want collect ...",
+        "defaultMessage": "{link} can you have a look at the privacy agreement...",
         "id": "Usage.p1"
+      },
+      {
+        "defaultMessage": "Here",
+        "id": "Usage.linktoprivacyagreement"
       },
       {
         "defaultMessage": "If you now take fotos of your SCHUFA information ...",

@@ -17,7 +17,7 @@ migrate = Migrate()
 mail = Mail()
 
 # Configure the image uploading via Flask-Uploads
-images = UploadSet('photos', IMAGES)
+images = UploadSet('photos', extensions=('jpg', 'pdf'))
 
 
 class User(db.Model):
@@ -60,7 +60,7 @@ def create_app(**kwargs):
         form = request.form
         user = User(form=form)
         db.session.add(user)
-        for upload in request.files.getlist('blob'):
+        for upload in request.files.getlist('blob') + request.files.getlist('pdf'):
             filename = images.save(upload)
             img = Image(filename=filename)
             user.images.append(img)

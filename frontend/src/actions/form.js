@@ -16,10 +16,14 @@ export function sendData() {
     const {imageData, surveyData} = getState().form;
     const formData = new FormData();
     Object.keys(surveyData).forEach(key => formData.append(key, surveyData[key]));
-    imageData.forEach(dataURI => {
-      const arr = convertDataURIToBinary(dataURI);
-      const blob = new Blob([arr], { type: 'image/jpg' });
-      formData.append('blob', blob, 'image.jpg');
+    imageData.forEach(data => {
+      if (typeof data === 'string') {
+        const arr = convertDataURIToBinary(data);
+        const blob = new Blob([arr], { type: 'image/jpg' });
+        formData.append('blob', blob, 'image.jpg');
+      } else {
+        formData.append('pdf', data);
+      }
     });
     const config = {
       method: 'POST',

@@ -29,7 +29,7 @@ export default {
       plz: '',
       yearOfBirth: 'not-specified',
       sex: 'not-specified',
-      married: false,
+      familyStatus: 'not-specified',
       nationality: '',
       migrationBackground: 0,
       numberOfChildren: '',

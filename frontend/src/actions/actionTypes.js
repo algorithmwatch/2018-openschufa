@@ -11,6 +11,7 @@ export const SET_EDIT_MODE = 'photo/SET_EDIT_MODE';
 export const ADD_POLYLINE = 'photo/ADD_POLYLINE';
 export const UNDO_POLYLINE = 'photo/UNDO_POLYLINE';
 export const ADD_PHOTO = 'form/ADD_PHOTO';
+export const ADD_PDF = 'form/ADD_PDF';
 export const RESET_FORM = 'form/RESET_FORM';
 export const SET_PROP = 'form/SET_PROP';
 export const UPLOAD_SUCCESS = 'form/UPLOAD_SUCCESS';

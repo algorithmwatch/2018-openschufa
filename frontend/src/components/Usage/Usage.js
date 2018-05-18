@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {FormattedMessage} from 'react-intl';
 import {withStyles} from 'material-ui/styles';
 import Paper from 'material-ui/Paper';
@@ -17,37 +17,64 @@ const styles = theme => ({
   image: {
     marginTop: 10,
     maxWidth: '100%'
+  },
+  link: {
+    cursor: 'pointer',
+    color: 'blue',
+    textDecoration: 'underline'
   }
 });
 
-const Usage = ({classes}) => {
+class Usage extends Component {
 
-  return (
-    <div>
-      <Paper className={classes.root} elevation={0}>
-        <ProgressBar stepsFinished={0}/>
-        <Typography variant="title" gutterBottom>
-          <FormattedMessage
-            id="Usage.header"
-            defaultMessage="Introduction"
-          />
-        </Typography>
-        <Typography variant="body1" gutterBottom>
-          <FormattedMessage
-            id="Usage.p1"
-            defaultMessage="On the next pages we want collect ..."
-          />
-        </Typography>
-        <Typography variant="body1" gutterBottom>
-          <FormattedMessage
-            id="Usage.p2"
-            defaultMessage="If you now take fotos of your SCHUFA information ..."
-          />
-        </Typography>
-        <img src={photo} alt='' className={classes.image}/>
-      </Paper>
-    </div>
-  )
+  handleClick = e => {
+    this.props.openModal('privacyagreement');
+    e.preventDefault();
+  };
+
+  render () {
+
+    const { classes } = this.props;
+
+    return (
+      <div>
+        <Paper className={classes.root} elevation={0}>
+          <ProgressBar stepsFinished={0}/>
+          <Typography variant="title" gutterBottom>
+            <FormattedMessage
+              id="Usage.header"
+              defaultMessage="Introduction"
+            />
+          </Typography>
+          <Typography variant="body1" gutterBottom>
+            <FormattedMessage
+              id="Usage.p1"
+              defaultMessage="{link} can you have a look at the privacy agreement..."
+              values={{
+                link:
+                  <span
+                    className={classes.link}
+                    onClick={this.handleClick}>
+                    <FormattedMessage
+                      id="Usage.linktoprivacyagreement"
+                      defaultMessage="Here"
+                    />
+                  </span>
+              }}
+            />
+          </Typography>
+          <Typography variant="body1" gutterBottom>
+            <FormattedMessage
+              id="Usage.p2"
+              defaultMessage="If you now take fotos of your SCHUFA information ..."
+            />
+          </Typography>
+          <img src={photo} alt='' className={classes.image}/>
+        </Paper>
+      </div>
+    )
+  }
+
 };
 
 export default withStyles(styles)(Usage);

@@ -113,12 +113,6 @@ class AddedPhoto extends Component{
             />
             */}
           </Typography>
-          <Typography variant="body1" gutterBottom>
-            <FormattedMessage
-              id="AddedPhoto.p1"
-              defaultMessage="Click on 'ANOTHER PHOTO' to take another photo."
-            />
-          </Typography>
           <div className={classes.centerContainer}>
             <Button
               color='primary'

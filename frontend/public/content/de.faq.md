@@ -4,6 +4,10 @@
 
 Uns interessiert Deine SCHUFA-Auskunft, die Du nach Bundesdatenschutzgesetz §34 in Briefform erhalten hast und aus mindestens vier DIN A4-Seiten besteht. Von diesem Schreiben wollen wir NICHT die erste Seite (auf der Dein Name und Deine Adresse steht) und auch nicht die letzte Seite. Wir benötigen die Seiten mit den Tabellen und die vorletzte Seite, auf der in einem Fließtext einige Angaben über Anfragen von Banken, Kreditbewilligungen usw. stehen könnten. Die letzte Seite benötigen wir nicht. Wenn Du Daten nicht an uns übermitteln will, lasse die weg oder schwärze sie - Du kannst das Schwärzen direkt hier in der Anwendung machen.
 
+### Von wann soll die Selbstauskunft sein?
+
+Die Selbstauskunft sollte von 2018 sein. Wenn Ihr mehrere Auskünfte habt, ladet bitte  nur die aktuellste hoch.
+
 ### Wo wende ich mich bei Problemen hin?
 
 Bitte per E-mail an <mailto:support@openschufa.de>.
@@ -12,13 +16,17 @@ Bitte per E-mail an <mailto:support@openschufa.de>.
 
 Der Fragebogen soll wichtige Informationen für die Analyse des Scorings und seiner Auswirkungen liefern. Dafür bitten wir Dich, möglichst viele Fragen zu Deiner persönlichen Situation zu beantworten. Beispielsweise fragen wir nach sogenannten Negativmerkmalen, die dazu führen können, dass jemand keinen Kredit mehr bekommt. Hier kann der Fragebogen wichtige Hinweise zum Abgleich der Daten mit der Auskunft geben.
 
-### Kann ich Euch meine Auskunft per Post schicken?
+### Kann ich Euch meine Auskunft per Post oder E-mail schicken?
 
-Nein. Die Daten können nur mithilfe der Web App unter www.openschufa.de übertragen werden. Eine Übermittlung per E-Mail oder auf dem Postweg ist NICHT möglich.
+Nein. Die Daten können nur mithilfe der Web App unter www.openschufa.de übertragen werden. Eine Übermittlung per E-Mail oder auf dem Postweg ist aus Gründen des Datenschutzes NICHT möglich.
 
 ### Ich habe Zugang zum SCHUFA-Online Konto, kann ich Euch die Daten von dort senden?
 
 Nein. Wir benötigen das Format der Selbstauskunft nach Bundesdatenschutzgesetz §34, die Dir die SCHUFA einmal im Jahr kostenlos ausstellt. Wenn Du noch keine kostenlose Selbstauskunft beantragt hast, kannst Du das jetzt unter www.selbstauskunft.net/schufa tun. Die Datenspende läuft bis September.
+
+### Wozu dient der Fragebogen?
+
+Der Fragebogen soll wichtige Informationen für die Analyse des Scorings und seiner Auswirkungen liefern. Dafür bitten wir Dich, möglichst viele Fragen zu Deiner persönlichen Situation zu beantworten. Beispielsweise fragen wir nach sogenannten Negativmerkmalen, die dazu führen können, dass jemand keinen Kredit mehr bekommt. Hier kann der Fragebogen wichtige Hinweise zum Abgleich der Daten mit der Auskunft geben. Wir fragen folgendes ab: Datum der Auskunft, Postleitzahl des Wohnorts, Geburtsjahr, Geschlecht, Familenstatus, Nationalität, Migrationshintergrund, Monatliche Einkünfte, Wohnungssituation, Anzahl der Umzüge der letzten 10 Jahre, Abbezahlte Kredite etc., Kredithöhe, Anzahl der Handyverträge, Anzahl Girokonten, Anzahl Kreditkarten, Anzahl Versandhandelkonten/ Mahnungen/ Insolvenzen.
 
 ### Wie werden die Daten gespeichert?
 

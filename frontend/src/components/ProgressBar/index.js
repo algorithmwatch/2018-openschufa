@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Fragment} from "react";
 import CheckCircleOutline from "@material-ui/icons/CheckCircle";
 import Typography from "material-ui/Typography";
 import {FormattedMessage} from 'react-intl';
@@ -14,7 +14,7 @@ const line = {
 };
 
 const ProgressBar = ({stepsFinished}) => (
-  <Typography variant="body1" gutterBottom>
+  <div>
     <div
       style={{
         flexDirection: "row",
@@ -22,43 +22,20 @@ const ProgressBar = ({stepsFinished}) => (
         justifyContent: "space-between"
       }}
     >
-      <div>
-        {stepsFinished > 0 ? (
-          <CheckCircleOutline style={completeStyle}/>
-        ) : (
-          <CheckCircleOutline style={greyedOutStyle}/>
-        )}
-      </div>
-      <div style={line}/>
-      <div>
-        {stepsFinished > 1 ? (
-          <CheckCircleOutline style={completeStyle}/>
-        ) : (
-          <CheckCircleOutline style={greyedOutStyle}/>
-        )}
-      </div>
-      <div style={line}/>
-      <div>
-        {stepsFinished > 2 ? (
-          <CheckCircleOutline
-            style={completeStyle}
-            iconStyle={{fill: "red"}}
-          />
-        ) : (
-          <CheckCircleOutline
-            style={greyedOutStyle}
-            iconStyle={{fill: "red"}}
-          />
-        )}
-      </div>
-      <div style={line}/>
-      <div>
-        {stepsFinished > 3 ? (
-          <CheckCircleOutline style={completeStyle}/>
-        ) : (
-          <CheckCircleOutline style={greyedOutStyle}/>
-        )}
-      </div>
+    {[0, 1, 2, 3].map(i => (
+        <Fragment key={i}>
+          <div>
+            {stepsFinished > i ? (
+              <CheckCircleOutline style={completeStyle}/>
+            ) : (
+              <CheckCircleOutline style={greyedOutStyle}/>
+            )}
+          </div>
+          {i < 3 &&
+            <div style={line}/>
+          }
+        </Fragment>
+      ))}
     </div>
     <div
       style={{
@@ -70,39 +47,47 @@ const ProgressBar = ({stepsFinished}) => (
       }}
     >
       <div style={{width: "20%"}}>
-        <small>
-          <FormattedMessage
-            id='Progressbar.introduction'
-            defaultMessage='Introduction'
-          />
-        </small>
+        <Typography variant='body1' gutterBottom>
+          <small>
+            <FormattedMessage
+              id='Progressbar.introduction'
+              defaultMessage='Introduction'
+            />
+          </small>
+        </Typography>
       </div>
       <div style={{width: "25%", textAlign: "center"}}>
-        <small>
-          <FormattedMessage
-            id='Progressbar.upload'
-            defaultMessage='Upload'
-          />
-        </small>
+        <Typography variant='body1' gutterBottom>
+          <small>
+            <FormattedMessage
+              id='Progressbar.upload'
+              defaultMessage='Upload'
+            />
+          </small>
+        </Typography>
       </div>
       <div style={{width: "30%", textAlign: "center"}}>
-        <small>
-          <FormattedMessage
-            id='Progressbar.form'
-            defaultMessage='Form'
-          />
-        </small>
+        <Typography variant='body1' gutterBottom>
+          <small>
+            <FormattedMessage
+              id='Progressbar.form'
+              defaultMessage='Form'
+            />
+          </small>
+        </Typography>
       </div>
       <div style={{width: "20%", textAlign: "right"}}>
-        <small>
-          <FormattedMessage
-            id='Progressbar.send'
-            defaultMessage='Send'
-          />
-        </small>
+        <Typography variant='body1' gutterBottom>
+          <small>
+            <FormattedMessage
+              id='Progressbar.send'
+              defaultMessage='Send'
+            />
+          </small>
+        </Typography>
       </div>
     </div>
-  </Typography>
+  </div>
 );
 
 export default ProgressBar;

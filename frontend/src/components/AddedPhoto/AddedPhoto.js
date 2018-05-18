@@ -108,7 +108,7 @@ class AddedPhoto extends Component{
               />
               <input
                 type="file"
-                accept="image/*"
+                accept="image/*,application/pdf"
                 onChange={this.onChange}
                 style={{ display: 'none' }}
               />

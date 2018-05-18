@@ -1,6 +1,6 @@
 import initialState from './initialState';
 import {
-  ADD_PHOTO, RESET_FORM, UPLOAD_REQUEST,
+  ADD_PHOTO, ADD_PDF, RESET_FORM, UPLOAD_REQUEST,
   UPLOAD_FAILURE, UPLOAD_SUCCESS, SET_PROP, UPLOAD_PROGRESS
 } from "../actions/actionTypes";
 
@@ -14,6 +14,13 @@ export default function reducer(state = initialState.form, action) {
       return {
         ...state,
         imageData: [...state.imageData, dataURL]
+      };
+
+    case ADD_PDF:
+      const { file } = action.payload;
+      return {
+        ...state,
+        imageData: [...state.imageData, file]
       };
 
     case RESET_FORM:

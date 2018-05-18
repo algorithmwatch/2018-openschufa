@@ -33,10 +33,10 @@ const styles = theme => ({
 class CapturePhoto extends Component {
 
   onChange = (e) => {
-    const { displayCapturedPhoto } = this.props;
+    const { selectFile } = this.props;
     const input = e.currentTarget;
     const file = input.files[0];
-    displayCapturedPhoto(file);
+    selectFile(file);
   };
 
   render() {
@@ -66,7 +66,7 @@ class CapturePhoto extends Component {
             />
             <input
               type="file"
-              accept="image/*"
+              accept="image/*,application/pdf"
               onChange={this.onChange}
               style={{ display: 'none' }}
             />
@@ -79,7 +79,7 @@ class CapturePhoto extends Component {
 }
 
 CapturePhoto.propTypes = {
-  displayCapturedPhoto: PropTypes.func.isRequired
+  selectFile: PropTypes.func.isRequired
 };
 
 

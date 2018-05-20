@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styles from './PaintPhoto.css';
 import PinchZoom from './pinch-zoom';
@@ -8,29 +8,27 @@ import ZoomIcon from '@material-ui/icons/ZoomIn';
 import UndoIcon from '@material-ui/icons/Undo';
 import brushSVG from './noun_721104.svg';
 import PaintCursor from './PaintCursor';
-import { MODE_ZOOM, MODE_PAINT } from '../../constants'
-
+import { MODE_ZOOM, MODE_PAINT } from '../../constants';
 
 const BRUSH_WIDTH = 40;
 
 function translate(p, t) {
   return {
     x: p.x + t.x,
-    y: p.y + t.y
+    y: p.y + t.y,
   };
 }
 
 function scale(p, s) {
   return {
     x: p.x * s,
-    y: p.y * s
+    y: p.y * s,
   };
 }
 
 class PaintPhoto extends Component {
-
   state = {
-    mouseOver: false
+    mouseOver: false,
   };
 
   componentDidMount() {
@@ -57,7 +55,7 @@ class PaintPhoto extends Component {
     this.pinchzoom = new PinchZoom(canvas, {
       zoomOutFactor: 1,
       minZoom: 1,
-      maxZoom: 8
+      maxZoom: 8,
     });
 
     if (editMode !== MODE_ZOOM) {
@@ -67,7 +65,7 @@ class PaintPhoto extends Component {
 
   drawPolylines(polylines) {
     const canvas = this.refs.canvas;
-    const ctx = canvas.getContext("2d");
+    const ctx = canvas.getContext('2d');
     ctx.lineCap = ctx.lineJoin = 'round';
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     polylines.forEach(polyline => {
@@ -94,26 +92,28 @@ class PaintPhoto extends Component {
   }
 
   getZoomContainerScale() {
-    return Number(this.pinchzoom.el.style.transform.split('scale(')[1].split(',')[0]);
+    return Number(
+      this.pinchzoom.el.style.transform.split('scale(')[1].split(',')[0]
+    );
   }
 
-  containerToCanvas = (p) => {
+  containerToCanvas = p => {
     const rect = this.refs.container.getBoundingClientRect();
-    p = translate(p, {x: -rect.left, y: -rect.top});
+    p = translate(p, { x: -rect.left, y: -rect.top });
     const s = this.getZoomContainerScale();
     const offset = this.pinchzoom.offset;
     p = translate(p, offset);
-    return scale(p, 1/s);
+    return scale(p, 1 / s);
   };
 
-  onMouseDown = (e) => {
+  onMouseDown = e => {
     e.preventDefault();
     document.body.addEventListener('mousemove', this.onMouseMove);
     document.body.addEventListener('mouseup', this.onMouseUp);
     this.drawStart({ x: e.clientX, y: e.clientY });
   };
 
-  onTouchStart = (e) => {
+  onTouchStart = e => {
     e.preventDefault();
     if (this.firstTouch) return;
     if (e.touches.length > 1) return;
@@ -128,19 +128,21 @@ class PaintPhoto extends Component {
     this.currentLineWidth = BRUSH_WIDTH / this.getZoomContainerScale();
     this.currentPolyline = {
       lineWidth: this.currentLineWidth,
-      points: [p_]
+      points: [p_],
     };
   }
 
-  onMouseMove = (e) => {
+  onMouseMove = e => {
     this.drawMove({ x: e.clientX, y: e.clientY });
   };
 
-  onTouchMove = (e) => {
+  onTouchMove = e => {
     e.preventDefault();
 
     if (!this.firstTouch) return;
-    const touch = Array.from(e.touches).find(t => t.identifier === this.firstTouch.identifier);
+    const touch = Array.from(e.touches).find(
+      t => t.identifier === this.firstTouch.identifier
+    );
     if (!touch) {
       return;
     }
@@ -150,7 +152,7 @@ class PaintPhoto extends Component {
 
   drawMove(p) {
     const canvas = this.refs.canvas;
-    const ctx = canvas.getContext("2d");
+    const ctx = canvas.getContext('2d');
 
     const p0 = this.currentPoint;
     const p1 = this.containerToCanvas(p);
@@ -172,11 +174,13 @@ class PaintPhoto extends Component {
     this.drawEnd();
   };
 
-  onTouchEnd = (e) => {
+  onTouchEnd = e => {
     e.preventDefault();
 
     if (!this.firstTouch) return;
-    const touch = Array.from(e.touches).find(t => t.identifier === this.firstTouch.identifier);
+    const touch = Array.from(e.touches).find(
+      t => t.identifier === this.firstTouch.identifier
+    );
     if (touch) {
       return;
     }
@@ -190,7 +194,7 @@ class PaintPhoto extends Component {
 
     addPolyline({
       lineWidth,
-      points: simplify(points, 1 / this.getZoomContainerScale())
+      points: simplify(points, 1 / this.getZoomContainerScale()),
     });
 
     this.currentPolyline = null;
@@ -198,11 +202,11 @@ class PaintPhoto extends Component {
     this.firstTouch = null;
   }
 
-  onMouseOver = (e) => {
+  onMouseOver = e => {
     this.setState({ mouseOver: true });
   };
 
-  onMouseOut = (e) => {
+  onMouseOut = e => {
     this.setState({ mouseOver: false });
   };
 
@@ -210,18 +214,24 @@ class PaintPhoto extends Component {
     e.stopPropagation();
   }
 
-  undoPolyline = (e) => {
+  undoPolyline = e => {
     const { undoPolyline } = this.props;
     undoPolyline();
     e.stopPropagation();
   };
 
   render() {
-    const { editMode, imageData, size, rotation, setModeZoom, setModePaint } = this.props;
+    const {
+      editMode,
+      imageData,
+      size,
+      rotation,
+      setModeZoom,
+      setModePaint,
+    } = this.props;
     const editModeZoom = editMode === MODE_ZOOM;
     const editModePaint = editMode === MODE_PAINT;
     const { mouseOver } = this.state;
-
 
     let containerStyle = {};
     let containerListeners = {};
@@ -229,7 +239,7 @@ class PaintPhoto extends Component {
 
     if (editModePaint) {
       containerStyle = {
-        cursor: 'none'
+        cursor: 'none',
       };
       containerListeners = {
         onTouchStart: this.onTouchStart,
@@ -237,23 +247,21 @@ class PaintPhoto extends Component {
         onTouchEnd: this.onTouchEnd,
         onMouseDown: this.onMouseDown,
         onMouseOver: this.onMouseOver,
-        onMouseOut: this.onMouseOut
+        onMouseOut: this.onMouseOut,
       };
       buttonListeners = {
         onMouseOver: this.stopPropagation,
-        onMouseOut: this.stopPropagation
+        onMouseOut: this.stopPropagation,
       };
     }
 
-    let {width, height} = size;
+    let { width, height } = size;
     const [tx, ty] = {
       0: [0, 0],
       90: [0, -100],
       180: [-100, -100],
-      270: [-100, 0]
-    }[
-      rotation
-    ];
+      270: [-100, 0],
+    }[rotation];
 
     const photoStyle = {
       width,
@@ -272,19 +280,13 @@ class PaintPhoto extends Component {
         {...containerListeners}
         style={containerStyle}
       >
-
-        { editModePaint && mouseOver &&
-          <PaintCursor/>
-        }
+        {editModePaint && mouseOver && <PaintCursor />}
 
         <div className={styles.debug}>
           {size.width} x {size.height}, {rotation}°
         </div>
 
-        <div
-          ref="photoContainer"
-          style={{ width, height }}
-        >
+        <div ref="photoContainer" style={{ width, height }}>
           <img
             className={styles.photo}
             style={photoStyle}
@@ -293,7 +295,8 @@ class PaintPhoto extends Component {
           />
           <canvas
             className={styles.canvas}
-            ref="canvas" {...{ width, height }}
+            ref="canvas"
+            {...{ width, height }}
           />
         </div>
 
@@ -304,33 +307,48 @@ class PaintPhoto extends Component {
           onTouchEnd={this.stopPropagation}
           onMouseDown={this.stopPropagation}
         >
-
-          <div className={styles.button} onClick={setModeZoom} {...buttonListeners}>
+          <div
+            className={styles.button}
+            onClick={setModeZoom}
+            {...buttonListeners}
+          >
             <Button
               variant="fab"
-              color={editModeZoom ? "primary" : "default"}
-              aria-label="paint">
+              color={editModeZoom ? 'primary' : 'default'}
+              aria-label="paint"
+            >
               <ZoomIcon />
             </Button>
           </div>
 
-          <div className={styles.button} onClick={setModePaint} {...buttonListeners}>
+          <div
+            className={styles.button}
+            onClick={setModePaint}
+            {...buttonListeners}
+          >
             <Button
               variant="fab"
-              color={editModePaint ? "primary" : "default"}
-              aria-label="paint">
-              <img width="35" src={'data:image/svg+xml;utf8,' + brushSVG} alt=""/>
+              color={editModePaint ? 'primary' : 'default'}
+              aria-label="paint"
+            >
+              <img
+                width="35"
+                src={'data:image/svg+xml;utf8,' + brushSVG}
+                alt=""
+              />
             </Button>
           </div>
 
-          <div className={styles.button} onClick={this.undoPolyline} {...buttonListeners}>
+          <div
+            className={styles.button}
+            onClick={this.undoPolyline}
+            {...buttonListeners}
+          >
             <Button variant="fab" aria-label="paint">
               <UndoIcon />
             </Button>
           </div>
-
         </div>
-
       </div>
     );
   }
@@ -345,8 +363,7 @@ PaintPhoto.propTypes = {
   setModeZoom: PropTypes.func.isRequired,
   setModePaint: PropTypes.func.isRequired,
   addPolyline: PropTypes.func.isRequired,
-  undoPolyline: PropTypes.func.isRequired
+  undoPolyline: PropTypes.func.isRequired,
 };
-
 
 export default PaintPhoto;

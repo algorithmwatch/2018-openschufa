@@ -1,11 +1,10 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import LandingPage from './LandingPage/LandingPageContainer';
 import Stepper from './StepperPage/StepperPageContainer';
-import Modal from "./Modal/ModalContainer";
-import {MuiThemeProvider, createMuiTheme} from 'material-ui/styles';
+import Modal from './Modal/ModalContainer';
+import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
 import CssBaseline from 'material-ui/CssBaseline';
-import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
-
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 const theme = createMuiTheme({
   palette: {
@@ -21,35 +20,35 @@ const theme = createMuiTheme({
       dark: '#00214f',
       contrastText: '#fff',
     },
-  }
+  },
 });
 
 theme.overrides = {
   Index: {
     button: {
-      marginBottom: 20
-    }
+      marginBottom: 20,
+    },
   },
-  MuiButton: { // Name of the component ⚛️ / style shee
+  MuiButton: {
+    // Name of the component ⚛️ / style shee
     raised: {
-      boxShadow: theme.shadows[0]
-    }
+      boxShadow: theme.shadows[0],
+    },
   },
 };
-
 
 class App extends Component {
   render() {
     return (
       <MuiThemeProvider theme={theme}>
-        <CssBaseline/>
+        <CssBaseline />
         <Router>
           <Switch>
-            <Route exact path="/" component={LandingPage}/>
-            <Route path="/steps" component={Stepper}/>
+            <Route exact path="/" component={LandingPage} />
+            <Route path="/steps" component={Stepper} />
           </Switch>
         </Router>
-        <Modal/>
+        <Modal />
       </MuiThemeProvider>
     );
   }

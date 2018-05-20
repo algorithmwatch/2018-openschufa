@@ -1,14 +1,12 @@
-import React, {Component} from 'react';
-import {FormattedMessage, injectIntl, defineMessages} from 'react-intl';
-import {withStyles} from 'material-ui/styles';
+import React, { Component } from 'react';
+import { FormattedMessage, injectIntl, defineMessages } from 'react-intl';
+import { withStyles } from 'material-ui/styles';
 import Paper from 'material-ui/Paper';
 import Typography from 'material-ui/Typography';
 import Button from 'material-ui/Button';
-import PropTypes from "prop-types";
-import {Checkbox, FormControlLabel, FormGroup} from "material-ui";
+import PropTypes from 'prop-types';
+import { Checkbox, FormControlLabel, FormGroup } from 'material-ui';
 import ProgressBar from '../ProgressBar';
-
-
 
 const inlineStyles = theme => ({
   root: theme.mixins.gutters({
@@ -22,46 +20,41 @@ const inlineStyles = theme => ({
   buttonContainer: {
     width: '100%',
     display: 'flex',
-    justifyContent: 'center'
-  }
+    justifyContent: 'center',
+  },
 });
 
 const messages = defineMessages({
   checkboxLabel: {
     id: 'Finish.checkboxlabel',
-    defaultMessage: 'Accept privacy agreement'
+    defaultMessage: 'Accept privacy agreement',
   },
 });
 
 class Finish extends Component {
-
   static propTypes = {
     classes: PropTypes.object.isRequired,
   };
 
   state = {
-    checked: false
+    checked: false,
   };
 
   handleChange = name => event => {
-    this.setState({[name]: event.target.checked});
+    this.setState({ [name]: event.target.checked });
   };
 
   render() {
-
-    const {classes, openModal, sendData} = this.props;
-    const {formatMessage} = this.props.intl;
-    const {checked} = this.state;
+    const { classes, openModal, sendData } = this.props;
+    const { formatMessage } = this.props.intl;
+    const { checked } = this.state;
 
     return (
       <div>
         <Paper className={classes.root} elevation={0}>
-          <ProgressBar stepsFinished={3}/>
+          <ProgressBar stepsFinished={3} />
           <Typography variant="title" gutterBottom>
-            <FormattedMessage
-              id="Finish.header"
-              defaultMessage="Finish"
-            />
+            <FormattedMessage id="Finish.header" defaultMessage="Finish" />
           </Typography>
           <Typography variant="body1" gutterBottom>
             <FormattedMessage
@@ -71,8 +64,8 @@ class Finish extends Component {
           </Typography>
           <div className={classes.buttonContainer}>
             <Button
-              color='default'
-              variant='raised'
+              color="default"
+              variant="raised"
               className={classes.button}
               onClick={() => openModal('privacyagreement')}
             >
@@ -102,21 +95,18 @@ class Finish extends Component {
           </Typography>
           <div className={classes.buttonContainer}>
             <Button
-              color='primary'
-              variant='raised'
+              color="primary"
+              variant="raised"
               className={classes.button}
               onClick={() => sendData()}
               disabled={!checked}
             >
-              <FormattedMessage
-                id="Finish.sendbutton"
-                defaultMessage="Send"
-              />
+              <FormattedMessage id="Finish.sendbutton" defaultMessage="Send" />
             </Button>
           </div>
         </Paper>
       </div>
-    )
+    );
   }
 }
 

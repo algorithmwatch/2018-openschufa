@@ -1,18 +1,14 @@
-import {
-  OPEN_MODAL,
-  CLOSE_MODAL } from "./actionTypes";
-
+import { OPEN_MODAL, CLOSE_MODAL } from './actionTypes';
 
 export function openModal(id) {
   return {
     type: OPEN_MODAL,
-    id
-  }
+    id,
+  };
 }
 
 export function closeModal() {
   return {
-    type: CLOSE_MODAL
-  }
+    type: CLOSE_MODAL,
+  };
 }
-

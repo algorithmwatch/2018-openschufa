@@ -10,43 +10,41 @@ import {
   SET_EDIT_MODE,
   ADD_POLYLINE,
   UNDO_POLYLINE,
-  SET_ACTIVE_STEP
+  SET_ACTIVE_STEP,
 } from '../actions/actionTypes';
 import { STEP_ROTATE } from '../constants';
 
 export default function stuff(state = initialState.photo, action) {
-
   switch (action.type) {
-
     case SET_PROCESSING:
       return {
         ...state,
-        processing: action.payload
+        processing: action.payload,
       };
 
     case SET_IMAGEDATA:
       const { imageData } = action.payload;
       return {
         ...state,
-        imageData
+        imageData,
       };
 
     case SET_SIZE:
       const { width, height } = action.payload;
-      const landscape = (width > height);
+      const landscape = width > height;
       const rotation = landscape ? 90 : 0;
       return {
         ...state,
         size: { width, height },
         rotation,
-        processing: false
+        processing: false,
       };
 
     case ROTATE_PHOTO:
       const { degrees } = action.payload;
       return {
         ...state,
-        rotation: degrees
+        rotation: degrees,
       };
 
     case RESET_PHOTO:
@@ -56,20 +54,20 @@ export default function stuff(state = initialState.photo, action) {
       const { mode } = action.payload;
       return {
         ...state,
-        editMode: mode
+        editMode: mode,
       };
 
     case ADD_POLYLINE:
       const { polyline } = action.payload;
       return {
         ...state,
-        polylines: [...state.polylines, polyline]
+        polylines: [...state.polylines, polyline],
       };
 
     case UNDO_POLYLINE:
       return {
         ...state,
-        polylines: state.polylines.slice(0, -1)
+        polylines: state.polylines.slice(0, -1),
       };
 
     case SET_ACTIVE_STEP:
@@ -77,7 +75,7 @@ export default function stuff(state = initialState.photo, action) {
       if (activeStep === STEP_ROTATE) {
         return {
           ...state,
-          polylines: []
+          polylines: [],
         };
       } else {
         return state;

@@ -1,86 +1,86 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { withStyles } from "material-ui/styles";
-import Button from "material-ui/Button";
-import Typography from "material-ui/Typography";
-import { FormattedMessage } from "react-intl";
-import logo from "../../images/logo.png";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { withStyles } from 'material-ui/styles';
+import Button from 'material-ui/Button';
+import Typography from 'material-ui/Typography';
+import { FormattedMessage } from 'react-intl';
+import logo from '../../images/logo.png';
 /*
 import {MenuItem} from 'material-ui/Menu';
 import MenuList from "material-ui/Menu/MenuList";
 */
-import FileUpload from "@material-ui/icons/FileUpload";
-import classNames from "classnames";
-import { Link } from "react-router-dom";
-import styles from "./LandingPage.css";
-import { STEP_USAGE } from "../../constants";
+import FileUpload from '@material-ui/icons/FileUpload';
+import classNames from 'classnames';
+import { Link } from 'react-router-dom';
+import styles from './LandingPage.css';
+import { STEP_USAGE } from '../../constants';
 
 const inlineStyles = theme => ({
   header: {
-    height: "4em",
+    height: '4em',
     backgroundImage: `url(${logo})`,
-    backgroundPosition: "center center",
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "contain",
-    marginBottom: "1rem",
-    width: "100%"
+    backgroundPosition: 'center center',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'contain',
+    marginBottom: '1rem',
+    width: '100%',
   },
   item: {
-    width: "100%",
-    textAlign: "center"
+    width: '100%',
+    textAlign: 'center',
   },
   secondToLastItem: {
-    flex: "1 1 auto"
+    flex: '1 1 auto',
   },
   lastItem: {
-    display: "flex",
-    width: "100%",
-    justifyContent: "space-between"
+    display: 'flex',
+    width: '100%',
+    justifyContent: 'space-between',
   },
   languageContainer: {
-    display: "flex",
-    justifyContent: "flex-end"
+    display: 'flex',
+    justifyContent: 'flex-end',
   },
   languageMenuList: {
-    width: "3rem",
-    paddingTop: 0
+    width: '3rem',
+    paddingTop: 0,
   },
   languageMenuItem: {
-    textAlign: "end",
+    textAlign: 'end',
     paddingTop: 0,
     paddingBottom: 6,
     paddingRight: 0,
-    display: "block",
-    fontSize: "1rem",
-    lineHeight: "1rem",
-    height: "UNSET"
+    display: 'block',
+    fontSize: '1rem',
+    lineHeight: '1rem',
+    height: 'UNSET',
   },
   button: {
-    width: "10rem"
+    width: '10rem',
   },
   leftIcon: {
-    marginRight: theme.spacing.unit
+    marginRight: theme.spacing.unit,
   },
   iconSmall: {
-    fontSize: 20
+    fontSize: 20,
   },
   leftButton: {
-    paddingLeft: 0
+    paddingLeft: 0,
   },
   rightButton: {
-    paddingRight: 0
+    paddingRight: 0,
   },
   callToAction: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    height: "5rem",
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '5rem',
     backgroundColor: theme.palette.primary.main,
-    marginBottom: 10
+    marginBottom: 10,
   },
   callToActionTitle: {
-    fontSize: "1.2rem"
-  }
+    fontSize: '1.2rem',
+  },
 });
 
 /*
@@ -93,7 +93,7 @@ const languages = [
 class Index extends Component {
   static propTypes = {
     classes: PropTypes.object.isRequired,
-    router: PropTypes.object
+    router: PropTypes.object,
   };
 
   componentDidMount() {
@@ -145,13 +145,13 @@ class Index extends Component {
               </MenuList>
           </div>*/}
         </div>
-        <div className={classes.callToAction} style={{ marginBottom: "2rem" }}>
+        <div className={classes.callToAction} style={{ marginBottom: '2rem' }}>
           <Typography
             className={classes.callToActionTitle}
             variant="title"
             noWrap={true}
           >
-            <span style={{ color: "white" }}>
+            <span style={{ color: 'white' }}>
               <FormattedMessage
                 id="LandingPage.calltoaction"
                 defaultMessage="Help us to crack the SCHUFA!"
@@ -159,7 +159,7 @@ class Index extends Component {
             </span>
           </Typography>
         </div>
-        <div className={classes.item} style={{ marginBottom: "2rem" }}>
+        <div className={classes.item} style={{ marginBottom: '2rem' }}>
           <Typography variant="subheading" gutterBottom>
             <FormattedMessage
               id="LandingPage.welcome"
@@ -175,7 +175,7 @@ class Index extends Component {
             />
           </Typography>
         </div>
-        <div className={classes.item} style={{ marginBottom: "2rem" }}>
+        <div className={classes.item} style={{ marginBottom: '2rem' }}>
           <Link to="/steps">
             <Button
               color="primary"
@@ -185,9 +185,9 @@ class Index extends Component {
             >
               <span
                 style={{
-                  color: "white",
-                  textDecoration: "none",
-                  textTransform: "none"
+                  color: 'white',
+                  textDecoration: 'none',
+                  textTransform: 'none',
                 }}
               >
                 <FileUpload
@@ -209,7 +209,7 @@ class Index extends Component {
             />
           </Typography>
         </div>
-        <div className={classes.item} style={{ marginBottom: "2rem" }}>
+        <div className={classes.item} style={{ marginBottom: '2rem' }}>
           <Button
             color="default"
             variant="raised"
@@ -217,7 +217,7 @@ class Index extends Component {
             href="https://selbstauskunft.net/schufa/"
             target="_blank"
           >
-            <span style={{ textTransform: "none" }}>
+            <span style={{ textTransform: 'none' }}>
               <FormattedMessage
                 id="LandingPage.requestinfo.buttontext"
                 defaultMessage="Apply"
@@ -235,15 +235,15 @@ class Index extends Component {
         </div>
         <div
           className={classNames(classes.item)}
-          style={{ marginBottom: "2rem" }}
+          style={{ marginBottom: '2rem' }}
         >
           <Button
             color="default"
             variant="raised"
             className={classes.button}
-            onClick={() => this.handleModalOpen("openschufa")}
+            onClick={() => this.handleModalOpen('openschufa')}
           >
-            <span style={{ textTransform: "none" }}>
+            <span style={{ textTransform: 'none' }}>
               <FormattedMessage
                 id="LandingPage.openschufa.buttontext"
                 defaultMessage="Get information"
@@ -264,9 +264,9 @@ class Index extends Component {
             color="default"
             variant="raised"
             className={classes.button}
-            onClick={() => this.handleModalOpen("faq")}
+            onClick={() => this.handleModalOpen('faq')}
           >
-            <span style={{ textTransform: "none" }}>
+            <span style={{ textTransform: 'none' }}>
               <FormattedMessage
                 id="LandingPage.faq.buttontext"
                 defaultMessage="FAQ"
@@ -278,7 +278,7 @@ class Index extends Component {
           <Button
             className={classes.leftButton}
             size="small"
-            onClick={() => this.handleModalOpen("imprint")}
+            onClick={() => this.handleModalOpen('imprint')}
           >
             <FormattedMessage
               id="LandingPage.impressum"
@@ -288,7 +288,7 @@ class Index extends Component {
           <Button
             className={classes.rightButton}
             size="small"
-            onClick={() => this.handleModalOpen("dataprivacy")}
+            onClick={() => this.handleModalOpen('dataprivacy')}
           >
             <FormattedMessage
               id="LandingPage.dataprivacy"

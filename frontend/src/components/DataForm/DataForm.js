@@ -1,215 +1,210 @@
-import React, {Component} from "react";
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {injectIntl, defineMessages, FormattedMessage} from 'react-intl';
+import { injectIntl, defineMessages, FormattedMessage } from 'react-intl';
 import TextField from 'material-ui/TextField';
-import {withStyles} from 'material-ui/styles';
+import { withStyles } from 'material-ui/styles';
 import Paper from 'material-ui/Paper';
 import Typography from 'material-ui/Typography';
 import DateFnsUtils from 'material-ui-pickers/utils/date-fns-utils';
 import format from 'date-fns/format';
 import MuiPickersUtilsProvider from 'material-ui-pickers/utils/MuiPickersUtilsProvider';
 import DatePicker from 'material-ui-pickers/DatePicker';
-import {
-  FormLabel,
-  FormControl,
-  FormGroup,
-} from 'material-ui/Form';
-import {MenuItem} from "material-ui/Menu/index";
+import { FormLabel, FormControl, FormGroup } from 'material-ui/Form';
+import { MenuItem } from 'material-ui/Menu/index';
 
 import enLocale from 'date-fns/locale/en-US';
 import deLocale from 'date-fns/locale/de';
-import Snackbar from "material-ui/Snackbar";
-import IconButton from "material-ui/IconButton";
+import Snackbar from 'material-ui/Snackbar';
+import IconButton from 'material-ui/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import ProgressBar from '../ProgressBar';
 
-
 const localeMap = {
   en: enLocale,
-  de: deLocale
+  de: deLocale,
 };
 
 class LocalizedUtils extends DateFnsUtils {
   getDatePickerHeaderText(date) {
-    return format(date, 'D MMM YYYY', {locale: this.locale});
+    return format(date, 'D MMM YYYY', { locale: this.locale });
   }
 }
 
 const messages = defineMessages({
   plz: {
     id: 'DataForm.plz',
-    defaultMessage: 'Postal code'
+    defaultMessage: 'Postal code',
   },
   yearOfBirth: {
     id: 'DataForm.yearofbirth',
-    defaultMessage: 'Year of birth'
+    defaultMessage: 'Year of birth',
   },
   sex: {
     id: 'DataForm.sex',
-    defaultMessage: 'Sex'
+    defaultMessage: 'Sex',
   },
   male: {
     id: 'DataForm.male',
-    defaultMessage: 'Male'
+    defaultMessage: 'Male',
   },
   female: {
     id: 'DataForm.female',
-    defaultMessage: 'Female'
+    defaultMessage: 'Female',
   },
   nonBinary: {
     id: 'DataForm.nonbinary',
-    defaultMessage: 'Non-binary'
+    defaultMessage: 'Non-binary',
   },
   notSpecified: {
     id: 'DataForm.notspecified',
-    defaultMessage: 'Not specified'
+    defaultMessage: 'Not specified',
   },
   familyStatus: {
     id: 'DataForm.familystatus',
-    defaultMessage: 'Family status'
+    defaultMessage: 'Family status',
   },
   married: {
     id: 'DataForm.married',
-    defaultMessage: 'Married / Civil partners'
+    defaultMessage: 'Married / Civil partners',
   },
   divorced: {
     id: 'DataForm.divorced',
-    defaultMessage: 'Divorced'
+    defaultMessage: 'Divorced',
   },
   singleParent: {
     id: 'DataForm.singleparent',
-    defaultMessage: 'Single parent'
+    defaultMessage: 'Single parent',
   },
   single: {
     id: 'DataForm.single',
-    defaultMessage: 'Single'
+    defaultMessage: 'Single',
   },
   nationality: {
     id: 'DataForm.nationality',
-    defaultMessage: 'Nationality'
+    defaultMessage: 'Nationality',
   },
   yes: {
     id: 'DataForm.yes',
-    defaultMessage: 'Yes'
+    defaultMessage: 'Yes',
   },
   no: {
     id: 'DataForm.no',
-    defaultMessage: 'No'
+    defaultMessage: 'No',
   },
   migrationBackground: {
     id: 'DataForm.migrationbackground',
-    defaultMessage: 'Migration background'
+    defaultMessage: 'Migration background',
   },
   numberOfChildren: {
     id: 'DataForm.numberOfChildren',
-    defaultMessage: 'Number of children entitled to child allowance'
+    defaultMessage: 'Number of children entitled to child allowance',
   },
   freelance: {
     id: 'DataForm.freelance',
-    defaultMessage: 'Freelance'
+    defaultMessage: 'Freelance',
   },
   employed: {
     id: 'DataForm.employed',
-    defaultMessage: 'Employed'
+    defaultMessage: 'Employed',
   },
   official: {
     id: 'DataForm.official',
-    defaultMessage: 'Official'
+    defaultMessage: 'Official',
   },
   seekingWork: {
     id: 'DataForm.seekingwork',
-    defaultMessage: 'Seeking work'
+    defaultMessage: 'Seeking work',
   },
   retired: {
     id: 'DataForm.retired',
-    defaultMessage: 'Retired'
+    defaultMessage: 'Retired',
   },
   student: {
     id: 'DataForm.student',
-    defaultMessage: 'Student'
+    defaultMessage: 'Student',
   },
   employment: {
     id: 'DataForm.employment',
-    defaultMessage: 'Employment'
+    defaultMessage: 'Employment',
   },
   monthlyIncome: {
     id: 'DataForm.monthlyincome',
-    defaultMessage: 'Monthly income (pre-tax)'
+    defaultMessage: 'Monthly income (pre-tax)',
   },
   moreThan5000: {
     id: 'DataForm.morethan5000',
-    defaultMessage: 'More than 5000 €'
+    defaultMessage: 'More than 5000 €',
   },
   formHousing: {
     id: 'DataForm.housing',
-    defaultMessage: 'Housing'
+    defaultMessage: 'Housing',
   },
   sharedFlat: {
     id: 'DataForm.sharedflat',
-    defaultMessage: 'Shared flat'
+    defaultMessage: 'Shared flat',
   },
   flat: {
     id: 'DataForm.flat',
-    defaultMessage: 'Flat'
+    defaultMessage: 'Flat',
   },
   freeholdFlat: {
     id: 'DataForm.freeholdflat',
-    defaultMessage: 'Freehold flat'
+    defaultMessage: 'Freehold flat',
   },
   relocations: {
     id: 'DataForm.relocations',
-    defaultMessage: 'Number of relocations within last 10 years'
+    defaultMessage: 'Number of relocations within last 10 years',
   },
   more: {
     id: 'DataForm.more',
-    defaultMessage: 'More'
+    defaultMessage: 'More',
   },
   number: {
     id: 'DataForm.number',
-    defaultMessage: 'Number'
+    defaultMessage: 'Number',
   },
   loanAmount: {
     id: 'DataForm.loanamount',
-    defaultMessage: 'Loan amount'
+    defaultMessage: 'Loan amount',
   },
   numberOfMobileContracts: {
     id: 'DataForm.numberofmobilecontracts',
-    defaultMessage: 'Number of mobile contracts'
+    defaultMessage: 'Number of mobile contracts',
   },
   numberOfGiroAccounts: {
     id: 'DataForm.numberofgiroaccounts',
-    defaultMessage: 'Number of giro accounts'
+    defaultMessage: 'Number of giro accounts',
   },
   numberOfCreditCards: {
     id: 'DataForm.numberofcreditcards',
-    defaultMessage: 'Number of credit cards'
+    defaultMessage: 'Number of credit cards',
   },
   mailOrder: {
     id: 'DataForm.mailorder',
-    defaultMessage: 'Do you have mail order accounts like Amazon or Zalando?'
+    defaultMessage: 'Do you have mail order accounts like Amazon or Zalando?',
   },
   admonition: {
     id: 'DataForm.admonitions',
-    defaultMessage: 'Admonitions'
+    defaultMessage: 'Admonitions',
   },
   cashing: {
     id: 'DataForm.cashing',
-    defaultMessage: 'Pending collection orders'
+    defaultMessage: 'Pending collection orders',
   },
   executionProceedings: {
     id: 'DataForm.executionproceedings',
-    defaultMessage: 'Execution proceedings'
+    defaultMessage: 'Execution proceedings',
   },
   insolvencyProceedings: {
     id: 'DataForm.insolvencyproceedings',
-    defaultMessage: 'Insolvency proceedings'
+    defaultMessage: 'Insolvency proceedings',
   },
   formDate: {
     id: 'DataForm.date',
-    defaultMessage: 'Date of SCHUFA-information'
-  }
+    defaultMessage: 'Date of SCHUFA-information',
+  },
 });
 
 const inlineStyles = theme => ({
@@ -224,7 +219,7 @@ const inlineStyles = theme => ({
     flexWrap: 'nowrap',
     marginTop: 20,
     width: '100%',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   textField: {
     marginLeft: theme.spacing.unit,
@@ -234,28 +229,27 @@ const inlineStyles = theme => ({
   divContainer: {
     marginLeft: 8,
     marginTop: 16,
-    width: 270
+    width: 270,
   },
   checkboxLabel: {
-    fontSize: '0.75rem'
+    fontSize: '0.75rem',
   },
   subHeading: {
-    marginTop: 20
-  }
+    marginTop: 20,
+  },
 });
 
 class DataForm extends Component {
-
   static propTypes = {
     classes: PropTypes.object,
     theme: PropTypes.object,
     intl: PropTypes.object,
-    language: PropTypes.string
+    language: PropTypes.string,
   };
 
   state = {
     open: false,
-    message: ""
+    message: '',
   };
 
   handleChange = name => event => {
@@ -263,11 +257,12 @@ class DataForm extends Component {
     if (name === 'plz' && value >= 99999) {
       this.setState({
         open: true,
-        message:
+        message: (
           <FormattedMessage
             id="DataForm.validationerror.plz"
             defaultMessage="Please enter at most 5 numbers!"
           />
+        ),
       });
       return;
     }
@@ -275,22 +270,24 @@ class DataForm extends Component {
       if (value.length > 30) {
         this.setState({
           open: true,
-          message:
+          message: (
             <FormattedMessage
               id="DataForm.validationerror.nationalitylength"
               defaultMessage="Please enter at most 30 characters!"
             />
+          ),
         });
         return;
       }
       if (value.length && !/^[a-z -]+$/i.test(value)) {
         this.setState({
           open: true,
-          message:
+          message: (
             <FormattedMessage
               id="DataForm.validationerror.nationality"
               defaultMessage="Please enter only letters or hyphens!"
             />
+          ),
         });
         return;
       }
@@ -298,23 +295,24 @@ class DataForm extends Component {
     if (name === 'numberOfChildren' && (value >= 20 || value < 0)) {
       this.setState({
         open: true,
-        message:
+        message: (
           <FormattedMessage
             id="DataForm.validationerror.numberOfChildren"
             defaultMessage="Please enter a number between 0 and 20!"
           />
+        ),
       });
       return;
     }
-    this.props.handleChange(name, value)
+    this.props.handleChange(name, value);
   };
 
   handleCheckboxChange = name => event => {
-    this.props.handleChange(name, event.target.checked)
+    this.props.handleChange(name, event.target.checked);
   };
 
-  handleDateChange = (date) => {
-    this.props.handleChange('schufaDate', date)
+  handleDateChange = date => {
+    this.props.handleChange('schufaDate', date);
   };
 
   handleClose = (event, reason) => {
@@ -326,205 +324,220 @@ class DataForm extends Component {
   };
 
   render() {
-
-    const {classes, language} = this.props;
-    const {formatMessage} = this.props.intl;
+    const { classes, language } = this.props;
+    const { formatMessage } = this.props.intl;
     const locale = localeMap[language];
     const {
-      plz, yearOfBirth, sex, familyStatus, nationality,
-      migrationBackground, numberOfChildren, employment,
-      monthlyIncome, housing, relocation, numberOfActiveLoans,
-      activeLoanAmount, numberOfPaidOffLoans, paidOffLoanAmount,
-      numberOfMobileContracts, numberOfGiroAccounts, numberOfCreditCards,
-      mailOrder, admonition, cashing, executionProceedings,
-      insolvencyProceedings, schufaDate
+      plz,
+      yearOfBirth,
+      sex,
+      familyStatus,
+      nationality,
+      migrationBackground,
+      numberOfChildren,
+      employment,
+      monthlyIncome,
+      housing,
+      relocation,
+      numberOfActiveLoans,
+      activeLoanAmount,
+      numberOfPaidOffLoans,
+      paidOffLoanAmount,
+      numberOfMobileContracts,
+      numberOfGiroAccounts,
+      numberOfCreditCards,
+      mailOrder,
+      admonition,
+      cashing,
+      executionProceedings,
+      insolvencyProceedings,
+      schufaDate,
     } = this.props.surveyData;
 
     const sexes = [
       {
         value: 'male',
-        label: formatMessage(messages.male)
+        label: formatMessage(messages.male),
       },
       {
         value: 'female',
-        label: formatMessage(messages.female)
+        label: formatMessage(messages.female),
       },
       {
         value: 'non-binary',
-        label: formatMessage(messages.nonBinary)
+        label: formatMessage(messages.nonBinary),
       },
       {
         value: 'not-specified',
-        label: formatMessage(messages.notSpecified)
-      }
+        label: formatMessage(messages.notSpecified),
+      },
     ];
 
     const familyStatuses = [
       {
         value: 'married',
-        label: formatMessage(messages.married)
+        label: formatMessage(messages.married),
       },
       {
         value: 'divorced',
-        label: formatMessage(messages.divorced)
+        label: formatMessage(messages.divorced),
       },
       {
         value: 'single',
-        label: formatMessage(messages.single)
+        label: formatMessage(messages.single),
       },
       {
         value: 'single-parent',
-        label: formatMessage(messages.singleParent)
+        label: formatMessage(messages.singleParent),
       },
       {
         value: 'not-specified',
-        label: formatMessage(messages.notSpecified)
-      }
+        label: formatMessage(messages.notSpecified),
+      },
     ];
 
     const yesno = [
       {
         value: 1,
-        label: formatMessage(messages.yes)
+        label: formatMessage(messages.yes),
       },
       {
         value: 0,
-        label: formatMessage(messages.no)
-      }
+        label: formatMessage(messages.no),
+      },
     ];
 
     const employments = [
       {
         value: 'freelance',
-        label: formatMessage(messages.freelance)
+        label: formatMessage(messages.freelance),
       },
       {
         value: 'employed',
-        label: formatMessage(messages.employed)
+        label: formatMessage(messages.employed),
       },
       {
         value: 'official',
-        label: formatMessage(messages.official)
+        label: formatMessage(messages.official),
       },
       {
         value: 'seeking-work',
-        label: formatMessage(messages.seekingWork)
+        label: formatMessage(messages.seekingWork),
       },
       {
         value: 'retired',
-        label: formatMessage(messages.retired)
+        label: formatMessage(messages.retired),
       },
       {
         value: 'student',
-        label: formatMessage(messages.student)
+        label: formatMessage(messages.student),
       },
       {
         value: 'not-specified',
-        label: formatMessage(messages.notSpecified)
-      }
+        label: formatMessage(messages.notSpecified),
+      },
     ];
 
     const amounts = [
       {
         value: 500,
-        label: '500-1000 €'
+        label: '500-1000 €',
       },
       {
         value: 1000,
-        label: '1000-2000 €'
+        label: '1000-2000 €',
       },
       {
         value: 2000,
-        label: '2000-3000 €'
+        label: '2000-3000 €',
       },
       {
         value: 3000,
-        label: '3000-4000 €'
+        label: '3000-4000 €',
       },
       {
         value: 4000,
-        label: '4000-5000 €'
+        label: '4000-5000 €',
       },
       {
         value: 5000,
-        label: formatMessage(messages.moreThan5000)
+        label: formatMessage(messages.moreThan5000),
       },
       {
         value: 0,
-        label: formatMessage(messages.notSpecified)
-      }
+        label: formatMessage(messages.notSpecified),
+      },
     ];
 
     const housings = [
       {
         value: 'shared-flat',
-        label: formatMessage(messages.sharedFlat)
+        label: formatMessage(messages.sharedFlat),
       },
       {
         value: 'flat',
-        label: formatMessage(messages.flat)
+        label: formatMessage(messages.flat),
       },
       {
         value: 'freehold-flat',
-        label: formatMessage(messages.freeholdFlat)
+        label: formatMessage(messages.freeholdFlat),
       },
       {
         value: 'not-specified',
-        label: formatMessage(messages.notSpecified)
-      }
+        label: formatMessage(messages.notSpecified),
+      },
     ];
 
     const numbers = [
       {
         value: 'not-specified',
-        label: formatMessage(messages.notSpecified)
+        label: formatMessage(messages.notSpecified),
       },
       {
         value: 0,
-        label: '0'
+        label: '0',
       },
       {
         value: 1,
-        label: 1
+        label: 1,
       },
       {
         value: 2,
-        label: 2
+        label: 2,
       },
       {
         value: 3,
-        label: 3
+        label: 3,
       },
       {
         value: 4,
-        label: 4
+        label: 4,
       },
       {
         value: 5,
-        label: 5
+        label: 5,
       },
       {
         value: 6,
-        label: formatMessage(messages.more)
+        label: formatMessage(messages.more),
       },
     ];
 
     const years = [];
-    for(let i = 1900; i <= 2018; i++) years.push({
-      value: i,
-      label: i
+    for (let i = 1900; i <= 2018; i++)
+      years.push({
+        value: i,
+        label: i,
+      });
+    years.push({
+      value: 'not-specified',
+      label: formatMessage(messages.notSpecified),
     });
-    years.push(
-      {
-        value: 'not-specified',
-        label: formatMessage(messages.notSpecified)
-      }
-    );
 
     return (
       <div>
         <Paper className={classes.root} elevation={0}>
-          <ProgressBar stepsFinished={2}/>
+          <ProgressBar stepsFinished={2} />
           <Typography variant="title" gutterBottom>
             <FormattedMessage
               id="DataForm.header"
@@ -543,16 +556,20 @@ class DataForm extends Component {
                 <DatePicker
                   className={classes.textField}
                   label={formatMessage(messages.formDate)}
-                  format='D MMM YYYY'
+                  format="D MMM YYYY"
                   value={schufaDate}
                   onChange={this.handleDateChange}
                   animateYearScrolling={false}
-                  leftArrowIcon={<KeyboardArrowLeft/>}
-                  rightArrowIcon={<KeyboardArrowRight/>}
+                  leftArrowIcon={<KeyboardArrowLeft />}
+                  rightArrowIcon={<KeyboardArrowRight />}
                 />
               </div>
             </MuiPickersUtilsProvider>
-            <Typography variant="subheading" className={classes.subHeading} gutterBottom>
+            <Typography
+              variant="subheading"
+              className={classes.subHeading}
+              gutterBottom
+            >
               <FormattedMessage
                 id="DataForm.sociodemography"
                 defaultMessage="Socio-demography"
@@ -751,7 +768,11 @@ class DataForm extends Component {
                 </MenuItem>
               ))}
             </TextField>
-            <Typography variant="subheading" className={classes.subHeading} gutterBottom>
+            <Typography
+              variant="subheading"
+              className={classes.subHeading}
+              gutterBottom
+            >
               <FormattedMessage
                 id="DataForm.financialsituation"
                 defaultMessage="Financial situation"
@@ -760,8 +781,8 @@ class DataForm extends Component {
             <FormControl component="fieldset" className={classes.divContainer}>
               <FormLabel component="legend" className={classes.checkboxLabel}>
                 <FormattedMessage
-                  id='DataForm.activeloans'
-                  defaultMessage='Active Loans / Mortgages / Lease contracts / instalment payments'
+                  id="DataForm.activeloans"
+                  defaultMessage="Active Loans / Mortgages / Lease contracts / instalment payments"
                 />
               </FormLabel>
               <FormGroup>
@@ -810,8 +831,8 @@ class DataForm extends Component {
             <FormControl component="fieldset" className={classes.divContainer}>
               <FormLabel component="legend" className={classes.checkboxLabel}>
                 <FormattedMessage
-                  id='DataForm.paidoffloans'
-                  defaultMessage='Paid off Loans / Mortgages / Lease contracts / instalment payments'
+                  id="DataForm.paidoffloans"
+                  defaultMessage="Paid off Loans / Mortgages / Lease contracts / instalment payments"
                 />
               </FormLabel>
               <FormGroup>
@@ -855,7 +876,6 @@ class DataForm extends Component {
                     </MenuItem>
                   ))}
                 </TextField>
-
               </FormGroup>
             </FormControl>
             <TextField
@@ -918,7 +938,11 @@ class DataForm extends Component {
                 </MenuItem>
               ))}
             </TextField>
-            <Typography variant="subheading" className={classes.subHeading} gutterBottom>
+            <Typography
+              variant="subheading"
+              className={classes.subHeading}
+              gutterBottom
+            >
               <FormattedMessage
                 id="DataForm.ecommerce"
                 defaultMessage="E-Commerce"
@@ -944,7 +968,11 @@ class DataForm extends Component {
                 </MenuItem>
               ))}
             </TextField>
-            <Typography variant="subheading" className={classes.subHeading} gutterBottom>
+            <Typography
+              variant="subheading"
+              className={classes.subHeading}
+              gutterBottom
+            >
               <FormattedMessage
                 id="DataForm.negativeindicators"
                 defaultMessage="Negative Indicators"
@@ -990,7 +1018,11 @@ class DataForm extends Component {
                 </MenuItem>
               ))}
             </TextField>
-            <Typography variant="subheading" className={classes.subHeading} gutterBottom>
+            <Typography
+              variant="subheading"
+              className={classes.subHeading}
+              gutterBottom
+            >
               <FormattedMessage
                 id="DataForm.hardfacts"
                 defaultMessage="Hard facts"
@@ -1059,10 +1091,11 @@ class DataForm extends Component {
             </IconButton>,
           ]}
         />
-
       </div>
-    )
+    );
   }
 }
 
-export default withStyles(inlineStyles, {withTheme: true})(injectIntl(DataForm));
+export default withStyles(inlineStyles, { withTheme: true })(
+  injectIntl(DataForm)
+);

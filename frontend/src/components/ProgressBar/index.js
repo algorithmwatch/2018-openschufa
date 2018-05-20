@@ -3,8 +3,8 @@ import CheckCircleOutline from "@material-ui/icons/CheckCircle";
 import Typography from "material-ui/Typography";
 import { FormattedMessage, defineMessages } from "react-intl";
 
-const completeStyle = {fill: "green", width: "2rem", height: "2rem"};
-const greyedOutStyle = {fill: "grey", width: "2rem", height: "2rem"};
+const completeStyle = { fill: "#01d538", width: "2rem", height: "2rem" };
+const greyedOutStyle = { fill: "grey", width: "2rem", height: "2rem" };
 
 const lineStyle = {
   height: ".2rem",

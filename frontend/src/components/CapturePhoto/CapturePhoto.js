@@ -12,7 +12,6 @@ const styles = theme => ({
   root: theme.mixins.gutters({
     paddingTop: 16,
     paddingBottom: 16,
-    backgroundColor: theme.palette.background.default,
   }),
   image: {
     marginTop: 10,
@@ -39,16 +38,69 @@ class CapturePhoto extends Component {
   render() {
     const { classes } = this.props;
     return (
-      <div>
+      <div style={{ marginTop: 6 }}>
         <Paper className={classes.root} elevation={0}>
           <ProgressBar stepsFinished={1} />
-          <Typography variant="body1" gutterBottom>
+          <Typography variant="title" gutterBottom>
             <FormattedMessage
-              id="Capture.p1"
-              defaultMessage="Please only send those SCHUFA pages that do not show the SCHUFA-Logo ..."
+              id="Capture.title"
+              defaultMessage="Consider the following"
             />
           </Typography>
-          <img src={photo} alt="" className={classes.image} />
+          <Typography variant="body1" gutterBottom>
+            <div style={{ fontSize: 25, fontWeight: 'fat', marginTop: '2rem' }}>
+              1
+            </div>
+            <div
+              style={{
+                position: 'relative',
+                left: 30,
+                bottom: 18,
+                paddingRight: 30,
+              }}
+            >
+              <FormattedMessage
+                id="Capture.one"
+                defaultMessage="Please only send those SCHUFA pages that do not show the SCHUFA-Logo ..."
+              />
+            </div>
+          </Typography>
+          <Typography variant="body1" gutterBottom>
+            <div style={{ fontSize: 25, fontWeight: 'fat', marginTop: '2rem' }}>
+              2
+            </div>
+            <div
+              style={{
+                position: 'relative',
+                left: 30,
+                bottom: 18,
+                paddingRight: 30,
+              }}
+            >
+              <FormattedMessage
+                id="Capture.two"
+                defaultMessage="Please only send those SCHUFA pages that do not show the SCHUFA-Logo ..."
+              />
+            </div>
+          </Typography>
+          <Typography variant="body1" gutterBottom>
+            <div style={{ fontSize: 25, fontWeight: 'fat', marginTop: '2rem' }}>
+              3
+            </div>
+            <div
+              style={{
+                position: 'relative',
+                left: 30,
+                bottom: 18,
+                paddingRight: 30,
+              }}
+            >
+              <FormattedMessage
+                id="Capture.three"
+                defaultMessage="Please only send those SCHUFA pages that do not show the SCHUFA-Logo ..."
+              />
+            </div>
+          </Typography>
           <div className={classes.buttonContainer}>
             <Button
               color="primary"
@@ -56,10 +108,18 @@ class CapturePhoto extends Component {
               component="label"
               className={classes.button}
             >
-              <FormattedMessage
-                id="Capture.takephotobutton"
-                defaultMessage="Press to take photo"
-              />
+              <span
+                style={{
+                  color: 'white',
+                  padding: '.5rem',
+                  textTransform: 'none',
+                }}
+              >
+                <FormattedMessage
+                  id="Capture.takephotobutton"
+                  defaultMessage="Press to take photo"
+                />
+              </span>
               <input
                 type="file"
                 accept="image/*,application/pdf"

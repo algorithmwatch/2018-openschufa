@@ -216,7 +216,6 @@ const inlineStyles = theme => ({
   root: theme.mixins.gutters({
     paddingTop: 16,
     paddingBottom: 16,
-    marginTop: theme.spacing.unit * 3,
     backgroundColor: theme.palette.background.default,
   }),
   formContainer: {

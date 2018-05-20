@@ -34,17 +34,11 @@ const steps = [
 ];
 
 const inlineStyles = theme => ({
-  header: {
-    flex: '0 0 auto'
-  },
   footer: {
     display: 'flex',
-    flex: '0 0 auto',
     backgroundColor: theme.palette.primary.main,
-    width: '100%',
     justifyContent: 'space-between',
     minHeight: 50,
-    alignItems: 'flex-start'
   },
   content: {
     flex: '1 1 auto',
@@ -190,15 +184,19 @@ class StepperPage extends Component {
     const backButton = [STEP_USAGE].includes(activeStep) ?
       <div/> :
       <Button size="small" onClick={this.handleBack}>
-        {theme.direction === 'rtl' ? <KeyboardArrowRight/> : <KeyboardArrowLeft/>}
-        {formatMessage(stepObj.prevBtn)}
+        {theme.direction === 'rtl' ? <KeyboardArrowRight style={{"fill": "white"}} /> : <KeyboardArrowLeft style={{"fill": "white"}} />}
+        <span style={{color: 'white', fontSize: "16px", textTransform: 'none'}}>{formatMessage(stepObj.prevBtn)}</span>
       </Button>;
     const nextButton = [STEP_CAPTURE, STEP_OVERVIEW, STEP_FINISHED].includes(activeStep) ?
       <div/> :
       <Button size="small" onClick={this.handleNext}>
-        {formatMessage(stepObj.nextBtn)}
-        {theme.direction === 'rtl' ? <KeyboardArrowLeft/> : <KeyboardArrowRight/>}
+        <span style={{color: 'white', fontSize: "16px", textTransform: 'none'}}>{formatMessage(stepObj.nextBtn)}</span>
+        {STEP_USAGE !== activeStep && (theme.direction === 'rtl' ? <KeyboardArrowLeft style={{"fill": "white"}} /> : <KeyboardArrowRight style={{"fill": "white"}} />)}
       </Button>;
+
+    //  hacky
+    const footerStyle = { margin: document.body.clientWidth < 800 ? 16 : 24 };
+    if (STEP_USAGE === activeStep) footerStyle.justifyContent = 'center';
 
     return (
       <div className={styles.root}>
@@ -210,7 +208,7 @@ class StepperPage extends Component {
           {stepObj.component}
         </div>
         {![STEP_SAVED, STEP_FINISHED].includes(activeStep) &&
-        <div className={classes.footer}>
+        <div className={classes.footer} style={footerStyle}>
           {backButton}
           {nextButton}
         </div>

@@ -105,7 +105,7 @@
   "Progressbar.introduction": "Einführung",
   "Progressbar.send": "Abschicken",
   "Progressbar.upload": "Upload",
-  "StepperPage.capturebutton": "Foto oder PDF hinzufügen",
+  "StepperPage.capturebutton": "Nächster Schritt",
   "StepperPage.finishbutton": "Daten senden",
   "StepperPage.formbutton": "Fragebogen",
   "StepperPage.overviewbutton": "Abschliessen",
@@ -115,8 +115,9 @@
   "StepperPage.rotatebutton": "Rotieren",
   "StepperPage.saveimagebutton": "Bild speichern",
   "StepperPage.usagebutton": "Einführung",
-  "Usage.header": "Einführung",
+  "Usage.header": "Los geht's!",
+  "Usage.whatpagesweneed": "Welche Seiten wir benötigen",
   "Usage.linktoprivacyagreement": "hier",
-  "Usage.p1": "Auf den nächsten Seiten  wollen wir von Dir einige Fotos/Scans einsammeln und Dich bitten, eine Fragebogen auszufüllen. Du kannst {link} einen Blick in die Einwilligung zur Datenspeicherung werfen, der Du zustimmen musst.",
-  "Usage.p2": "Wenn Du jetzt per Smartphone Fotos von Deiner SCHUFA-Auskunft machst, achte bitte darauf, dass die Bilder scharf sind. Hast Du genug Helligkeit? Lege für die Fotos die Seiten am besten auf eine flache Unterlage und fotografiere senkrecht von oben, damit die Kanten der Seite möglichst gerade sind. "
+  "Usage.p1": "Damit wir die SCHUFA knacken können, brauchen wir von die Fotos oder Scans deiner SCHUFA-Daten. Anschließend bitten wir dich um einige Zusatzinfos von Dir.",
+  "Usage.p2": "Wir benötigen von Dir zwei oder ggf. mehr Seiten der SCHUFA-Auskunft, die eine Tabelle und weitere Infos enthalten. Seiten, die oben recht das SCHUFA-Logo zeigen, benötigen wir NICHT."
 }

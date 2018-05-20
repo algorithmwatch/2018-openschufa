@@ -11,7 +11,6 @@ const styles = theme => ({
   root: theme.mixins.gutters({
     paddingTop: 16,
     paddingBottom: 16,
-    backgroundColor: theme.palette.background.default,
   }),
   image: {
     marginTop: 10,
@@ -36,7 +35,7 @@ class Usage extends Component {
     const { classes } = this.props;
 
     return (
-      <div>
+      <div style={{marginTop: 6}}>
         <Paper className={classes.root} elevation={0}>
           <ProgressBar stepsFinished={0}/>
           <Typography variant="title" gutterBottom>
@@ -62,12 +61,21 @@ class Usage extends Component {
               }}
             />
           </Typography>
+          <br />
+          <br />
+          <Typography variant="title" gutterBottom>
+            <small><FormattedMessage
+              id="Usage.whatpagesweneed"
+              defaultMessage="Introduction"
+            /></small>
+          </Typography>
           <Typography variant="body1" gutterBottom>
             <FormattedMessage
               id="Usage.p2"
               defaultMessage="If you now take fotos of your SCHUFA information ..."
             />
           </Typography>
+          <br />
           <img src={photo} alt='' className={classes.image}/>
         </Paper>
       </div>

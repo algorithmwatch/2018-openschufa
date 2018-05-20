@@ -167,16 +167,8 @@ class Index extends Component {
             />
           </Typography>
         </div>
-        <div className={classes.item}>
-          <Typography variant="body1" gutterBottom>
-            <FormattedMessage
-              id="LandingPage.upload.description"
-              defaultMessage="You already have a SCHUFA-information that you wish to pass on to us?"
-            />
-          </Typography>
-        </div>
         <div className={classes.item} style={{ marginBottom: '2rem' }}>
-          <Link to="/steps">
+          <Link to="/steps" style={{ textDecoration: 'none' }}>
             <Button
               color="primary"
               variant="raised"
@@ -186,13 +178,9 @@ class Index extends Component {
               <span
                 style={{
                   color: 'white',
-                  textDecoration: 'none',
                   textTransform: 'none',
                 }}
               >
-                <FileUpload
-                  className={classNames(classes.leftIcon, classes.iconSmall)}
-                />
                 <FormattedMessage
                   id="LandingPage.upload.buttontext"
                   defaultMessage="Upload"
@@ -200,14 +188,6 @@ class Index extends Component {
               </span>
             </Button>
           </Link>
-        </div>
-        <div className={classes.item}>
-          <Typography variant="body1" gutterBottom>
-            <FormattedMessage
-              id="LandingPage.requestinfo.description"
-              defaultMessage="You still have to apply for your SCHUFA-information?"
-            />
-          </Typography>
         </div>
         <div className={classes.item} style={{ marginBottom: '2rem' }}>
           <Button
@@ -224,14 +204,6 @@ class Index extends Component {
               />
             </span>
           </Button>
-        </div>
-        <div className={classes.item}>
-          <Typography variant="body1" gutterBottom>
-            <FormattedMessage
-              id="LandingPage.openschufa.description"
-              defaultMessage="You want to know more about the project and those who participate?"
-            />
-          </Typography>
         </div>
         <div
           className={classNames(classes.item)}
@@ -251,15 +223,10 @@ class Index extends Component {
             </span>
           </Button>
         </div>
-        <div className={classes.item}>
-          <Typography variant="body1" gutterBottom>
-            <FormattedMessage
-              id="LandingPage.faq.description"
-              defaultMessage="Frequently asked questions"
-            />
-          </Typography>
-        </div>
-        <div className={classNames(classes.item, classes.secondToLastItem)}>
+        <div
+          className={classNames(classes.item, classes.secondToLastItem)}
+          style={{ marginBottom: '2rem' }}
+        >
           <Button
             color="default"
             variant="raised"

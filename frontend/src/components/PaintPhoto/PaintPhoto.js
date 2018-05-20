@@ -9,6 +9,7 @@ import UndoIcon from '@material-ui/icons/Undo';
 import brushSVG from './noun_721104.svg';
 import PaintCursor from './PaintCursor';
 import { MODE_ZOOM, MODE_PAINT } from '../../constants';
+import Typography from 'material-ui/Typography';
 
 const BRUSH_WIDTH = 40;
 
@@ -286,7 +287,10 @@ class PaintPhoto extends Component {
           {size.width} x {size.height}, {rotation}°
         </div>
 
-        <div ref="photoContainer" style={{ width, height }}>
+        <div
+          ref="photoContainer"
+          style={{ width, height, position: 'absolute' }}
+        >
           <img
             className={styles.photo}
             style={photoStyle}
@@ -298,6 +302,47 @@ class PaintPhoto extends Component {
             ref="canvas"
             {...{ width, height }}
           />
+          <div
+            style={{
+              position: 'absolute',
+              top: 100,
+              left: 0,
+              right: 0,
+              margin: '0 auto',
+              maxWidth: '80%',
+              zIndex: 1,
+              backgroundColor: 'white',
+              padding: '.5rem',
+              borderRadius: 5,
+              opacity: 0.95,
+            }}
+          >
+            <div>
+              <Typography variant="title" gutterBottom>
+                Was kann geschwärzt werden?
+              </Typography>
+              <div
+                onClick={e => e.currentTarget.parentNode.parentNode.remove()}
+                style={{
+                  position: 'absolute',
+                  right: 5,
+                  top: 5,
+                  paddingTop: 5,
+                  paddingRight: 5,
+                  paddingBottom: 30,
+                  paddingLeft: 30,
+                  cursor: 'pointer',
+                  fontSize: 30,
+                }}
+              >
+                ×
+              </div>
+              <Typography variant="body1" gutterBottom>
+                Schwärze z.B. sicherheitshalber die Strichcodes und Ziffern am
+                linken Seitenrand.
+              </Typography>
+            </div>
+          </div>
         </div>
 
         <div

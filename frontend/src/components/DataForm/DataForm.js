@@ -211,7 +211,6 @@ const inlineStyles = theme => ({
   root: theme.mixins.gutters({
     paddingTop: 16,
     paddingBottom: 16,
-    backgroundColor: theme.palette.background.default,
   }),
   formContainer: {
     display: 'flex',
@@ -535,7 +534,7 @@ class DataForm extends Component {
     });
 
     return (
-      <div>
+      <div style={{ marginTop: 6 }}>
         <Paper className={classes.root} elevation={0}>
           <ProgressBar stepsFinished={2} />
           <Typography variant="title" gutterBottom>

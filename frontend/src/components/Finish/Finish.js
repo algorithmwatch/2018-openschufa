@@ -12,7 +12,6 @@ const inlineStyles = theme => ({
   root: theme.mixins.gutters({
     paddingTop: 16,
     paddingBottom: 16,
-    backgroundColor: theme.palette.background.default,
   }),
   button: {
     margin: theme.spacing.unit,
@@ -50,7 +49,7 @@ class Finish extends Component {
     const { checked } = this.state;
 
     return (
-      <div>
+      <div style={{ marginTop: 6 }}>
         <Paper className={classes.root} elevation={0}>
           <ProgressBar stepsFinished={3} />
           <Typography variant="title" gutterBottom>
@@ -69,10 +68,12 @@ class Finish extends Component {
               className={classes.button}
               onClick={() => openModal('privacyagreement')}
             >
-              <FormattedMessage
-                id="Finish.privacyagreementbutton"
-                defaultMessage="Show privacy agreement"
-              />
+              <span style={{ textTransform: 'none' }}>
+                <FormattedMessage
+                  id="Finish.privacyagreementbutton"
+                  defaultMessage="Show privacy agreement"
+                />
+              </span>
             </Button>
           </div>
           <FormGroup row>
@@ -101,7 +102,12 @@ class Finish extends Component {
               onClick={() => sendData()}
               disabled={!checked}
             >
-              <FormattedMessage id="Finish.sendbutton" defaultMessage="Send" />
+              <span style={{ textTransform: 'none' }}>
+                <FormattedMessage
+                  id="Finish.sendbutton"
+                  defaultMessage="Send"
+                />
+              </span>
             </Button>
           </div>
         </Paper>

@@ -15,7 +15,6 @@ const styles = theme => ({
   root: theme.mixins.gutters({
     paddingTop: 16,
     paddingBottom: 16,
-    backgroundColor: theme.palette.background.default,
   }),
   button: {
     width: '10rem',
@@ -66,7 +65,7 @@ class AddedPhoto extends Component {
     if (numberOfPdfs) msg += `${numberOfPdfs} Pdf(s) `;
     msg += 'hinzugefügt';
     return (
-      <div>
+      <div style={{ marginTop: 6, textAlign: 'center' }}>
         <Paper className={classes.root} elevation={0}>
           <ProgressBar stepsFinished={numberOfPhotos > 1 ? 2 : 1} />
           {lastDocumentType && (
@@ -115,17 +114,22 @@ class AddedPhoto extends Component {
             />
             */}
           </Typography>
-          <div className={classes.centerContainer}>
+          <div
+            className={classes.centerContainer}
+            style={{ marginTop: '2rem' }}
+          >
             <Button
               color="primary"
               variant="raised"
               component="label"
               className={classes.button}
             >
-              <FormattedMessage
-                id="AddPhoto.addphoto"
-                defaultMessage="Another photo"
-              />
+              <span style={{ textTransform: 'none', color: 'white' }}>
+                <FormattedMessage
+                  id="AddPhoto.addphoto"
+                  defaultMessage="Another photo"
+                />
+              </span>
               <input
                 type="file"
                 accept="image/*,application/pdf"
@@ -135,17 +139,22 @@ class AddedPhoto extends Component {
             </Button>
           </div>
           <Typography variant="body1" gutterBottom />
-          <div className={classes.centerContainer}>
+          <div
+            className={classes.centerContainer}
+            style={{ marginTop: '2rem' }}
+          >
             <Button
               color="secondary"
               variant="raised"
               className={classes.button}
               onClick={() => setActiveStep(STEP_FORM)}
             >
-              <FormattedMessage
-                id="AddPhoto.survey"
-                defaultMessage="To survey"
-              />
+              <span style={{ textTransform: 'none' }}>
+                <FormattedMessage
+                  id="AddPhoto.survey"
+                  defaultMessage="To survey"
+                />
+              </span>
             </Button>
           </div>
         </Paper>

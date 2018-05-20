@@ -47,60 +47,66 @@ class CapturePhoto extends Component {
               defaultMessage="Consider the following"
             />
           </Typography>
-          <Typography variant="body1" gutterBottom>
-            <div style={{ fontSize: 25, fontWeight: 'fat', marginTop: '2rem' }}>
+          <div style={{ marginTop: '2rem' }}>
+            <Typography variant="title" gutterBottom>
               1
-            </div>
-            <div
-              style={{
-                position: 'relative',
-                left: 30,
-                bottom: 18,
-                paddingRight: 30,
-              }}
-            >
+            </Typography>
+          </div>
+          <div
+            style={{
+              position: 'relative',
+              left: 30,
+              bottom: 30,
+              paddingRight: 30,
+            }}
+          >
+            <Typography variant="body1" gutterBottom>
               <FormattedMessage
                 id="Capture.one"
                 defaultMessage="Please only send those SCHUFA pages that do not show the SCHUFA-Logo ..."
               />
-            </div>
-          </Typography>
-          <Typography variant="body1" gutterBottom>
-            <div style={{ fontSize: 25, fontWeight: 'fat', marginTop: '2rem' }}>
+            </Typography>
+          </div>
+          <div style={{ marginTop: '0.5rem' }}>
+            <Typography variant="title" gutterBottom>
               2
-            </div>
-            <div
-              style={{
-                position: 'relative',
-                left: 30,
-                bottom: 18,
-                paddingRight: 30,
-              }}
-            >
+            </Typography>
+          </div>
+          <div
+            style={{
+              position: 'relative',
+              left: 30,
+              bottom: 30,
+              paddingRight: 30,
+            }}
+          >
+            <Typography variant="body1" gutterBottom>
               <FormattedMessage
                 id="Capture.two"
                 defaultMessage="Please only send those SCHUFA pages that do not show the SCHUFA-Logo ..."
               />
-            </div>
-          </Typography>
-          <Typography variant="body1" gutterBottom>
-            <div style={{ fontSize: 25, fontWeight: 'fat', marginTop: '2rem' }}>
+            </Typography>
+          </div>
+          <div style={{ marginTop: '0.5rem' }}>
+            <Typography variant="title" gutterBottom>
               3
-            </div>
-            <div
-              style={{
-                position: 'relative',
-                left: 30,
-                bottom: 18,
-                paddingRight: 30,
-              }}
-            >
+            </Typography>
+          </div>
+          <div
+            style={{
+              position: 'relative',
+              left: 30,
+              bottom: 30,
+              paddingRight: 30,
+            }}
+          >
+            <Typography variant="body1" gutterBottom>
               <FormattedMessage
                 id="Capture.three"
                 defaultMessage="Please only send those SCHUFA pages that do not show the SCHUFA-Logo ..."
               />
-            </div>
-          </Typography>
+            </Typography>
+          </div>
           <div className={classes.buttonContainer}>
             <Button
               color="primary"

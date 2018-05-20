@@ -288,6 +288,48 @@ class PaintPhoto extends Component {
         </div>
 
         <div
+          style={{
+            position: 'absolute',
+            top: 100,
+            left: 0,
+            right: 0,
+            margin: '0 auto',
+            maxWidth: '80%',
+            zIndex: 1,
+            backgroundColor: 'white',
+            padding: '.5rem',
+            borderRadius: 5,
+            opacity: 0.95,
+          }}
+        >
+          <div>
+            <Typography variant="title" gutterBottom>
+              Was kann geschwärzt werden?
+            </Typography>
+            <div
+              onClick={e => e.currentTarget.parentNode.parentNode.remove()}
+              style={{
+                position: 'absolute',
+                right: 5,
+                top: 5,
+                paddingTop: 5,
+                paddingRight: 5,
+                paddingBottom: 30,
+                paddingLeft: 30,
+                cursor: 'pointer',
+                fontSize: 30,
+              }}
+            >
+              ×
+            </div>
+            <Typography variant="body1" gutterBottom>
+              Schwärze z.B. sicherheitshalber die Strichcodes und Ziffern am
+              linken Seitenrand.
+            </Typography>
+          </div>
+        </div>
+
+        <div
           ref="photoContainer"
           style={{ width, height, position: 'absolute' }}
         >
@@ -302,47 +344,6 @@ class PaintPhoto extends Component {
             ref="canvas"
             {...{ width, height }}
           />
-          <div
-            style={{
-              position: 'absolute',
-              top: 100,
-              left: 0,
-              right: 0,
-              margin: '0 auto',
-              maxWidth: '80%',
-              zIndex: 1,
-              backgroundColor: 'white',
-              padding: '.5rem',
-              borderRadius: 5,
-              opacity: 0.95,
-            }}
-          >
-            <div>
-              <Typography variant="title" gutterBottom>
-                Was kann geschwärzt werden?
-              </Typography>
-              <div
-                onClick={e => e.currentTarget.parentNode.parentNode.remove()}
-                style={{
-                  position: 'absolute',
-                  right: 5,
-                  top: 5,
-                  paddingTop: 5,
-                  paddingRight: 5,
-                  paddingBottom: 30,
-                  paddingLeft: 30,
-                  cursor: 'pointer',
-                  fontSize: 30,
-                }}
-              >
-                ×
-              </div>
-              <Typography variant="body1" gutterBottom>
-                Schwärze z.B. sicherheitshalber die Strichcodes und Ziffern am
-                linken Seitenrand.
-              </Typography>
-            </div>
-          </div>
         </div>
 
         <div

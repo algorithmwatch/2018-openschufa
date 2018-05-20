@@ -35,12 +35,6 @@ theme.overrides = {
       boxShadow: theme.shadows[0]
     }
   },
-  MuiButtonBase: {
-    root: {
-      marginTop: 8,
-      marginBottom: 16
-    }
-  }
 };
 
 

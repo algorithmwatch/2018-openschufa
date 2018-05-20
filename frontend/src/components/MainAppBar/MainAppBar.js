@@ -84,7 +84,7 @@ class MainAppBar extends Component {
 
     return (
       <div>
-        <AppBar color='white' position="static">
+        <AppBar color='inherit' position="static">
           <Toolbar>
             <div className={classes.logoContainer}>
               <Link to='/'>

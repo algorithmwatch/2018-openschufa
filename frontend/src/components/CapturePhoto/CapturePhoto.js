@@ -57,7 +57,7 @@ class CapturePhoto extends Component {
               position: 'relative',
               left: 30,
               bottom: 30,
-              paddingRight: 30,
+              marginRight: 30,
             }}
           >
             <Typography variant="body1" gutterBottom>
@@ -77,7 +77,7 @@ class CapturePhoto extends Component {
               position: 'relative',
               left: 30,
               bottom: 30,
-              paddingRight: 30,
+              marginRight: 30,
             }}
           >
             <Typography variant="body1" gutterBottom>
@@ -97,7 +97,7 @@ class CapturePhoto extends Component {
               position: 'relative',
               left: 30,
               bottom: 30,
-              paddingRight: 30,
+              marginRight: 30,
             }}
           >
             <Typography variant="body1" gutterBottom>

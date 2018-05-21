@@ -3,7 +3,7 @@ import { FormattedMessage } from 'react-intl';
 import { withStyles } from 'material-ui/styles';
 import Paper from 'material-ui/Paper';
 import Typography from 'material-ui/Typography';
-import photo from '../../images/how_to_take_photo.jpg';
+import photo from '../../images/which_pages_to_take.jpg';
 import ProgressBar from '../ProgressBar';
 
 const styles = theme => ({

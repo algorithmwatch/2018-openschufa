@@ -12,6 +12,7 @@
   "Capture.two": "Die Bilder müssen hell sein",
   "Capture.three":
     "die Kanten des Dokuments sollten möglichst gerade sein. Lege die Seiten am besten auf eine flache Unterlage und fotografiere senkrecht von oben.",
+  "Capture.four": "Bei PDF-Dateien ist kein Schwärzen möglich!",
   "DataForm.activeloans":
     "Laufende Kredite / Baufinanzierung / Leasingverträge / Ratenzahlungsgeschäfte",
   "DataForm.admonitions": "Mahnungen",

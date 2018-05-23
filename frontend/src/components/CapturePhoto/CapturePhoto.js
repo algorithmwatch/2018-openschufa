@@ -87,6 +87,10 @@ class CapturePhoto extends Component {
               />
             </Button>
           </div>
+
+          <Tip bullet="!" style={{ marginTop: '3rem' }}>
+            <FormattedMessage id="Capture.four" defaultMessage="no blacking" />
+          </Tip>
         </Paper>
       </div>
     );

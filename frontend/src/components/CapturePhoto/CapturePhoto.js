@@ -6,6 +6,7 @@ import Paper from 'material-ui/Paper';
 import Typography from 'material-ui/Typography';
 import Button from 'material-ui/Button';
 import ProgressBar from '../ProgressBar';
+import Tip from './Tip';
 
 const styles = theme => ({
   root: theme.mixins.gutters({
@@ -46,66 +47,19 @@ class CapturePhoto extends Component {
               defaultMessage="Consider the following"
             />
           </Typography>
-          <div style={{ marginTop: '2rem' }}>
-            <Typography variant="title" gutterBottom>
-              1
-            </Typography>
-          </div>
-          <div
-            style={{
-              position: 'relative',
-              left: 30,
-              bottom: 30,
-              marginRight: 30,
-            }}
-          >
-            <Typography variant="body1" gutterBottom>
-              <FormattedMessage
-                id="Capture.one"
-                defaultMessage="Please only send those SCHUFA pages that do not show the SCHUFA-Logo ..."
-              />
-            </Typography>
-          </div>
-          <div style={{ marginTop: '0.5rem' }}>
-            <Typography variant="title" gutterBottom>
-              2
-            </Typography>
-          </div>
-          <div
-            style={{
-              position: 'relative',
-              left: 30,
-              bottom: 30,
-              marginRight: 30,
-            }}
-          >
-            <Typography variant="body1" gutterBottom>
-              <FormattedMessage
-                id="Capture.two"
-                defaultMessage="Please only send those SCHUFA pages that do not show the SCHUFA-Logo ..."
-              />
-            </Typography>
-          </div>
-          <div style={{ marginTop: '0.5rem' }}>
-            <Typography variant="title" gutterBottom>
-              3
-            </Typography>
-          </div>
-          <div
-            style={{
-              position: 'relative',
-              left: 30,
-              bottom: 30,
-              marginRight: 30,
-            }}
-          >
-            <Typography variant="body1" gutterBottom>
-              <FormattedMessage
-                id="Capture.three"
-                defaultMessage="Please only send those SCHUFA pages that do not show the SCHUFA-Logo ..."
-              />
-            </Typography>
-          </div>
+
+          <Tip bullet="1" style={{ marginTop: '2rem' }}>
+            <FormattedMessage id="Capture.one" defaultMessage="sharp" />
+          </Tip>
+
+          <Tip bullet="2">
+            <FormattedMessage id="Capture.two" defaultMessage="bright" />
+          </Tip>
+
+          <Tip bullet="3">
+            <FormattedMessage id="Capture.three" defaultMessage="straight" />
+          </Tip>
+
           <div className={classes.buttonContainer}>
             <Button
               color="primary"

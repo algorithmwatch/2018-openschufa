@@ -5,11 +5,6 @@ import Button from 'material-ui/Button';
 import Typography from 'material-ui/Typography';
 import { FormattedMessage } from 'react-intl';
 import logo from '../../images/logo.png';
-/*
-import {MenuItem} from 'material-ui/Menu';
-import MenuList from "material-ui/Menu/MenuList";
-*/
-import FileUpload from '@material-ui/icons/FileUpload';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import styles from './LandingPage.css';

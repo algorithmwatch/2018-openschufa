@@ -5,7 +5,6 @@ import { FormattedMessage } from 'react-intl';
 import Paper from 'material-ui/Paper';
 import Typography from 'material-ui/Typography';
 import Button from 'material-ui/Button';
-import photo from '../../images/which_pages_to_take.jpg';
 import ProgressBar from '../ProgressBar';
 
 const styles = theme => ({

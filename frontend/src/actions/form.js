@@ -1,21 +1,28 @@
-import {BASE64_MARKER, STEP_FINISHED} from "../constants";
+import { BASE64_MARKER, STEP_FINISHED } from '../constants';
 import {
-  RESET_FORM, UPLOAD_SUCCESS, UPLOAD_FAILURE,
-  UPLOAD_REQUEST, SET_PROP, SET_ACTIVE_STEP, UPLOAD_PROGRESS
-} from "./actionTypes";
+  RESET_FORM,
+  UPLOAD_SUCCESS,
+  UPLOAD_FAILURE,
+  UPLOAD_REQUEST,
+  SET_PROP,
+  SET_ACTIVE_STEP,
+  UPLOAD_PROGRESS,
+} from './actionTypes';
 
 export function sendData() {
   return (dispatch, getState) => {
     dispatch({
-      type: UPLOAD_REQUEST
+      type: UPLOAD_REQUEST,
     });
     dispatch({
       type: SET_ACTIVE_STEP,
-      payload: STEP_FINISHED
+      payload: STEP_FINISHED,
     });
-    const {imageData, surveyData} = getState().form;
+    const { imageData, surveyData } = getState().form;
     const formData = new FormData();
-    Object.keys(surveyData).forEach(key => formData.append(key, surveyData[key]));
+    Object.keys(surveyData).forEach(key =>
+      formData.append(key, surveyData[key])
+    );
     imageData.forEach(data => {
       if (typeof data === 'string') {
         const arr = convertDataURIToBinary(data);
@@ -27,30 +34,29 @@ export function sendData() {
     });
     const config = {
       method: 'POST',
-      body: formData
+      body: formData,
     };
     return futch('/upload/', config, dispatch)
       .then(response => {
-        if (response.statusText === "OK") {
+        if (response.statusText === 'OK') {
           return JSON.parse(response.body);
-        }
-        else {
-          return Promise.reject(response.body)
+        } else {
+          return Promise.reject(response.body);
         }
       })
       .then(json => {
         dispatch({
           type: UPLOAD_SUCCESS,
-          payload: json
-        })
+          payload: json,
+        });
       })
       .catch(error => {
         dispatch({
           type: UPLOAD_FAILURE,
-          payload: error
+          payload: error,
         });
-      })
-  }
+      });
+  };
 }
 
 function convertDataURIToBinary(dataURI) {
@@ -60,7 +66,7 @@ function convertDataURIToBinary(dataURI) {
   const rawLength = raw.length;
   const array = new Uint8Array(rawLength);
 
-  for(let i = 0; i < rawLength; i++) {
+  for (let i = 0; i < rawLength; i++) {
     array[i] = raw.charCodeAt(i);
   }
   return array;
@@ -68,25 +74,26 @@ function convertDataURIToBinary(dataURI) {
 
 export function resetForm() {
   return {
-    type: RESET_FORM
+    type: RESET_FORM,
   };
 }
 
 export function setProp(name, value) {
   return {
     type: SET_PROP,
-    payload: { name, value }
-  }
+    payload: { name, value },
+  };
 }
 
-function futch(url, opts={}, dispatch) {
+function futch(url, opts = {}, dispatch) {
   return new Promise((response, reject) => {
     const xhr = new XMLHttpRequest();
-    xhr.onload = () => response({
-      body: xhr.response,
-      statusText: xhr.statusText,
-      type: xhr.responseType
-    });
+    xhr.onload = () =>
+      response({
+        body: xhr.response,
+        statusText: xhr.statusText,
+        type: xhr.responseType,
+      });
     xhr.onerror = reject;
     if (xhr.upload)
       xhr.upload.onprogress = e => {
@@ -95,12 +102,11 @@ function futch(url, opts={}, dispatch) {
             type: UPLOAD_PROGRESS,
             payload: {
               uploadProgress: e.loaded / e.total * 100,
-              loaded: e.loaded
-            }
-          })
+              loaded: e.loaded,
+            },
+          });
       };
     xhr.open(opts.method || 'get', url);
     xhr.send(opts.body);
   });
 }
-

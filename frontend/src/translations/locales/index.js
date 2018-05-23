@@ -1,1 +1,1 @@
-export de from "./de.json";
+export de from './de.json';

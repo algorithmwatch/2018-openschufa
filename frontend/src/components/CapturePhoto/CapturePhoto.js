@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
-import PropTypes from 'prop-types'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
-import {FormattedMessage} from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 import Paper from 'material-ui/Paper';
 import Typography from 'material-ui/Typography';
 import Button from 'material-ui/Button';
@@ -12,27 +12,23 @@ const styles = theme => ({
   root: theme.mixins.gutters({
     paddingTop: 16,
     paddingBottom: 16,
-    marginTop: theme.spacing.unit * 3,
-    backgroundColor: theme.palette.background.default,
   }),
   image: {
     marginTop: 10,
-    maxWidth: '100%'
+    maxWidth: '100%',
   },
   button: {
-    marginTop: 12
+    marginTop: 12,
   },
   buttonContainer: {
     width: '100%',
     display: 'flex',
-    justifyContent: 'center'
-  }
+    justifyContent: 'center',
+  },
 });
 
-
 class CapturePhoto extends Component {
-
-  onChange = (e) => {
+  onChange = e => {
     const { selectFile } = this.props;
     const input = e.currentTarget;
     const file = input.files[0];
@@ -40,37 +36,103 @@ class CapturePhoto extends Component {
   };
 
   render() {
-
     const { classes } = this.props;
     return (
-      <div>
+      <div style={{ marginTop: 6 }}>
         <Paper className={classes.root} elevation={0}>
-          <ProgressBar stepsFinished={1}/>
-          <Typography variant="body1" gutterBottom>
+          <ProgressBar stepsFinished={1} />
+          <Typography variant="title" gutterBottom>
             <FormattedMessage
-              id="Capture.p1"
-              defaultMessage="Please only send those SCHUFA pages that do not show the SCHUFA-Logo ..."
+              id="Capture.title"
+              defaultMessage="Consider the following"
             />
           </Typography>
-          <img src={photo} alt='' className={classes.image}/>
-          <div className={classes.buttonContainer}>
-          <Button
-            color='primary'
-            variant='raised'
-            component='label'
-            className={classes.button}
+          <div style={{ marginTop: '2rem' }}>
+            <Typography variant="title" gutterBottom>
+              1
+            </Typography>
+          </div>
+          <div
+            style={{
+              position: 'relative',
+              left: 30,
+              bottom: 30,
+              marginRight: 30,
+            }}
           >
-            <FormattedMessage
-              id="Capture.takephotobutton"
-              defaultMessage="Press to take photo"
-            />
-            <input
-              type="file"
-              accept="image/*,application/pdf"
-              onChange={this.onChange}
-              style={{ display: 'none' }}
-            />
-          </Button>
+            <Typography variant="body1" gutterBottom>
+              <FormattedMessage
+                id="Capture.one"
+                defaultMessage="Please only send those SCHUFA pages that do not show the SCHUFA-Logo ..."
+              />
+            </Typography>
+          </div>
+          <div style={{ marginTop: '0.5rem' }}>
+            <Typography variant="title" gutterBottom>
+              2
+            </Typography>
+          </div>
+          <div
+            style={{
+              position: 'relative',
+              left: 30,
+              bottom: 30,
+              marginRight: 30,
+            }}
+          >
+            <Typography variant="body1" gutterBottom>
+              <FormattedMessage
+                id="Capture.two"
+                defaultMessage="Please only send those SCHUFA pages that do not show the SCHUFA-Logo ..."
+              />
+            </Typography>
+          </div>
+          <div style={{ marginTop: '0.5rem' }}>
+            <Typography variant="title" gutterBottom>
+              3
+            </Typography>
+          </div>
+          <div
+            style={{
+              position: 'relative',
+              left: 30,
+              bottom: 30,
+              marginRight: 30,
+            }}
+          >
+            <Typography variant="body1" gutterBottom>
+              <FormattedMessage
+                id="Capture.three"
+                defaultMessage="Please only send those SCHUFA pages that do not show the SCHUFA-Logo ..."
+              />
+            </Typography>
+          </div>
+          <div className={classes.buttonContainer}>
+            <Button
+              color="primary"
+              variant="raised"
+              component="label"
+              className={classes.button}
+            >
+              <span
+                style={{
+                  color: 'white',
+                  padding: '.5rem',
+                  textTransform: 'none',
+                }}
+              >
+                <FormattedMessage
+                  id="Capture.takephotobutton"
+                  defaultMessage="Press to take photo"
+                />
+              </span>
+              <input
+                type="file"
+                accept="image/*,application/pdf"
+                onChange={this.onChange}
+                style={{ display: 'none' }}
+              />
+            </Button>
           </div>
         </Paper>
       </div>
@@ -79,8 +141,7 @@ class CapturePhoto extends Component {
 }
 
 CapturePhoto.propTypes = {
-  selectFile: PropTypes.func.isRequired
+  selectFile: PropTypes.func.isRequired,
 };
-
 
 export default withStyles(styles)(CapturePhoto);

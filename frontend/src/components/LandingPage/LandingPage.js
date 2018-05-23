@@ -1,9 +1,9 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {withStyles} from 'material-ui/styles';
+import { withStyles } from 'material-ui/styles';
 import Button from 'material-ui/Button';
 import Typography from 'material-ui/Typography';
-import {FormattedMessage} from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 import logo from '../../images/logo.png';
 /*
 import {MenuItem} from 'material-ui/Menu';
@@ -11,10 +11,9 @@ import MenuList from "material-ui/Menu/MenuList";
 */
 import FileUpload from '@material-ui/icons/FileUpload';
 import classNames from 'classnames';
-import {Link} from "react-router-dom";
-import styles from "./LandingPage.css";
-import {STEP_USAGE} from "../../constants";
-
+import { Link } from 'react-router-dom';
+import styles from './LandingPage.css';
+import { STEP_USAGE } from '../../constants';
 
 const inlineStyles = theme => ({
   header: {
@@ -24,27 +23,27 @@ const inlineStyles = theme => ({
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'contain',
     marginBottom: '1rem',
-    width: '100%'
+    width: '100%',
   },
   item: {
     width: '100%',
-    textAlign: 'center'
+    textAlign: 'center',
   },
   secondToLastItem: {
-    flex: '1 1 auto'
+    flex: '1 1 auto',
   },
   lastItem: {
     display: 'flex',
     width: '100%',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
   },
   languageContainer: {
     display: 'flex',
-    justifyContent: 'flex-end'
+    justifyContent: 'flex-end',
   },
   languageMenuList: {
     width: '3rem',
-    paddingTop: 0
+    paddingTop: 0,
   },
   languageMenuItem: {
     textAlign: 'end',
@@ -54,10 +53,10 @@ const inlineStyles = theme => ({
     display: 'block',
     fontSize: '1rem',
     lineHeight: '1rem',
-    height: 'UNSET'
+    height: 'UNSET',
   },
   button: {
-    width: '10rem'
+    width: '10rem',
   },
   leftIcon: {
     marginRight: theme.spacing.unit,
@@ -66,10 +65,10 @@ const inlineStyles = theme => ({
     fontSize: 20,
   },
   leftButton: {
-    paddingLeft: 0
+    paddingLeft: 0,
   },
   rightButton: {
-    paddingRight: 0
+    paddingRight: 0,
   },
   callToAction: {
     display: 'flex',
@@ -77,11 +76,11 @@ const inlineStyles = theme => ({
     alignItems: 'center',
     height: '5rem',
     backgroundColor: theme.palette.primary.main,
-    marginBottom: 10
+    marginBottom: 10,
   },
   callToActionTitle: {
-    fontSize: '1.2rem'
-  }
+    fontSize: '1.2rem',
+  },
 });
 
 /*
@@ -91,26 +90,24 @@ const languages = [
 ];
 */
 
-
 class Index extends Component {
-
   static propTypes = {
     classes: PropTypes.object.isRequired,
     router: PropTypes.object,
   };
 
   componentDidMount() {
-    this.props.resetForm()
+    this.props.resetForm();
   }
 
   handleModalOpen = id => {
-    const {openModal} = this.props;
+    const { openModal } = this.props;
     openModal(id);
   };
 
   handleLanguageClick = language => {
-    const {switchLanguage} = this.props;
-    switchLanguage(language)
+    const { switchLanguage } = this.props;
+    switchLanguage(language);
   };
 
   handleUploadClick = () => {
@@ -121,7 +118,6 @@ class Index extends Component {
   };
 
   render() {
-
     // const {classes, currentLanguage} = this.props;
     const { classes } = this.props;
 
@@ -149,15 +145,21 @@ class Index extends Component {
               </MenuList>
           </div>*/}
         </div>
-        <div className={classes.callToAction}>
-          <Typography className={classes.callToActionTitle} variant="title" noWrap={true}>
-            <FormattedMessage
-              id="LandingPage.calltoaction"
-              defaultMessage="Help us to crack the SCHUFA!"
-            />
+        <div className={classes.callToAction} style={{ marginBottom: '2rem' }}>
+          <Typography
+            className={classes.callToActionTitle}
+            variant="title"
+            noWrap={true}
+          >
+            <span style={{ color: 'white' }}>
+              <FormattedMessage
+                id="LandingPage.calltoaction"
+                defaultMessage="Help us to crack the SCHUFA!"
+              />
+            </span>
           </Typography>
         </div>
-        <div className={classes.item}>
+        <div className={classes.item} style={{ marginBottom: '2rem' }}>
           <Typography variant="subheading" gutterBottom>
             <FormattedMessage
               id="LandingPage.welcome"
@@ -165,107 +167,95 @@ class Index extends Component {
             />
           </Typography>
         </div>
-        <div className={classes.item}>
-          <Typography variant="body1" gutterBottom>
-            <FormattedMessage
-              id="LandingPage.upload.description"
-              defaultMessage="You already have a SCHUFA-information that you wish to pass on to us?"
-            />
-          </Typography>
-        </div>
-        <div className={classes.item}>
-          <Link to='/steps'>
+        <div className={classes.item} style={{ marginBottom: '2rem' }}>
+          <Link to="/steps" style={{ textDecoration: 'none' }}>
             <Button
-              color='primary'
-              variant='raised'
+              color="primary"
+              variant="raised"
               className={classes.button}
               onClick={this.handleUploadClick}
             >
-              <FileUpload className={classNames(classes.leftIcon, classes.iconSmall)}/>
-              <FormattedMessage
-                id="LandingPage.upload.buttontext"
-                defaultMessage="Upload"
-              />
+              <span
+                style={{
+                  color: 'white',
+                  textTransform: 'none',
+                }}
+              >
+                <FormattedMessage
+                  id="LandingPage.upload.buttontext"
+                  defaultMessage="Upload"
+                />
+              </span>
             </Button>
           </Link>
         </div>
-        <div className={classes.item}>
-          <Typography variant="body1" gutterBottom>
-            <FormattedMessage
-              id="LandingPage.requestinfo.description"
-              defaultMessage="You still have to apply for your SCHUFA-information?"
-            />
-          </Typography>
-        </div>
-        <div className={classes.item}>
+        <div className={classes.item} style={{ marginBottom: '2rem' }}>
           <Button
-            color='default'
-            variant='raised'
+            color="default"
+            variant="raised"
             className={classes.button}
             href="https://selbstauskunft.net/schufa/"
             target="_blank"
           >
-            <FormattedMessage
-              id="LandingPage.requestinfo.buttontext"
-              defaultMessage="Apply"
-            />
+            <span style={{ textTransform: 'none' }}>
+              <FormattedMessage
+                id="LandingPage.requestinfo.buttontext"
+                defaultMessage="Apply"
+              />
+            </span>
           </Button>
         </div>
-        <div className={classes.item}>
-          <Typography variant="body1" gutterBottom>
-            <FormattedMessage
-              id="LandingPage.openschufa.description"
-              defaultMessage="You want to know more about the project and those who participate?"
-            />
-          </Typography>
-        </div>
-        <div className={classNames(classes.item)}>
+        <div
+          className={classNames(classes.item)}
+          style={{ marginBottom: '2rem' }}
+        >
           <Button
-            color='default'
-            variant='raised'
+            color="default"
+            variant="raised"
             className={classes.button}
             onClick={() => this.handleModalOpen('openschufa')}
           >
-            <FormattedMessage
-              id="LandingPage.openschufa.buttontext"
-              defaultMessage="Get information"
-            />
+            <span style={{ textTransform: 'none' }}>
+              <FormattedMessage
+                id="LandingPage.openschufa.buttontext"
+                defaultMessage="Get information"
+              />
+            </span>
           </Button>
         </div>
-        <div className={classes.item}>
-          <Typography variant="body1" gutterBottom>
-            <FormattedMessage
-              id="LandingPage.faq.description"
-              defaultMessage="Frequently asked questions"
-            />
-          </Typography>
-        </div>
-        <div className={classNames(classes.item, classes.secondToLastItem)}>
+        <div
+          className={classNames(classes.item, classes.secondToLastItem)}
+          style={{ marginBottom: '2rem' }}
+        >
           <Button
-            color='default'
-            variant='raised'
+            color="default"
+            variant="raised"
             className={classes.button}
             onClick={() => this.handleModalOpen('faq')}
           >
-            <FormattedMessage
-              id="LandingPage.faq.buttontext"
-              defaultMessage="FAQ"
-            />
+            <span style={{ textTransform: 'none' }}>
+              <FormattedMessage
+                id="LandingPage.faq.buttontext"
+                defaultMessage="FAQ"
+              />
+            </span>
           </Button>
         </div>
         <div className={classes.lastItem}>
-          <Button className={classes.leftButton}
-                  size='small'
-                  onClick={() => this.handleModalOpen('imprint')}
+          <Button
+            className={classes.leftButton}
+            size="small"
+            onClick={() => this.handleModalOpen('imprint')}
           >
             <FormattedMessage
               id="LandingPage.impressum"
               defaultMessage="Imprint"
             />
           </Button>
-          <Button className={classes.rightButton}
-                  size='small'
-                  onClick={() => this.handleModalOpen('dataprivacy')}
+          <Button
+            className={classes.rightButton}
+            size="small"
+            onClick={() => this.handleModalOpen('dataprivacy')}
           >
             <FormattedMessage
               id="LandingPage.dataprivacy"
@@ -274,7 +264,7 @@ class Index extends Component {
           </Button>
         </div>
       </div>
-    )
+    );
   }
 }
 

@@ -9,46 +9,44 @@ import {
   ADD_POLYLINE,
   UNDO_POLYLINE,
   SET_ACTIVE_STEP,
-  ADD_PHOTO, ADD_PDF
-} from "./actionTypes";
-import { STEP_ROTATE, STEP_SAVED } from "../constants";
-
+  ADD_PHOTO,
+  ADD_PDF,
+} from './actionTypes';
+import { STEP_ROTATE, STEP_SAVED } from '../constants';
 
 export function selectFile(file) {
-  return (dispatch) => {
+  return dispatch => {
     if (file.type.startsWith('image/')) {
       selectImageFile(dispatch, file);
     } else {
       selectPdfFile(dispatch, file);
     }
-  }
+  };
 }
 
 function selectImageFile(dispatch, file) {
   const fileReader = new FileReader();
   fileReader.readAsDataURL(file);
   fileReader.onload = () => {
-
     // image data was read from file
     dispatch({
       type: SET_IMAGEDATA,
-      payload: {imageData: fileReader.result}
+      payload: { imageData: fileReader.result },
     });
 
     const img = new Image();
     img.src = fileReader.result;
     img.onload = () => {
-
       // image data was loaded and it's size can be retrieved
-      const {width, height} = img;
+      const { width, height } = img;
       dispatch({
         type: SET_SIZE,
-        payload: {width, height}
+        payload: { width, height },
       });
       dispatch({
         type: SET_ACTIVE_STEP,
-        payload: STEP_ROTATE
-      })
+        payload: STEP_ROTATE,
+      });
     };
   };
 }
@@ -56,20 +54,20 @@ function selectImageFile(dispatch, file) {
 function selectPdfFile(dispatch, file) {
   dispatch({
     type: ADD_PDF,
-    payload: {file}
+    payload: { file },
   });
   dispatch({
     type: SET_ACTIVE_STEP,
-    payload: STEP_SAVED
-  })
+    payload: STEP_SAVED,
+  });
 }
 
 export function rotatePhoto(degrees) {
   return {
     type: ROTATE_PHOTO,
     payload: {
-      degrees
-    }
+      degrees,
+    },
   };
 }
 
@@ -77,8 +75,8 @@ export function setEditMode(mode) {
   return {
     type: SET_EDIT_MODE,
     payload: {
-      mode
-    }
+      mode,
+    },
   };
 }
 
@@ -86,14 +84,14 @@ export function addPolyline(polyline) {
   return {
     type: ADD_POLYLINE,
     payload: {
-      polyline
-    }
+      polyline,
+    },
   };
 }
 
 export function undoPolyline() {
   return {
-    type: UNDO_POLYLINE
+    type: UNDO_POLYLINE,
   };
 }
 
@@ -103,10 +101,9 @@ function rad(a) {
 
 export function savePhoto() {
   return (dispatch, getState) => {
-
     dispatch({
       type: SET_PROCESSING,
-      payload: true
+      payload: true,
     });
 
     const { imageData, rotation, polylines } = getState().photo;
@@ -128,13 +125,11 @@ export function savePhoto() {
       }
 
       let translation = {
-        0:   { x: 0, y: 0 },
-        90:  { x: height, y: 0 },
-        180: { x: width, y: height},
-        270: { x: 0, y: width}
-      }[
-        rotation
-      ];
+        0: { x: 0, y: 0 },
+        90: { x: height, y: 0 },
+        180: { x: width, y: height },
+        270: { x: 0, y: width },
+      }[rotation];
 
       ctx.save();
       ctx.translate(translation.x, translation.y);
@@ -154,14 +149,13 @@ export function savePhoto() {
       dispatch({
         type: ADD_PHOTO,
         payload: {
-          dataURL: canvas.toDataURL('image/jpeg', 0.6)
-        }
+          dataURL: canvas.toDataURL('image/jpeg', 0.6),
+        },
       });
       dispatch({
         type: SET_PROCESSING,
-        payload: false
+        payload: false,
       });
     };
-
-  }
+  };
 }

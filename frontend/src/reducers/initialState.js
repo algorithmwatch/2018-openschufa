@@ -1,6 +1,5 @@
 import { STEP_USAGE, MODE_ZOOM } from '../constants';
-import {languageWithoutRegionCode, messages} from "../i18nsetup";
-
+import { languageWithoutRegionCode, messages } from '../i18nsetup';
 
 export default {
   photo: {
@@ -9,19 +8,19 @@ export default {
     rotation: null,
     processing: false,
     editMode: MODE_ZOOM,
-    polylines: []
+    polylines: [],
   },
   modal: {
     open: false,
-    title: "",
-    text: ""
+    title: '',
+    text: '',
   },
   intl: {
     language: languageWithoutRegionCode,
-    messages: messages
+    messages: messages,
   },
   stepper: {
-    activeStep: STEP_USAGE
+    activeStep: STEP_USAGE,
   },
   form: {
     surveyData: {
@@ -51,14 +50,14 @@ export default {
       insolvencyProceedings: 0,
     },
     imageData: [],
-    uuid: "",
-    formUploadErrorMessage: "",
+    uuid: '',
+    formUploadErrorMessage: '',
     isUploading: false,
     uploadProgress: 0,
-    loaded: 0
+    loaded: 0,
   },
   finished: {
     sentEmail: false,
-    emailErrorMessage: ""
-  }
+    emailErrorMessage: '',
+  },
 };

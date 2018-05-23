@@ -1,4 +1,4 @@
-export * from "./photo";
+export * from './photo';
 export * from './modal';
 export * from './intl';
 export * from './stepper';

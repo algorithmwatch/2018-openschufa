@@ -109,7 +109,13 @@ def create_app(**kwargs):
             for image in user.images:
                 src = os.path.join(config.APP_ROOT, 'media', image.filename)
                 dst = os.path.join(user_dir, image.filename)
-                os.symlink(src, dst)
+                try:
+                    os.symlink(src, dst)
+                except OSError as e:
+                    if e.errno == errno.EEXIST:
+                        pass
+                    else:
+                        raise
 
     def send_email(to, subject, template, **kwargs):
         msg = Message(subject, recipients=[to])

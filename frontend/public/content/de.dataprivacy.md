@@ -6,7 +6,8 @@ Diese Datenschutz-Information gilt für die Datenverarbeitung durch Lorena Jaume
 
 AW AlgorithmWatch gGmbH
 Bergstr. 22
-10115 Berlin  Email: info@algorithmwatch.org 
+10115 Berlin
+ Email: info@algorithmwatch.org
 Telefon: +49 30 99 404 49 001
 
 ### 2. Erhebung und Speicherung personenbezogener Daten sowie Art und Zweck von deren Verwendung
@@ -64,7 +65,7 @@ Zweck der Datenverarbeitung sind journalistisch-wissenschaftliche Zwecke. Die An
 
 Die Datenverarbeitung erfolgt nach Art. 6 Abs. 1 S. 1 lit. a DSGVO auf Grundlage Ihrer freiwillig erteilten Einwilligung.
 
-Die Daten aus den Fragebögen werden nach erfolgter Einwilligung per verschlüsselter Verbindung auf dem Server Digital Ocean (https://www-digitalocean.com/ hochgeladen und gespeichert.  
+Die Daten aus den Fragebögen werden nach erfolgter Einwilligung per verschlüsselter Verbindung auf dem Server Digital Ocean hochgeladen und gespeichert.  
 Die im Rahmen des Fragenbogens von uns erhobenen Daten werden auf unbestimmte Zeit zu Forschungszwecken und für journalistische Auswertungen bei der AlgorithmWatch gGmbH, bei der Open Knowledge Foundation sowie bei den Redaktionen gespeichert und mit anderen Daten aus dem Fragebogen für Auswertungen verknüpft.
 
 #### d) Bei Nutzung unserer Kontaktfunktion
@@ -104,7 +105,7 @@ Sie haben das Recht:
 
 Sofern Ihre personenbezogenen Daten auf Grundlage von berechtigten Interessen gemäß Art. 6 Abs. 1 S. 1 lit. f DSGVO verarbeitet werden, haben Sie das Recht, gemäß Art. 21 DSGVO Widerspruch gegen die Verarbeitung Ihrer personenbezogenen Daten einzulegen, soweit dafür Gründe vorliegen, die sich aus Ihrer besonderen Situation ergeben oder sich der Widerspruch gegen Direktwerbung richtet. Im letzteren Fall haben Sie ein generelles Widerspruchsrecht, das ohne Angabe einer besonderen Situation von uns umgesetzt wird.
 
-Möchten Sie von Ihrem Widerrufs- oder Widerspruchsrecht Gebrauch machen, genügt eine E-Mail an inf@algorithmwatch.de
+Möchten Sie von Ihrem Widerrufs- oder Widerspruchsrecht Gebrauch machen, genügt eine E-Mail an info@algorithmwatch.de
 
 ### 6. Datensicherheit
 

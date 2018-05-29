@@ -9,6 +9,8 @@ import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import styles from './LandingPage.css';
 import { STEP_USAGE } from '../../constants';
+import MenuList from 'material-ui/Menu/MenuList';
+import MenuItem from 'material-ui/Menu/MenuItem';
 
 const inlineStyles = theme => ({
   header: {
@@ -78,12 +80,7 @@ const inlineStyles = theme => ({
   },
 });
 
-/*
-const languages = [
-  {locale: 'de', name: 'DE'},
-  {locale: 'en', name: 'EN'},
-];
-*/
+const languages = [{ locale: 'de', name: 'DE' }, { locale: 'en', name: 'EN' }];
 
 class Index extends Component {
   static propTypes = {
@@ -113,32 +110,29 @@ class Index extends Component {
   };
 
   render() {
-    // const {classes, currentLanguage} = this.props;
-    const { classes } = this.props;
+    const { classes, currentLanguage } = this.props;
 
     return (
       <div className={styles.root}>
         <div className={classes.header}>
-          {/*<div className={classes.languageContainer}>
-              <MenuList className={classes.languageMenuList}>
-                {
-                  languages
-                    .filter(lang => lang.locale !== currentLanguage)
-                    .map((lang, i) => {
-                      return (
-                        <MenuItem
-                          key={i}
-                          className={classes.languageMenuItem}
-                          value={lang.locale}
-                          onClick={() => this.handleLanguageClick(lang.locale)}
-                        >
-                          {lang.name}
-                        </MenuItem>
-                      );
-                    })
-                }
-              </MenuList>
-          </div>*/}
+          <div className={classes.languageContainer}>
+            <MenuList className={classes.languageMenuList}>
+              {languages
+                .filter(lang => lang.locale !== currentLanguage)
+                .map((lang, i) => {
+                  return (
+                    <MenuItem
+                      key={i}
+                      className={classes.languageMenuItem}
+                      value={lang.locale}
+                      onClick={() => this.handleLanguageClick(lang.locale)}
+                    >
+                      {lang.name}
+                    </MenuItem>
+                  );
+                })}
+            </MenuList>
+          </div>
         </div>
         <div className={classes.callToAction} style={{ marginBottom: '2rem' }}>
           <Typography

@@ -5,3 +5,4 @@
 /backend/.pytest_cache/
 __pycache__/
 /frontend/src/translations/extractedMessages/
+/backend/data/

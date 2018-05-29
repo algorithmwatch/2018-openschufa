@@ -1,6 +1,9 @@
+import json
 import logging
+import os
 import uuid
 
+import errno
 from flask import Flask, jsonify, request, render_template
 from flask_cors import CORS
 from flask_mail import Mail, Message
@@ -9,6 +12,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_uploads import UploadSet, IMAGES, configure_uploads
 from sqlalchemy import func
 from sqlalchemy.dialects.postgresql import JSONB, UUID
+from sqlalchemy.orm import joinedload
 
 import config
 
@@ -26,6 +30,9 @@ class User(db.Model):
     form = db.Column(JSONB)
     images = db.relationship('Image', backref='user', lazy=True)
 
+    def __repr__(self):
+        return '<User %r>' % self.guid
+
 
 class Image(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -33,6 +40,9 @@ class Image(db.Model):
                         db.ForeignKey('user.id', ondelete=u'CASCADE', onupdate=u'CASCADE'),
                         nullable=False)
     filename = db.Column(db.String, default=None, nullable=True)
+
+    def __repr__(self):
+        return '<Image %r>' % self.filename
 
 
 def create_app(**kwargs):
@@ -76,6 +86,36 @@ def create_app(**kwargs):
         send_email(json['email'], 'Deine ID zum OpenSCHUFA Upload',
                    'uuid', uuid=json['uuid'])
         return '', 204
+
+    @app.cli.command()
+    def get_users():
+        data_dir = os.path.join(config.APP_ROOT, 'data')
+        try:
+            os.makedirs(data_dir)
+        except OSError as e:
+            if e.errno != errno.EEXIST:
+                raise
+        query = User.query.options(joinedload('images'))
+        for user in query:
+            user_dir = os.path.join(data_dir, user.guid.hex)
+            try:
+                os.makedirs(user_dir)
+            except OSError as e:
+                if e.errno != errno.EEXIST:
+                    raise
+            form_data = user.form
+            with open(os.path.join(user_dir, 'data.json'), 'w') as outfile:
+                json.dump(form_data, outfile)
+            for image in user.images:
+                src = os.path.join(config.APP_ROOT, 'media', image.filename)
+                dst = os.path.join(user_dir, image.filename)
+                try:
+                    os.symlink(src, dst)
+                except OSError as e:
+                    if e.errno == errno.EEXIST:
+                        pass
+                    else:
+                        raise
 
     def send_email(to, subject, template, **kwargs):
         msg = Message(subject, recipients=[to])

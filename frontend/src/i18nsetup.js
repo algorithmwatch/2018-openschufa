@@ -14,8 +14,9 @@ let language =
   navigator.userLanguage;
 
 // Split locales with a region code
-// export const languageWithoutRegionCode = language.toLowerCase().split(/[_-]+/)[0];
-export const languageWithoutRegionCode = 'de';
+export const languageWithoutRegionCode = language
+  .toLowerCase()
+  .split(/[_-]+/)[0];
 
 // Try full locale, try locale without region code, fallback to 'en'
 export const messages =

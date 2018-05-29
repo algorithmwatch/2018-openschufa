@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
-// import {defineMessages, FormattedMessage, FormattedNumber, FormattedPlural, injectIntl} from 'react-intl';
-import { defineMessages, FormattedMessage, injectIntl } from 'react-intl';
+import {
+  defineMessages,
+  FormattedMessage,
+  FormattedNumber,
+  FormattedPlural,
+  injectIntl,
+} from 'react-intl';
 import { withStyles } from 'material-ui/styles';
 import Paper from 'material-ui/Paper';
 import Typography from 'material-ui/Typography';
@@ -59,11 +64,6 @@ class AddedPhoto extends Component {
     const numberOfPdfs = documentTypes.filter(t => t === PDF).length;
     const lastDocumentType = documentTypes[documentTypes.length - 1];
 
-    let msg = 'Du hast insgesamt ';
-    if (numberOfPhotos) msg += `${numberOfPhotos} Foto(s) `;
-    if (numberOfPhotos && numberOfPdfs) msg += 'und ';
-    if (numberOfPdfs) msg += `${numberOfPdfs} Pdf(s) `;
-    msg += 'hinzugefügt';
     return (
       <div style={{ marginTop: 6, textAlign: 'center' }}>
         <Paper className={classes.root} elevation={0}>
@@ -79,40 +79,69 @@ class AddedPhoto extends Component {
               })}
             </Typography>
           )}
-          <Typography variant="body1" gutterBottom>
-            {msg}
-            {/*
-            <FormattedMessage
-              id='AddedPhoto.numberofphotos'
-              defaultMessage={`You've added a total of {count} {photos}.`}
-              values={{
-                count: (
-                  <b>
-                    <FormattedNumber
+          <Typography variant="body1">
+            {numberOfPhotos > 0 && (
+              <FormattedMessage
+                id="AddedPhoto.numberofphotos"
+                defaultMessage={`You've added a total of {count} {photos}.`}
+                values={{
+                  count: (
+                    <b>
+                      <FormattedNumber value={numberOfPhotos} />
+                    </b>
+                  ),
+                  photos: (
+                    <FormattedPlural
                       value={numberOfPhotos}
+                      one={
+                        <FormattedMessage
+                          id="AddedPhoto.photosuffix"
+                          defaultMessage="photo"
+                        />
+                      }
+                      other={
+                        <FormattedMessage
+                          id="AddedPhoto.photossuffix"
+                          defaultMessage="photos"
+                        />
+                      }
                     />
-                  </b>
-                ),
-                photos: (
-                  <FormattedPlural
-                    value={numberOfPhotos}
-                    one={
-                      <FormattedMessage
-                        id='AddedPhoto.photo'
-                        defaultMessage='photo'
-                      />
-                    }
-                    other={
-                      <FormattedMessage
-                        id='AddedPhoto.photos'
-                        defaultMessage='photos'
-                      />
-                    }
-                  />
-                ),
-              }}
-            />
-            */}
+                  ),
+                }}
+              />
+            )}
+          </Typography>
+          <Typography variant="body1" gutterBottom>
+            {numberOfPdfs > 0 && (
+              <FormattedMessage
+                id="AddedPhoto.numberofpdfs"
+                defaultMessage={`You've added a total of {count} {documents}.`}
+                values={{
+                  count: (
+                    <b>
+                      <FormattedNumber value={numberOfPdfs} />
+                    </b>
+                  ),
+                  documents: (
+                    <FormattedPlural
+                      value={numberOfPdfs}
+                      one={
+                        <FormattedMessage
+                          id="AddedPhoto.pdfsuffix"
+                          defaultMessage="pdf document"
+                        />
+                      }
+                      other={
+                        <FormattedMessage
+                          id="AddedPhoto.pdfssuffix"
+                          defaultMessage="pdf documents"
+                        />
+                      }
+                    />
+                  ),
+                }}
+              />
+            )}
           </Typography>
           <div
             className={classes.centerContainer}

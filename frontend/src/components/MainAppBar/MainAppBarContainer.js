@@ -1,19 +1,12 @@
 import { connect } from 'react-redux';
-import MainAppBar from "../MainAppBar/MainAppBar";
+import MainAppBar from '../MainAppBar/MainAppBar';
 
+import { openModal } from '../../actions';
 
-import {
-  openModal
-} from "../../actions";
-
-
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
     openModal: id => dispatch(openModal(id)),
-  }
+  };
 };
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(MainAppBar);
+export default connect(null, mapDispatchToProps)(MainAppBar);

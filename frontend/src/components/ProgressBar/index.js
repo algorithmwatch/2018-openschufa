@@ -1,92 +1,78 @@
-import React, {Fragment} from "react";
-import CheckCircleOutline from "@material-ui/icons/CheckCircle";
-import Typography from "material-ui/Typography";
-import {FormattedMessage} from 'react-intl';
+import React, { Fragment } from 'react';
+import CheckCircleOutline from '@material-ui/icons/CheckCircle';
+import Typography from 'material-ui/Typography';
+import { FormattedMessage, defineMessages } from 'react-intl';
 
-const completeStyle = {fill: "green", width: "2rem", height: "2rem"};
-const greyedOutStyle = {fill: "grey", width: "2rem", height: "2rem"};
+const completeStyle = { fill: '#01d538', width: '2rem', height: '2rem' };
+const greyedOutStyle = { fill: 'grey', width: '2rem', height: '2rem' };
 
-const line = {
-  height: "0.2rem",
-  width: "100%",
-  backgroundColor: "grey",
-  marginTop: "0.9rem"
+const lineStyle = {
+  height: '.2rem',
+  width: '100%',
+  backgroundColor: 'grey',
+  marginTop: '.9rem',
 };
 
-const ProgressBar = ({stepsFinished}) => (
-  <div>
-    <div
-      style={{
-        flexDirection: "row",
-        display: "flex",
-        justifyContent: "space-between"
-      }}
-    >
-    {[0, 1, 2, 3].map(i => (
-        <Fragment key={i}>
-          <div>
-            {stepsFinished > i ? (
-              <CheckCircleOutline style={completeStyle}/>
-            ) : (
-              <CheckCircleOutline style={greyedOutStyle}/>
-            )}
+const labelStyle = {
+  position: 'absolute',
+  top: '2rem',
+  left: '-1rem',
+  width: '4rem',
+  textAlign: 'center',
+};
+
+const containerStyle = {
+  flexDirection: 'row',
+  display: 'flex',
+  justifyContent: 'space-between',
+  marginBottom: '3rem',
+  padding: '0 1rem',
+};
+
+// should be part of a config but since the state management is broken beyond
+// repair, whatever.  ¯\_(ツ)_/¯
+const steps = ['introduction', 'upload', 'form', 'send'];
+
+const messages = defineMessages({
+  introduction: {
+    id: 'Progressbar.introduction',
+    defaultMessage: 'Introduction',
+  },
+  upload: {
+    id: 'Progressbar.upload',
+    defaultMessage: 'Upload',
+  },
+  form: {
+    id: 'Progressbar.form',
+    defaultMessage: 'Form',
+  },
+  send: {
+    id: 'Progressbar.send',
+    defaultMessage: 'Send',
+  },
+});
+
+const ProgressBar = ({ stepsFinished }) => (
+  <div style={containerStyle}>
+    {steps.map((step, i) => (
+      <Fragment key={i}>
+        <div style={{ position: 'relative' }}>
+          {stepsFinished > i ? (
+            <CheckCircleOutline style={completeStyle} />
+          ) : (
+            <CheckCircleOutline style={greyedOutStyle} />
+          )}
+          <div style={labelStyle}>
+            <Typography variant="body1" gutterBottom>
+              <small>
+                <FormattedMessage {...messages[step]} />
+              </small>
+            </Typography>
           </div>
-          {i < 3 &&
-            <div style={line}/>
-          }
-        </Fragment>
-      ))}
-    </div>
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "space-between",
-        marginBottom: "2rem",
-        flexGrow: "0"
-      }}
-    >
-      <div style={{width: "20%"}}>
-        <Typography variant='body1' gutterBottom>
-          <small>
-            <FormattedMessage
-              id='Progressbar.introduction'
-              defaultMessage='Introduction'
-            />
-          </small>
-        </Typography>
-      </div>
-      <div style={{width: "25%", textAlign: "center"}}>
-        <Typography variant='body1' gutterBottom>
-          <small>
-            <FormattedMessage
-              id='Progressbar.upload'
-              defaultMessage='Upload'
-            />
-          </small>
-        </Typography>
-      </div>
-      <div style={{width: "30%", textAlign: "center"}}>
-        <Typography variant='body1' gutterBottom>
-          <small>
-            <FormattedMessage
-              id='Progressbar.form'
-              defaultMessage='Form'
-            />
-          </small>
-        </Typography>
-      </div>
-      <div style={{width: "20%", textAlign: "right"}}>
-        <Typography variant='body1' gutterBottom>
-          <small>
-            <FormattedMessage
-              id='Progressbar.send'
-              defaultMessage='Send'
-            />
-          </small>
-        </Typography>
-      </div>
-    </div>
+        </div>
+        {i + 1 < steps.length && <div style={lineStyle} />}
+      </Fragment>
+    ))}
   </div>
 );
 

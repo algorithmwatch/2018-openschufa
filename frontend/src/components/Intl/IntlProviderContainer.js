@@ -6,6 +6,4 @@ const mapStateToProps = state => {
   return { key: language, locale: language, messages };
 };
 
-export default connect(
-  mapStateToProps
-)(IntlProvider);
+export default connect(mapStateToProps)(IntlProvider);

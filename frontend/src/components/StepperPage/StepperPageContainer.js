@@ -1,4 +1,4 @@
-import StepperPage from './StepperPage'
+import StepperPage from './StepperPage';
 import { connect } from 'react-redux';
 
 import {
@@ -6,14 +6,15 @@ import {
   savePhoto,
   sendData,
   resetForm,
-  resetFinished
-} from "../../actions";
-
+  resetFinished,
+} from '../../actions';
 
 const mapStateToProps = state => {
   const { activeStep } = state.stepper;
-  const hasImages = Boolean(state.form.imageData.length > 0 || state.photo.imageData);
-  return {activeStep, hasImages} ;
+  const hasImages = Boolean(
+    state.form.imageData.length > 0 || state.photo.imageData
+  );
+  return { activeStep, hasImages };
 };
 
 const mapDispatchToProps = dispatch => {
@@ -22,11 +23,8 @@ const mapDispatchToProps = dispatch => {
     savePhoto: () => dispatch(savePhoto()),
     sendData: () => dispatch(sendData()),
     resetForm: () => dispatch(resetForm()),
-    resetFinished: () => dispatch(resetFinished())
-  }
+    resetFinished: () => dispatch(resetFinished()),
+  };
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(StepperPage);
+export default connect(mapStateToProps, mapDispatchToProps)(StepperPage);

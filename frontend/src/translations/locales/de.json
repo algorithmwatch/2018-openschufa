@@ -1,13 +1,20 @@
 {
   "AddPhoto.addphoto": "Weiteres Foto oder PDF hinzufügen",
   "AddPhoto.survey": "Zum Fragebogen",
-  "AddedPhoto.p1": "Klicke auf 'FOTO ODER PDF HINZUFÜGEN', um eine weitere Aufnahme zu machen.",
+  "AddedPhoto.p1":
+    "Klicke auf 'FOTO ODER PDF HINZUFÜGEN', um eine weitere Aufnahme zu machen.",
   "AddedPhoto.pdf": "Pdf",
   "AddedPhoto.photo": "Foto",
   "AddedPhoto.subheading": "Dein {documentType} wurde hinzugefügt.",
-  "Capture.p1": "Bitte sende uns NUR die Seiten der SCHUFA-Auskunft, DIE NICHT oben rechts das SCHUFA-Logo zeigen. Also nicht die erste Seite mit Deiner Adresse, nicht die letzte Seite mit den freundliche Grüßen der SCHUFA und auch nicht Rückseiten mit Erklärungen. Mindestens zwei Seiten solltest Du uns übermitteln, ggf. sind es bei Dir drei oder mehr. Du kannst gleich hier in der OpenSCHUFA-Anwendung auf den Bildern Inhalte schwärzen, z.B. sicherheitshalber die Strichcodes und Ziffern am linken Seitenrand.",
-  "Capture.takephotobutton": "Foto machen  / Datei auswählen",
-  "DataForm.activeloans": "Laufende Kredite / Baufinanzierung / Leasingverträge / Ratenzahlungsgeschäfte",
+  "Capture.title": "Bitte beachte 3 Sachen für die Fotos",
+  "Capture.takephotobutton": "Foto machen/Datei auswählen",
+  "Capture.one": "Die Bilder müssen scharf sein",
+  "Capture.two": "Die Bilder müssen hell sein",
+  "Capture.three":
+    "die Kanten des Dokuments sollten möglichst gerade sein. Lege die Seiten am besten auf eine flache Unterlage und fotografiere senkrecht von oben.",
+  "Capture.four": "Bei PDF-Dateien ist kein Schwärzen möglich!",
+  "DataForm.activeloans":
+    "Laufende Kredite / Baufinanzierung / Leasingverträge / Ratenzahlungsgeschäfte",
   "DataForm.admonitions": "Mahnungen",
   "DataForm.cashing": "Eingeleitete Inkassoverfahren",
   "DataForm.date": "Datum der SCHUFA-Auskunft",
@@ -15,12 +22,13 @@
   "DataForm.ecommerce": "E-Commerce",
   "DataForm.employed": "Angestellt",
   "DataForm.employment": "Arbeitsverhältnis",
-  "DataForm.executionproceedings": "Zwangsvollstreckungsmaßnahmen (u. A. Vermögensauskunft)",
+  "DataForm.executionproceedings":
+    "Zwangsvollstreckungsmaßnahmen (u. A. Vermögensauskunft)",
   "DataForm.familystatus": "Familienstatus",
   "DataForm.female": "Weiblich",
   "DataForm.financialsituation": "Finanzielle Situation",
-  "DataForm.flat": "Mietwohnung",
-  "DataForm.freeholdflat": "Eigentumswohnung",
+  "DataForm.flat": "Mietwohnung/-haus",
+  "DataForm.freeholdflat": "Eigentumswohnung/-haus",
   "DataForm.freelance": "Selbstständig",
   "DataForm.hardfacts": "Harte Merkmale für die Schufa",
   "DataForm.header": "Einige zusätzliche Angaben...",
@@ -45,8 +53,10 @@
   "DataForm.numberofgiroaccounts": "Anzahl der Girokonten",
   "DataForm.numberofmobilecontracts": "Anzahl der Handyverträge",
   "DataForm.official": "Beamte(r)",
-  "DataForm.p1": "Es folgen etwa 20 Fragen. Wir wollen von Dir weder Namen, genaue Anschrift noch E-mailadresse wissen. Doch wäre es für uns enorm hilfreich, wenn Du möglichst alle so genau wie möglich beantwortest.",
-  "DataForm.paidoffloans": "Abbezahlte Kredite / Baufinanzierung / Leasingverträge / Ratenzahlungsgeschäfte",
+  "DataForm.p1":
+    "Es folgen etwa 20 Fragen. Wir wollen von Dir weder Namen, genaue Anschrift noch E-mailadresse wissen. Doch wäre es für uns enorm hilfreich, wenn Du möglichst alle so genau wie möglich beantwortest.",
+  "DataForm.paidoffloans":
+    "Abbezahlte Kredite / Baufinanzierung / Leasingverträge / Ratenzahlungsgeschäfte",
   "DataForm.plz": "Postleitzahl",
   "DataForm.relocations": "Anzahl der Umzüge in den letzten 10 Jahren",
   "DataForm.retired": "In Rente oder Pension",
@@ -57,29 +67,39 @@
   "DataForm.singleparent": "Alleinerziehend",
   "DataForm.sociodemography": "Angaben zur Person",
   "DataForm.student": "Student",
-  "DataForm.validationerror.nationality": "Bitte gib nur Buchstaben, Leerzeichen oder Bindestriche ein!",
-  "DataForm.validationerror.nationalitylength": "Bitte gib höchstens 30 Zeichen ein!",
-  "DataForm.validationerror.numberOfChildren": "Bitte gib eine Zahl kleiner oder gleich 20 ein!",
+  "DataForm.validationerror.nationality":
+    "Bitte gib nur Buchstaben, Leerzeichen oder Bindestriche ein!",
+  "DataForm.validationerror.nationalitylength":
+    "Bitte gib höchstens 30 Zeichen ein!",
+  "DataForm.validationerror.numberOfChildren":
+    "Bitte gib eine Zahl kleiner oder gleich 20 ein!",
   "DataForm.validationerror.plz": "Bitte gib höchstens 5 Ziffern ein!",
   "DataForm.yearofbirth": "Geburtsjahr",
   "DataForm.yes": "Ja",
   "Finish.checkboxlabel": "Einwilligung zur Datenspeicherung",
   "Finish.header": "Abschliessen",
-  "Finish.p1": "Bitte lies die Einwilligung zur Datenspeicherung aufmerksam und akzeptiere diese um Deine Daten absenden zu können.",
-  "Finish.p2": "Klicke auf 'ABSENDEN' um Deine Daten zu senden. Hinweis: Der Upload ist eine größere Datenmenge; am besten mache es, wenn Du mit einem W-Lan verbunden bist.",
+  "Finish.p1":
+    "Bitte lies die Einwilligung zur Datenspeicherung aufmerksam und akzeptiere diese um Deine Daten absenden zu können.",
+  "Finish.p2":
+    "Klicke auf 'ABSENDEN' um Deine Daten zu senden. Hinweis: Der Upload ist eine größere Datenmenge; am besten mache es, wenn Du mit einem W-Lan verbunden bist.",
   "Finish.privacyagreementbutton": "Einwilligung zur Datenspeicherung zeigen",
   "Finish.sendbutton": "Absenden",
   "Finished.contact": "Bei Fragen bitte per Mail an {mail} schreiben.",
-  "Finished.emailsent": "Deine ID wurde an die oben angegebene e-Mail-Adresse verschickt. Solltest Du innerhalb der nächsten Minuten keine Nachricht erhalten, prüfe bitte Deinen SPAM-Ordner oder ob die Adresse stimmt!",
-  "Finished.emailsenterror": "Die Nachricht konnte nicht verschickt werden. Bitte prüfe Deine E-mailadresse und versuch es nochmal.",
+  "Finished.emailsent":
+    "Deine ID wurde an die oben angegebene e-Mail-Adresse verschickt. Solltest Du innerhalb der nächsten Minuten keine Nachricht erhalten, prüfe bitte Deinen SPAM-Ordner oder ob die Adresse stimmt!",
+  "Finished.emailsenterror":
+    "Die Nachricht konnte nicht verschickt werden. Bitte prüfe Deine E-mailadresse und versuch es nochmal.",
   "Finished.facebook": "Facebook",
   "Finished.formuploaderror": "Deine Daten konnten nicht hochgeladen werden:",
   "Finished.header": "Vielen Dank für Deine Teilnahme",
   "Finished.news": "Neuigkeiten gibt es bei {facebook} und {twitter}.",
-  "Finished.notification": "Deine Daten wurden hochgeladen und unter der folgenden ID gespeichert:",
-  "Finished.reminderquestion": "Schreibe Dir diese ID ab oder mache ein Bildschirmfoto. Mit der ID kannst Du Deine Einträge bei uns ändern oder löschen lassen. Wenn Du eine Nachricht mit dieser ID erhalten möchtest, trage bitte Deine E-mailadresse unten ein und klicke auf 'Abschicken'. Wir speichern Deine E-mailadresse nicht!",
+  "Finished.notification":
+    "Deine Daten wurden hochgeladen und unter der folgenden ID gespeichert:",
+  "Finished.reminderquestion":
+    "Schreibe Dir diese ID ab oder mache ein Bildschirmfoto. Mit der ID kannst Du Deine Einträge bei uns ändern oder löschen lassen. Wenn Du eine Nachricht mit dieser ID erhalten möchtest, trage bitte Deine E-mailadresse unten ein und klicke auf 'Abschicken'. Wir speichern Deine E-mailadresse nicht!",
   "Finished.twitter": "Twitter",
-  "Finished.uploadingnotification": "Der Upload kann einige Zeit in Anspruch nehmen; bitte nicht den Browser schließen!",
+  "Finished.uploadingnotification":
+    "Der Upload kann einige Zeit in Anspruch nehmen; bitte nicht den Browser schließen!",
   "FinishedForm.email": "Deine E-mailadresse",
   "FinishedForm.sendemail": "Abschicken",
   "FinishedForm.sendform": "Nochmal abschicken",
@@ -90,9 +110,9 @@
   "LandingPage.impressum": "Impressum",
   "LandingPage.openschufa.buttontext": "Informieren",
   "LandingPage.openschufa.description": "Erfahre mehr über das Vorhaben",
-  "LandingPage.requestinfo.buttontext": "Beantragen",
+  "LandingPage.requestinfo.buttontext": "SCHUFA-Auskunft beantragen",
   "LandingPage.requestinfo.description": "Beantrage eine Selbstauskunft",
-  "LandingPage.upload.buttontext": "Upload",
+  "LandingPage.upload.buttontext": "Deine SCHUFA-Auskunft hochladen",
   "LandingPage.upload.description": "Übermittle uns Deine SCHUFA-Auskunft",
   "LandingPage.welcome": "Willkommen bei OpenSCHUFA!",
   "Menu.about": "Über OpenSCHUFA",
@@ -105,18 +125,22 @@
   "Progressbar.introduction": "Einführung",
   "Progressbar.send": "Abschicken",
   "Progressbar.upload": "Upload",
-  "StepperPage.capturebutton": "Foto oder PDF hinzufügen",
+  "StepperPage.capturebutton": "Nächster Schritt",
   "StepperPage.finishbutton": "Daten senden",
   "StepperPage.formbutton": "Fragebogen",
   "StepperPage.overviewbutton": "Abschliessen",
   "StepperPage.paintbutton": "Schwärzen",
-  "StepperPage.prompt": "Du hast Deine Bilder noch nicht hochgeladen; sicher mit dem schließen?",
+  "StepperPage.prompt":
+    "Du hast Deine Bilder noch nicht hochgeladen; sicher mit dem schließen?",
   "StepperPage.resetbutton": "Zurücksetzen",
   "StepperPage.rotatebutton": "Rotieren",
   "StepperPage.saveimagebutton": "Bild speichern",
   "StepperPage.usagebutton": "Einführung",
-  "Usage.header": "Einführung",
+  "Usage.header": "Los geht's!",
+  "Usage.whatpagesweneed": "Welche Seiten wir benötigen",
   "Usage.linktoprivacyagreement": "hier",
-  "Usage.p1": "Auf den nächsten Seiten  wollen wir von Dir einige Fotos/Scans einsammeln und Dich bitten, eine Fragebogen auszufüllen. Du kannst {link} einen Blick in die Einwilligung zur Datenspeicherung werfen, der Du zustimmen musst.",
-  "Usage.p2": "Wenn Du jetzt per Smartphone Fotos von Deiner SCHUFA-Auskunft machst, achte bitte darauf, dass die Bilder scharf sind. Hast Du genug Helligkeit? Lege für die Fotos die Seiten am besten auf eine flache Unterlage und fotografiere senkrecht von oben, damit die Kanten der Seite möglichst gerade sind. "
+  "Usage.p1":
+    "Damit wir die SCHUFA knacken können, brauchen wir von Dir die Fotos oder Scans Deiner SCHUFA-Daten. Anschließend bitten wir Dich um einige Zusatzinfos von Dir.",
+  "Usage.p2":
+    "Wir benötigen von Dir zwei oder ggf. mehr Seiten der SCHUFA-Auskunft, die eine Tabelle und weitere Infos enthalten. Seiten, die oben recht das SCHUFA-Logo zeigen, benötigen wir NICHT."
 }

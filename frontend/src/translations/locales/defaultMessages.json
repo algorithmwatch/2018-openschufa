@@ -14,8 +14,28 @@
         "id": "AddedPhoto.pdf"
       },
       {
-        "defaultMessage": "Click on 'ANOTHER PHOTO' to take another photo.",
-        "id": "AddedPhoto.p1"
+        "defaultMessage": "You've added a total of {count} {photos}.",
+        "id": "AddedPhoto.numberofphotos"
+      },
+      {
+        "defaultMessage": "photo",
+        "id": "AddedPhoto.photosuffix"
+      },
+      {
+        "defaultMessage": "photos",
+        "id": "AddedPhoto.photossuffix"
+      },
+      {
+        "defaultMessage": "You've added a total of {count} {documents}.",
+        "id": "AddedPhoto.numberofpdfs"
+      },
+      {
+        "defaultMessage": "pdf document",
+        "id": "AddedPhoto.pdfsuffix"
+      },
+      {
+        "defaultMessage": "pdf documents",
+        "id": "AddedPhoto.pdfssuffix"
       },
       {
         "defaultMessage": "Another photo",
@@ -31,12 +51,28 @@
   {
     "descriptors": [
       {
-        "defaultMessage": "Please only send those SCHUFA pages that do not show the SCHUFA-Logo ...",
-        "id": "Capture.p1"
+        "defaultMessage": "Consider the following",
+        "id": "Capture.title"
+      },
+      {
+        "defaultMessage": "sharp",
+        "id": "Capture.one"
+      },
+      {
+        "defaultMessage": "bright",
+        "id": "Capture.two"
+      },
+      {
+        "defaultMessage": "straight",
+        "id": "Capture.three"
       },
       {
         "defaultMessage": "Press to take photo",
         "id": "Capture.takephotobutton"
+      },
+      {
+        "defaultMessage": "no blacking",
+        "id": "Capture.four"
       }
     ],
     "path": "src/components/CapturePhoto/CapturePhoto.json"
@@ -371,32 +407,16 @@
         "id": "LandingPage.welcome"
       },
       {
-        "defaultMessage": "You already have a SCHUFA-information that you wish to pass on to us?",
-        "id": "LandingPage.upload.description"
-      },
-      {
         "defaultMessage": "Upload",
         "id": "LandingPage.upload.buttontext"
-      },
-      {
-        "defaultMessage": "You still have to apply for your SCHUFA-information?",
-        "id": "LandingPage.requestinfo.description"
       },
       {
         "defaultMessage": "Apply",
         "id": "LandingPage.requestinfo.buttontext"
       },
       {
-        "defaultMessage": "You want to know more about the project and those who participate?",
-        "id": "LandingPage.openschufa.description"
-      },
-      {
         "defaultMessage": "Get information",
         "id": "LandingPage.openschufa.buttontext"
-      },
-      {
-        "defaultMessage": "Frequently asked questions",
-        "id": "LandingPage.faq.description"
       },
       {
         "defaultMessage": "FAQ",
@@ -526,6 +546,10 @@
       {
         "defaultMessage": "Here",
         "id": "Usage.linktoprivacyagreement"
+      },
+      {
+        "defaultMessage": "Introduction",
+        "id": "Usage.whatpagesweneed"
       },
       {
         "defaultMessage": "If you now take fotos of your SCHUFA information ...",

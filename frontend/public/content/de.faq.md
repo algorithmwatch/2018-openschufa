@@ -10,7 +10,7 @@ Die Selbstauskunft sollte von 2018 sein. Wenn Ihr mehrere Auskünfte habt, ladet
 
 ### Wo wende ich mich bei Problemen hin?
 
-Bitte per E-mail an <mailto:support@openschufa.de>.
+Bitte per E-mail an [support@openschufa.de](mailto:support@openschufa.de).
 
 ### Kann ich Euch meine Auskunft per Post oder E-mail schicken?
 
@@ -22,7 +22,7 @@ Nein. Wir benötigen das Format der Selbstauskunft nach Bundesdatenschutzgesetz 
 
 ### Wozu dient der Fragebogen?
 
-Der Fragebogen soll wichtige Informationen für die Analyse des Scorings und seiner Auswirkungen liefern. Dafür bitten wir Dich, möglichst viele Fragen zu Deiner persönlichen Situation zu beantworten. Beispielsweise fragen wir nach sogenannten Negativmerkmalen, die dazu führen können, dass jemand keinen Kredit mehr bekommt. Hier kann der Fragebogen wichtige Hinweise zum Abgleich der Daten mit der Auskunft geben. Wir fragen folgendes ab: Datum der Auskunft, Postleitzahl des Wohnorts, Geburtsjahr, Geschlecht, Familenstatus, Nationalität, Migrationshintergrund, Monatliche Einkünfte, Wohnungssituation, Anzahl der Umzüge der letzten 10 Jahre, Abbezahlte Kredite etc., Kredithöhe, Anzahl der Handyverträge, Anzahl Girokonten, Anzahl Kreditkarten, Anzahl Versandhandelkonten/ Mahnungen/ Insolvenzen.
+Der Fragebogen soll wichtige Informationen für die Analyse des Scorings und seiner Auswirkungen liefern. Dafür bitten wir Dich, möglichst viele Fragen zu Deiner persönlichen Situation zu beantworten. Beispielsweise fragen wir nach sogenannten Negativmerkmalen, die dazu führen können, dass jemand keinen Kredit mehr bekommt. Hier kann der Fragebogen wichtige Hinweise zum Abgleich der Daten mit der Auskunft geben. Wir fragen folgendes ab: Datum der Auskunft, Postleitzahl des Wohnorts, Geburtsjahr, Geschlecht, Familienstatus, Nationalität, Migrationshintergrund, Monatliche Einkünfte, Wohnungssituation, Anzahl der Umzüge der letzten 10 Jahre, Abbezahlte Kredite etc., Kredithöhe, Anzahl der Handyverträge, Anzahl Girokonten, Anzahl Kreditkarten, Anzahl Versandhandelskonten/ Mahnungen/ Insolvenzen.
 
 ### Wie werden die Daten gespeichert?
 

@@ -120,8 +120,9 @@
   "StepperPage.rotatebutton": "Rotieren",
   "StepperPage.saveimagebutton": "Bild speichern",
   "StepperPage.usagebutton": "Einführung",
+  "Usage.dsgvo": "Datenschutz-Grundverordnung (DSGVO): Bitte beachte unsere {link}!",
   "Usage.header": "Los geht's!",
-  "Usage.linktoprivacyagreement": "hier",
+  "Usage.linktofaq": "FAQ",
   "Usage.p1": "Damit wir die SCHUFA knacken können, brauchen wir von Dir die Fotos oder Scans Deiner SCHUFA-Daten. Anschließend bitten wir Dich um einige Zusatzinfos von Dir.",
   "Usage.p2": "Wir benötigen von Dir zwei oder ggf. mehr Seiten der SCHUFA-Auskunft, die eine Tabelle und weitere Infos enthalten. Seiten, die oben recht das SCHUFA-Logo zeigen, benötigen wir NICHT.",
   "Usage.whatpagesweneed": "Welche Seiten wir benötigen"

@@ -9,12 +9,11 @@ import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import styles from './LandingPage.css';
 import { STEP_USAGE } from '../../constants';
-import MenuList from 'material-ui/Menu/MenuList';
-import MenuItem from 'material-ui/Menu/MenuItem';
 
 const inlineStyles = theme => ({
   header: {
-    height: '4em',
+    height: '4rem',
+    minHeight: '4rem',
     backgroundImage: `url(${logo})`,
     backgroundPosition: 'center center',
     backgroundRepeat: 'no-repeat',
@@ -72,6 +71,7 @@ const inlineStyles = theme => ({
     justifyContent: 'center',
     alignItems: 'center',
     height: '5rem',
+    minHeight: '5rem',
     backgroundColor: theme.palette.primary.main,
     marginBottom: 10,
   },
@@ -80,7 +80,12 @@ const inlineStyles = theme => ({
   },
 });
 
-const languages = [{ locale: 'de', name: 'DE' }, { locale: 'en', name: 'EN' }];
+/*
+const languages = [
+  {locale: 'de', name: 'DE'},
+  {locale: 'en', name: 'EN'},
+];
+*/
 
 class Index extends Component {
   static propTypes = {
@@ -110,29 +115,32 @@ class Index extends Component {
   };
 
   render() {
-    const { classes, currentLanguage } = this.props;
+    // const {classes, currentLanguage} = this.props;
+    const { classes } = this.props;
 
     return (
       <div className={styles.root}>
         <div className={classes.header}>
-          <div className={classes.languageContainer}>
-            <MenuList className={classes.languageMenuList}>
-              {languages
-                .filter(lang => lang.locale !== currentLanguage)
-                .map((lang, i) => {
-                  return (
-                    <MenuItem
-                      key={i}
-                      className={classes.languageMenuItem}
-                      value={lang.locale}
-                      onClick={() => this.handleLanguageClick(lang.locale)}
-                    >
-                      {lang.name}
-                    </MenuItem>
-                  );
-                })}
-            </MenuList>
-          </div>
+          {/*<div className={classes.languageContainer}>
+              <MenuList className={classes.languageMenuList}>
+                {
+                  languages
+                    .filter(lang => lang.locale !== currentLanguage)
+                    .map((lang, i) => {
+                      return (
+                        <MenuItem
+                          key={i}
+                          className={classes.languageMenuItem}
+                          value={lang.locale}
+                          onClick={() => this.handleLanguageClick(lang.locale)}
+                        >
+                          {lang.name}
+                        </MenuItem>
+                      );
+                    })
+                }
+              </MenuList>
+          </div>*/}
         </div>
         <div className={classes.callToAction} style={{ marginBottom: '2rem' }}>
           <Typography

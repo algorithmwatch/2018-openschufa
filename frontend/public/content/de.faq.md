@@ -1,12 +1,17 @@
 ### FAQ - Häufig gestellte Fragen
 
+### DSGVO: Warum sieht meine Auskunft anders aus?
+
+Seit Inkrafttreten der Datenschutzgrundverordnung (DSGVO) erteilt die SCHUFA nicht mehr die gleiche Art der Auskunft. Sie gibt  nicht mehr die Übersicht über alle Scores (Branchenscores) in einer kompletten Tabelle heraus, sondern nur noch vereinzelte Scores (wenn die in den letzten 12 Monaten angefragt wurden) sowie den sogenannten Basisscore. Wir sammeln trotzdem auch diese neue Art der Auskünfte ein.
+
+
 ### Was genau braucht Ihr von mir?
 
-Uns interessiert Deine SCHUFA-Auskunft, die Du nach Bundesdatenschutzgesetz §34 in Briefform erhalten hast und aus mindestens vier DIN A4-Seiten besteht. Von diesem Schreiben wollen wir NICHT die erste Seite (auf der Dein Name und Deine Adresse steht) und auch nicht die letzte Seite. Wir benötigen die Seiten mit den Tabellen und die vorletzte Seite, auf der in einem Fließtext einige Angaben über Anfragen von Banken, Kreditbewilligungen usw. stehen könnten. Die letzte Seite benötigen wir nicht. Wenn Du Daten nicht an uns übermitteln will, lasse die weg oder schwärze sie - Du kannst das Schwärzen direkt hier in der Anwendung machen (das Schwärzen funktioniert nicht für PDF-Dateien. Beim Einreichen von Scans also entweder vor dem Scan Dinge schwärzen oder die Datei als jpg-Datei vom Scanner ausgeben lassen).
+(Bitte die Frage oben zu DSGVO beachten). Uns interessiert Deine SCHUFA-Auskunft, die Du nach Bundesdatenschutzgesetz §34 in Briefform erhalten hast (bis Ende Mai 2018) und aus mindestens vier DIN A4-Seiten besteht. Von diesem Schreiben wollen wir NICHT die erste Seite (auf der Dein Name und Deine Adresse steht) und auch nicht die letzte Seite. Wir benötigen die Seiten mit den Tabellen und die vorletzte Seite, auf der in einem Fließtext einige Angaben über Anfragen von Banken, Kreditbewilligungen usw. stehen könnten. Die letzte Seite benötigen wir nicht. Wenn Du Daten nicht an uns übermitteln willst, dann lasse die weg oder schwärze sie - Du kannst das Schwärzen direkt hier in der Anwendung machen (das Schwärzen funktioniert nicht für PDF-Dateien. Beim Einreichen von Scans also entweder vor dem Scan Dinge schwärzen oder die Datei als jpg-Datei vom Scanner ausgeben lassen).
 
 ### Von wann soll die Selbstauskunft sein?
 
-Die Selbstauskunft sollte von 2018 sein. Wenn Ihr mehrere Auskünfte habt, ladet bitte  nur die aktuellste hoch.
+Die Selbstauskunft sollte von 2018 sein. Wenn Ihr mehrere Auskünfte habt, ladet bitte nur die aktuellste hoch.
 
 ### Wo wende ich mich bei Problemen hin?
 

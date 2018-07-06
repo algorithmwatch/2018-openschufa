@@ -24,7 +24,7 @@ const styles = theme => ({
 
 class Usage extends Component {
   handleClick = e => {
-    this.props.openModal('privacyagreement');
+    this.props.openModal('faq');
     e.preventDefault();
   };
 
@@ -41,13 +41,19 @@ class Usage extends Component {
           <Typography variant="body1" gutterBottom>
             <FormattedMessage
               id="Usage.p1"
-              defaultMessage="{link} can you have a look at the privacy agreement..."
+              defaultMessage="To be able to crack SCHUFA, we need photos or scan of your SCHUFA data."
+            />
+          </Typography>
+          <Typography variant="body1" gutterBottom>
+            <FormattedMessage
+              id="Usage.dsgvo"
+              defaultMessage="General Data Protection Regulation (GDPR): Please check our {link}!"
               values={{
                 link: (
                   <span className={classes.link} onClick={this.handleClick}>
                     <FormattedMessage
-                      id="Usage.linktoprivacyagreement"
-                      defaultMessage="Here"
+                      id="Usage.linktofaq"
+                      defaultMessage="FAQ"
                     />
                   </span>
                 ),

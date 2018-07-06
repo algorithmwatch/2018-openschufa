@@ -540,12 +540,16 @@
         "id": "Usage.header"
       },
       {
-        "defaultMessage": "{link} can you have a look at the privacy agreement...",
+        "defaultMessage": "To be able to crack SCHUFA, we need photos or scan of your SCHUFA data.",
         "id": "Usage.p1"
       },
       {
-        "defaultMessage": "Here",
-        "id": "Usage.linktoprivacyagreement"
+        "defaultMessage": "General Data Protection Regulation (GDPR): Please check our {link}.",
+        "id": "Usage.dsgvo"
+      },
+      {
+        "defaultMessage": "FAQ",
+        "id": "Usage.linktofaq"
       },
       {
         "defaultMessage": "Introduction",

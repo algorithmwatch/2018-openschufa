@@ -7,5 +7,5 @@ You can now set up a pgAdmin4 connection with host `localhost` and port `5434`.
 ### Deploy frontend
 __Deploy with rsync__
 ```bash
-rsync -a --no-o --no-g -e 'ssh' --rsync-path='sudo rsync' <path to project>/frontend/build/ openschufa@beta.openschufa.de:/var/www/openschufa
+rsync -a --no-o --no-g --delete -e 'ssh' --rsync-path='sudo rsync' <path to project>/frontend/build/ openschufa@beta.openschufa.de:/var/www/openschufa
 ```

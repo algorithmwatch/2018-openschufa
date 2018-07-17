@@ -39,7 +39,7 @@ Die maschinenlesbaren Daten werden lokal gespeichert und per PGP verschlüsselt.
 
 ### Warum bekomme ich eine ID?
 
-Die maschinenlesbaren Daten bleiben auf unbestimmte Zeit für Forschungszwecke und für journalistische Auswertung bei AlgorithmWatch, bei OKF und den Redaktionen gespeichert. Wenn Du Deine Daten spendest, erhältst nach dem Upload eine ID (zufällig erzeugt), die Du speichern oder Dir per E-mail zusenden lassen kannst (wir speichern die E-mailadresse nicht!). Die ID ist ein die Daten gekoppelt - nicht aber an Deinen Namen. Mit dieser ID kannst Du Dich an support@openschufa.de wenden, wenn Du Deine Daten zu einem späteren Zeitpunkt löschen lassen möchtest. Wir speichern als einziges Meta-Datum, wann die Daten übertragen wurden. IP-Adressen werden nicht gespeichert.
+Die maschinenlesbaren Daten bleiben auf unbestimmte Zeit für Forschungszwecke und für journalistische Auswertung bei AlgorithmWatch, bei OKF und den Redaktionen gespeichert. Wenn Du Deine Daten spendest, erhältst nach dem Upload eine ID (zufällig erzeugt), die Du speichern oder Dir per E-mail zusenden lassen kannst (wir speichern die E-mailadresse nicht!). Die ID ist an die Daten gekoppelt - nicht aber an Deinen Namen. Mit dieser ID kannst Du Dich an support@openschufa.de wenden, wenn Du Deine Daten zu einem späteren Zeitpunkt löschen lassen möchtest. Wir speichern als einziges Meta-Datum, wann die Daten übertragen wurden. IP-Adressen werden nicht gespeichert.
 
 ### Ist die Software von OpenSCHUFA Open Source?
 

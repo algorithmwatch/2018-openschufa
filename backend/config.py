@@ -15,5 +15,11 @@ SQLALCHEMY_ECHO_POOL = True
 
 UPLOADED_PHOTOS_DEST = APP_ROOT + '/media/'
 
-MAIL_DEFAULT_SENDER = 'webmaster@openschufa.de'
+MAIL_DEFAULT_SENDER = 'id@openschufa.de'
+MAIL_USE_TLS = True
+MAIL_SERVER = 'in-v3.mailjet.com'
+MAIL_PORT = 587
+MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
+MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
+
 

@@ -43,9 +43,9 @@ Die Datenverarbeitung erfolgt mit dem journalistischen und wissenschaftlichen Zi
 
 Die Datenverarbeitung erfolgt nach Art. 6 Abs. 1 S. 1 lit. a DSGVO auf Grundlage Ihrer freiwillig erteilten Einwilligung.
 
-Die Daten aus den SCHUFA-Auskünften und den Fragebogenantworten werden nach erteilter Einwilligung per verschlüsselter Verbindung auf dem Server [Digital Ocean](https://www-digitalocean.com/) hochgeladen.  
+Die Daten aus den SCHUFA-Auskünften und den Fragebogenantworten werden nach erteilter Einwilligung per verschlüsselter Verbindung auf dem Server [Digital Ocean](https://digitalocean.com/) hochgeladen.  
 
-Die erfassten Daten werden darüber hinaus  lokal gespeichert und per PGP verschlüsselt.
+Die erfassten Daten werden darüber hinaus lokal gespeichert und per PGP verschlüsselt.
 Die Dateien bei Digital Ocean werden im Oktober 2018 gelöscht. Die Bilder/Scans mit den SCHUFA-Auskünften werden im Dezember 2018 auf den Offline-Rechnern komplett gelöscht.
 Durch die Nutzer versehentlich hochgeladene SCHUFA-Auskünfte, die den Namen und die Anschrift des Nutzers, sowie andere personenbezogene Daten enthalten, werden von uns nicht gespeichert. Die entsprechenden Fotos/Scans werden unverzüglich nach der Sichtung vernichtet.
 
